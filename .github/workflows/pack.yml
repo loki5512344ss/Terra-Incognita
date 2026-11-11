@@ -1,0 +1,57 @@
+# Собирает мод Incognita и zip сборки в формате CurseForge.
+#  - push в main и pull request: zip лежит в артефактах запуска (хранится 30 дней)
+#  - тег вида v1.2.3: дополнительно создаётся релиз GitHub с этим zip
+name: pack
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pack-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # нужны теги: по ним считается версия сборки
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Build and test the Incognita mod
+        run: script/build-mod.sh
+
+      - name: Build the CurseForge pack
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            python3 script/build-cf-pack.py --version "${GITHUB_REF_NAME#v}"
+          else
+            python3 script/build-cf-pack.py
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TerraIncognita-curseforge
+          path: dist/*-curseforge.zip
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish the release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" dist/*-curseforge.zip --title "Terra Incognita ${GITHUB_REF_NAME#v}" --generate-notes

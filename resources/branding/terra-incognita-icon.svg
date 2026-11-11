@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%">
+      <stop offset="0" stop-color="#3a2616"/>
+      <stop offset="0.6" stop-color="#1c120b"/>
+      <stop offset="1" stop-color="#0d0805"/>
+    </radialGradient>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f1d58a"/>
+      <stop offset="0.5" stop-color="#c8913c"/>
+      <stop offset="1" stop-color="#7a4f1c"/>
+    </linearGradient>
+    <linearGradient id="brassDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b98234"/>
+      <stop offset="1" stop-color="#5c3a14"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffcf6a" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#ff9a2e" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ff9a2e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="disc" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#2a1c11"/>
+      <stop offset="1" stop-color="#120b07"/>
+    </radialGradient>
+    <linearGradient id="fog" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3e6cf" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f3e6cf" stop-opacity="0.55"/>
+    </linearGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+    <clipPath id="card"><rect x="0" y="0" width="512" height="512" rx="96"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="512" height="512" fill="url(#bg)"/>
+    <circle cx="256" cy="256" r="230" fill="url(#glow)" opacity="0.55"/>
+
+    <!-- gear -->
+    <polygon points="229.1,74.0 235.9,42.9 276.1,42.9 282.9,74.0 323.7,84.9 345.1,61.4 380.0,81.6 370.3,111.8 400.2,141.7 430.4,132.0 450.6,166.9 427.1,188.3 438.0,229.1 469.1,235.9 469.1,276.1 438.0,282.9 427.1,323.7 450.6,345.1 430.4,380.0 400.2,370.3 370.3,400.2 380.0,430.4 345.1,450.6 323.7,427.1 282.9,438.0 276.1,469.1 235.9,469.1 229.1,438.0 188.3,427.1 166.9,450.6 132.0,430.4 141.7,400.2 111.8,370.3 81.6,380.0 61.4,345.1 84.9,323.7 74.0,282.9 42.9,276.1 42.9,235.9 74.0,229.1 84.9,188.3 61.4,166.9 81.6,132.0 111.8,141.7 141.7,111.8 132.0,81.6 166.9,61.4 188.3,84.9" fill="url(#brass)" stroke="#4a2e10" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="256" cy="256" r="160" fill="url(#brassDark)"/>
+    <circle cx="256" cy="256" r="148" fill="url(#disc)"/>
+    <circle cx="256" cy="256" r="148" fill="none" stroke="#e3b765" stroke-width="3" opacity="0.8"/>
+    <circle cx="256" cy="256" r="132" fill="none" stroke="#c8913c" stroke-width="1.5" stroke-dasharray="2 9" opacity="0.7"/>
+
+    <!-- compass star -->
+    <circle cx="256" cy="186" r="70" fill="url(#glow)"/>
+    <polygon points="256.0,138.0 263.7,237.5 305.5,206.5 274.5,248.3 374.0,256.0 274.5,263.7 305.5,305.5 263.7,274.5 256.0,374.0 248.3,274.5 206.5,305.5 237.5,263.7 138.0,256.0 237.5,248.3 206.5,206.5 248.3,237.5" fill="url(#brass)" stroke="#4a2e10" stroke-width="2" stroke-linejoin="round"/>
+    <polygon points="256,138 243,236 269,236" fill="#ffd27a" filter="url(#soft)" opacity="0.9"/>
+    <polygon points="256,138 243,236 269,236" fill="#fff0c2"/>
+    <circle cx="256" cy="256" r="11" fill="#2a1a0c" stroke="#e3b765" stroke-width="3"/>
+
+    <!-- fog -->
+    <rect x="0" y="300" width="512" height="212" fill="url(#fog)"/>
+    <ellipse cx="130" cy="388" rx="190" ry="26" fill="#f6ead3" opacity="0.28" filter="url(#blur)"/>
+    <ellipse cx="400" cy="430" rx="210" ry="24" fill="#f6ead3" opacity="0.34" filter="url(#blur)"/>
+    <ellipse cx="256" cy="486" rx="300" ry="30" fill="#f6ead3" opacity="0.45" filter="url(#blur)"/>
+  </g>
+  <rect x="3" y="3" width="506" height="506" rx="93" fill="none" stroke="#e3b765" stroke-opacity="0.35" stroke-width="3"/>
+</svg>

@@ -1,0 +1,840 @@
+{
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.265",
+  "mods": [
+    {
+      "file": "Chunky-NeoForge-1.4.23.jar",
+      "name": "Chunky (Forge/NeoForge)",
+      "curseforge": {
+        "project": 485681,
+        "file": 6383261
+      }
+    },
+    {
+      "file": "Clumps-neoforge-1.21.1-19.0.0.1.jar",
+      "name": "Clumps",
+      "curseforge": {
+        "project": 256717,
+        "file": 5623731
+      }
+    },
+    {
+      "file": "Controlling-neoforge-1.21.1-19.0.5.jar",
+      "name": "Controlling",
+      "curseforge": {
+        "project": 250398,
+        "file": 6368976
+      }
+    },
+    {
+      "file": "Corgilib-NeoForge-1.21.1-5.0.0.10.jar",
+      "name": "CorgiLib",
+      "curseforge": {
+        "project": 693313,
+        "file": 9113612
+      }
+    },
+    {
+      "file": "FarmersDelight-1.21.1-1.3.4.jar",
+      "name": "Farmer's Delight",
+      "curseforge": {
+        "project": 398521,
+        "file": 8765184
+      }
+    },
+    {
+      "file": "FarmersStructures-1.0.6-1.21.1_neoforge.jar",
+      "name": "Farmers Structures",
+      "curseforge": {
+        "project": 1088877,
+        "file": 8130121
+      }
+    },
+    {
+      "file": "ImmediatelyFast-NeoForge-1.6.15+1.21.1.jar",
+      "name": "ImmediatelyFast",
+      "curseforge": {
+        "project": 686911,
+        "file": 9165518
+      }
+    },
+    {
+      "file": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+      "name": "Immersive Engineering",
+      "curseforge": {
+        "project": 231951,
+        "file": 6733669
+      }
+    },
+    {
+      "file": "Jade-1.21.1-NeoForge-15.10.6.jar",
+      "name": "Jade 🔍",
+      "curseforge": {
+        "project": 324717,
+        "file": 8591319
+      }
+    },
+    {
+      "file": "JadeAddons-1.21.1-NeoForge-6.1.2.jar",
+      "name": "Jade Addons (Neo/Forge)",
+      "curseforge": {
+        "project": 583345,
+        "file": 9056575
+      }
+    },
+    {
+      "file": "JustEnoughProfessions-neoforge-1.21.1-4.0.5.jar",
+      "name": "Just Enough Professions (JEP)",
+      "curseforge": {
+        "project": 417645,
+        "file": 7966681
+      }
+    },
+    {
+      "file": "KineticGrip-1.21.1-1.0.5.jar",
+      "name": "Create Aeronautics: Kinetic Grip",
+      "curseforge": {
+        "project": 1523676,
+        "file": 8265245
+      }
+    },
+    {
+      "file": "MouseTweaks-neoforge-mc1.21-2.26.1.jar",
+      "name": "Mouse Tweaks",
+      "curseforge": {
+        "project": 60089,
+        "file": 5637846
+      }
+    },
+    {
+      "file": "NeoAuth-1.21.1-1.0.1.jar",
+      "name": "NeoAuth",
+      "curseforge": {
+        "project": 1140741,
+        "file": 7069504
+      }
+    },
+    {
+      "file": "Oh-The-Biomes-Weve-Gone-NeoForge-2.6.3.jar",
+      "name": "Oh The Biomes We've Gone",
+      "curseforge": {
+        "project": 1070751,
+        "file": 9114631
+      }
+    },
+    {
+      "file": "Oh-The-Trees-Youll-Grow-neoforge-1.21.1-5.3.5.jar",
+      "name": "Oh The Trees You'll Grow",
+      "curseforge": {
+        "project": 962544,
+        "file": 9113653
+      }
+    },
+    {
+      "file": "Ribbits-1.21.1-NeoForge-4.1.6.jar",
+      "name": "Ribbits",
+      "curseforge": {
+        "project": 622967,
+        "file": 7355196
+      }
+    },
+    {
+      "file": "Searchables-neoforge-1.21.1-1.0.2.jar",
+      "name": "Searchables",
+      "curseforge": {
+        "project": 858542,
+        "file": 5831692
+      }
+    },
+    {
+      "file": "SimpleBackups-1.21-4.0.30.jar",
+      "name": "Simple Backups",
+      "curseforge": {
+        "project": 583228,
+        "file": 7965880
+      }
+    },
+    {
+      "file": "StorageDrawers-neoforge-1.21.1-13.11.4.jar",
+      "name": "Storage Drawers",
+      "curseforge": {
+        "project": 223852,
+        "file": 6995432
+      }
+    },
+    {
+      "file": "TerraBlender-neoforge-1.21.1-4.1.0.8.jar",
+      "name": "TerraBlender (NeoForge)",
+      "curseforge": {
+        "project": 940057,
+        "file": 6054947
+      }
+    },
+    {
+      "file": "YungsApi-1.21.1-NeoForge-5.1.9.jar",
+      "name": "YUNG's API (NeoForge) [1.20.4-1.21.1 ONLY]",
+      "curseforge": {
+        "project": 1015100,
+        "file": 8894736
+      }
+    },
+    {
+      "file": "aerocopycats-1.1.1.jar",
+      "name": "Copycats+ aeronautics weight",
+      "url": "https://cdn.modrinth.com/data/wjpmYU1u/versions/wsXjRa7l/aerocopycats-1.1.1.jar",
+      "sha1": "3a93862421d0a8cdae1e3a3d7f0d4bd01e049007"
+    },
+    {
+      "file": "alltheleaks-1.1.14-1.21.1-neoforge.jar",
+      "name": "AllTheLeaks (Memory Leak Fix)",
+      "curseforge": {
+        "project": 1091339,
+        "file": 9360134
+      }
+    },
+    {
+      "file": "appleskin-neoforge-mc1.21-3.0.9.jar",
+      "name": "AppleSkin",
+      "curseforge": {
+        "project": 248787,
+        "file": 7854442
+      }
+    },
+    {
+      "file": "architectury-13.0.11-neoforge.jar",
+      "name": "Architectury API",
+      "curseforge": {
+        "project": 419699,
+        "file": 8492726
+      }
+    },
+    {
+      "file": "ash_api-neoforge-21.1.1.jar",
+      "name": "Ash API",
+      "curseforge": {
+        "project": 838498,
+        "file": 6856728
+      }
+    },
+    {
+      "file": "athena-neoforge-1.21.1-4.0.6.jar",
+      "name": "Athena",
+      "curseforge": {
+        "project": 841890,
+        "file": 8061947
+      }
+    },
+    {
+      "file": "balm-neoforge-1.21.1-21.0.67.jar",
+      "name": "Balm",
+      "curseforge": {
+        "project": 531761,
+        "file": 9406246
+      }
+    },
+    {
+      "file": "better-advanced-tooltips-2101.1.0-build.5.jar",
+      "name": "Better Advanced Tooltips",
+      "curseforge": {
+        "project": 1637623,
+        "file": 8576077
+      }
+    },
+    {
+      "file": "biomereplacer-3.1-hippo-neo.jar",
+      "name": "Biome Replacer",
+      "curseforge": {
+        "project": 910274,
+        "file": 8269912
+      }
+    },
+    {
+      "file": "bookshelf-neoforge-1.21.1-21.1.81.jar",
+      "name": "Bookshelf",
+      "curseforge": {
+        "project": 228525,
+        "file": 7606240
+      }
+    },
+    {
+      "file": "chat_heads-0.15.7-neoforge-1.21.jar",
+      "name": "Chat Heads",
+      "curseforge": {
+        "project": 407206,
+        "file": 8642154
+      }
+    },
+    {
+      "file": "chipped-neoforge-1.21.1-4.0.2.jar",
+      "name": "Chipped",
+      "curseforge": {
+        "project": 456956,
+        "file": 5813117
+      }
+    },
+    {
+      "file": "cloth-config-15.0.140-neoforge.jar",
+      "name": "Cloth Config API (Fabric/Forge/NeoForge)",
+      "curseforge": {
+        "project": 348521,
+        "file": 5729127
+      }
+    },
+    {
+      "file": "collective-1.21.1-8.73.jar",
+      "name": "Collective",
+      "curseforge": {
+        "project": 342584,
+        "file": 9394021
+      }
+    },
+    {
+      "file": "copycats-3.0.9+mc.1.21.1-neoforge.jar",
+      "name": "Create: Copycats+",
+      "curseforge": {
+        "project": 968398,
+        "file": 8822348
+      }
+    },
+    {
+      "file": "cosmeticarmorreworked-1.21.1-v1-neoforge.jar",
+      "name": "Cosmetic Armor Reworked",
+      "curseforge": {
+        "project": 237307,
+        "file": 5610814
+      }
+    },
+    {
+      "file": "create-1.21.1-6.0.10.jar",
+      "name": "Create",
+      "curseforge": {
+        "project": 328085,
+        "file": 7963363
+      }
+    },
+    {
+      "file": "create-aeronautics-bundled-1.21.1-1.3.2.jar",
+      "name": "Create Aeronautics",
+      "url": "https://cdn.modrinth.com/data/oWaK0Q19/versions/44pLdPGg/create-aeronautics-bundled-1.21.1-1.3.2.jar",
+      "sha1": "ddbe9cbc25e8f663218aa1e9fdfc4b99f0e11e4b"
+    },
+    {
+      "file": "create_aero_radar-0.1.1-1.21.1.jar",
+      "name": "Create Aero Radars",
+      "curseforge": {
+        "project": 1578228,
+        "file": 8307052
+      }
+    },
+    {
+      "file": "create_aquatic_ambitions-1.21.1-2.0.4.jar",
+      "name": "Create: Aquatic Ambitions",
+      "curseforge": {
+        "project": 1005676,
+        "file": 8466444
+      }
+    },
+    {
+      "file": "create_connected-1.3.3-mc1.21.1.jar",
+      "name": "Create: Connected",
+      "curseforge": {
+        "project": 947914,
+        "file": 8777573
+      }
+    },
+    {
+      "file": "create_radar-5.0.3-1.21.1.jar",
+      "name": "Create: Radars",
+      "curseforge": {
+        "project": 1152836,
+        "file": 9359310
+      }
+    },
+    {
+      "file": "createaddition-1.7.2.jar",
+      "name": "Create Crafts & Additions",
+      "curseforge": {
+        "project": 439890,
+        "file": 9029800
+      }
+    },
+    {
+      "file": "createbigcannons-5.11.7+mc.1.21.1.jar",
+      "name": "Create Big Cannons",
+      "curseforge": {
+        "project": 646668,
+        "file": 8303106
+      }
+    },
+    {
+      "file": "createdieselgenerators-1.21.1-1.3.15.jar",
+      "name": "Create: Diesel Generators",
+      "curseforge": {
+        "project": 869316,
+        "file": 8542167
+      }
+    },
+    {
+      "file": "cupboard-1.21.1-4.2.jar",
+      "name": "Cupboard",
+      "curseforge": {
+        "project": 326652,
+        "file": 8889050
+      }
+    },
+    {
+      "file": "curios-neoforge-9.5.1+1.21.1.jar",
+      "name": "Curios API",
+      "curseforge": {
+        "project": 309927,
+        "file": 6529130
+      }
+    },
+    {
+      "file": "dummmmmmy-1.21-2.1.2-neoforge.jar",
+      "name": "MmmMmmMmmMmm (Target Dummy)",
+      "curseforge": {
+        "project": 225738,
+        "file": 8903254
+      }
+    },
+    {
+      "file": "enchdesc-neoforge-1.21.1-21.1.11.jar",
+      "name": "Enchantment Descriptions",
+      "curseforge": {
+        "project": 250419,
+        "file": 8693034
+      }
+    },
+    {
+      "file": "entity_model_features-3.3.12-1.21-neoforge.jar",
+      "name": "[EMF] Entity Model Features [Fabric & Forge]",
+      "curseforge": {
+        "project": 844662,
+        "file": 9188526
+      }
+    },
+    {
+      "file": "entity_texture_features-7.2.6-1.21-neoforge.jar",
+      "name": "[ETF] Entity Texture Features - [Fabric & Forge]",
+      "curseforge": {
+        "project": 568563,
+        "file": 9188408
+      }
+    },
+    {
+      "file": "exposure-neoforge-1.21.1-1.9.19.jar",
+      "name": "Exposure",
+      "curseforge": {
+        "project": 871755,
+        "file": 8957000
+      }
+    },
+    {
+      "file": "fancymenu_neoforge_3.9.14_MC_1.21.1.jar",
+      "name": "FancyMenu",
+      "curseforge": {
+        "project": 367706,
+        "file": 9002957
+      }
+    },
+    {
+      "file": "ferritecore-7.0.3-neoforge.jar",
+      "name": "FerriteCore ((Neo)Forge)",
+      "curseforge": {
+        "project": 429235,
+        "file": 7524151
+      }
+    },
+    {
+      "file": "ftb-library-neoforge-2101.1.39.jar",
+      "name": "FTB Library (NeoForge)",
+      "curseforge": {
+        "project": 404465,
+        "file": 9350706
+      }
+    },
+    {
+      "file": "ftb-quests-neoforge-2101.1.38.jar",
+      "name": "FTB Quests (NeoForge)",
+      "curseforge": {
+        "project": 289412,
+        "file": 9405148
+      }
+    },
+    {
+      "file": "ftb-teams-neoforge-2101.1.11.jar",
+      "name": "FTB Teams (NeoForge)",
+      "curseforge": {
+        "project": 404468,
+        "file": 8724782
+      }
+    },
+    {
+      "file": "ftb-ultimine-neoforge-2101.1.15.jar",
+      "name": "FTB Ultimine (NeoForge)",
+      "curseforge": {
+        "project": 386134,
+        "file": 8231400
+      }
+    },
+    {
+      "file": "fusion-1.3.16-neoforge-mc1.21.1.jar",
+      "name": "Fusion (Connected Textures)",
+      "curseforge": {
+        "project": 854949,
+        "file": 9070353
+      }
+    },
+    {
+      "file": "geckolib-neoforge-1.21.1-4.9.3.jar",
+      "name": "GeckoLib",
+      "curseforge": {
+        "project": 388172,
+        "file": 8893490
+      }
+    },
+    {
+      "file": "immersive_engineering_js-2101.1.1.jar",
+      "name": "Immersive Engineering JS",
+      "curseforge": {
+        "project": 1412446,
+        "file": 8417023
+      }
+    },
+    {
+      "file": "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar",
+      "name": "Iris Shaders",
+      "curseforge": {
+        "project": 455508,
+        "file": 8242804
+      }
+    },
+    {
+      "file": "jei-1.21.1-neoforge-19.70.0.469.jar",
+      "name": "Just Enough Items (JEI)",
+      "curseforge": {
+        "project": 238222,
+        "file": 9393327
+      }
+    },
+    {
+      "file": "jeimultiblocks-1.21.1-1.0.6.jar",
+      "name": "Just Enough Immersive Multiblocks",
+      "curseforge": {
+        "project": 634571,
+        "file": 7131196
+      }
+    },
+    {
+      "file": "justenoughbreeding-neoforge-1.21.1-3.3.1.jar",
+      "name": "Just Enough Breeding (JEBr)",
+      "curseforge": {
+        "project": 899386,
+        "file": 9037421
+      }
+    },
+    {
+      "file": "konkrete_neoforge_1.9.9_MC_1.21.jar",
+      "name": "Konkrete",
+      "curseforge": {
+        "project": 410295,
+        "file": 5453385
+      }
+    },
+    {
+      "file": "kubejs-create-neoforge-2101.3.1-build.18.jar",
+      "name": "KubeJS Create",
+      "curseforge": {
+        "project": 429371,
+        "file": 7213667
+      }
+    },
+    {
+      "file": "kubejs-neoforge-2101.7.2-build.381.jar",
+      "name": "KubeJS",
+      "curseforge": {
+        "project": 238086,
+        "file": 9396059
+      }
+    },
+    {
+      "file": "lambdynamiclights-4.8.11+1.21.1.jar",
+      "name": "LambDynamicLights",
+      "curseforge": {
+        "project": 393442,
+        "file": 8780227
+      }
+    },
+    {
+      "file": "letsdo-vinery-neoforge-1.5.6.jar",
+      "name": "[Let's Do] Vinery",
+      "curseforge": {
+        "project": 704465,
+        "file": 9203990
+      }
+    },
+    {
+      "file": "lithostitched-1.8.1-neoforge-21.1.jar",
+      "name": "Lithostitched",
+      "curseforge": {
+        "project": 936015,
+        "file": 9170709
+      }
+    },
+    {
+      "file": "lootr-neoforge-1.21.1-1.11.38.127.jar",
+      "name": "Lootr (Forge & NeoForge)",
+      "curseforge": {
+        "project": 361276,
+        "file": 8968561
+      }
+    },
+    {
+      "file": "luminax-1.3.1_neoforge_1.21.1.jar",
+      "name": "Luminax",
+      "curseforge": {
+        "project": 1165932,
+        "file": 6924618
+      }
+    },
+    {
+      "file": "mcw-mcwfences-1.2.1-mc1.21.1neoforge.jar",
+      "name": "Macaw's Fences and Walls",
+      "curseforge": {
+        "project": 453925,
+        "file": 7308338
+      }
+    },
+    {
+      "file": "mcw-roofs-2.3.2-mc1.21.1neoforge.jar",
+      "name": "Macaw's Roofs",
+      "curseforge": {
+        "project": 352039,
+        "file": 6494399
+      }
+    },
+    {
+      "file": "mcw-trapdoors-1.1.5-mc1.21.1neoforge.jar",
+      "name": "Macaw's Trapdoors",
+      "curseforge": {
+        "project": 400933,
+        "file": 7256148
+      }
+    },
+    {
+      "file": "melody_neoforge_1.0.10_MC_1.21.jar",
+      "name": "Melody",
+      "curseforge": {
+        "project": 938643,
+        "file": 5453382
+      }
+    },
+    {
+      "file": "mezz_config-1.21.1-neoforge-0.6.10-standalone.jar",
+      "name": "MezzConfig",
+      "curseforge": {
+        "project": 1689768,
+        "file": 9374030
+      }
+    },
+    {
+      "file": "modelfix-1.21-1.10.jar",
+      "name": "Model Gap Fix",
+      "curseforge": {
+        "project": 676136,
+        "file": 5591286
+      }
+    },
+    {
+      "file": "modernfix-neoforge-5.27.27+mc1.21.1.jar",
+      "name": "ModernFix",
+      "curseforge": {
+        "project": 790626,
+        "file": 9309399
+      }
+    },
+    {
+      "file": "moonlight-1.21.1-3.7.2-neoforge.jar",
+      "name": "Moonlight Lib",
+      "curseforge": {
+        "project": 499980,
+        "file": 9122548
+      }
+    },
+    {
+      "file": "polymorph-neoforge-1.2.0+1.21.1.jar",
+      "name": "Polymorph",
+      "curseforge": {
+        "project": 388800,
+        "file": 8849478
+      }
+    },
+    {
+      "file": "prickle-neoforge-1.21.1-21.1.11.jar",
+      "name": "Prickle",
+      "curseforge": {
+        "project": 1023259,
+        "file": 6961457
+      }
+    },
+    {
+      "file": "rechiseled-1.2.6-neoforge-mc1.21.jar",
+      "name": "Rechiseled",
+      "curseforge": {
+        "project": 558998,
+        "file": 8875899
+      }
+    },
+    {
+      "file": "resourcefullib-neoforge-1.21-3.0.12.jar",
+      "name": "Resourceful Lib",
+      "curseforge": {
+        "project": 570073,
+        "file": 5973188
+      }
+    },
+    {
+      "file": "rhino-2101.2.8-build.91.jar",
+      "name": "Rhino",
+      "curseforge": {
+        "project": 416294,
+        "file": 8463898
+      }
+    },
+    {
+      "file": "ritchiesprojectilelib-2.1.2-mc.1.21.1-neoforge.jar",
+      "name": "Ritchie's Projectile Library",
+      "curseforge": {
+        "project": 1279407,
+        "file": 7587771
+      }
+    },
+    {
+      "file": "sable-neoforge-1.21.1-2.0.6.jar",
+      "name": "Sable",
+      "curseforge": {
+        "project": 1312371,
+        "file": 9043865
+      }
+    },
+    {
+      "file": "sodium-neoforge-0.8.13+mc1.21.1.jar",
+      "name": "Sodium",
+      "curseforge": {
+        "project": 394468,
+        "file": 8756580
+      }
+    },
+    {
+      "file": "sophisticatedbackpacks-1.21.1-3.26.19.2243.jar",
+      "name": "Sophisticated Backpacks",
+      "curseforge": {
+        "project": 422301,
+        "file": 9385446
+      }
+    },
+    {
+      "file": "sophisticatedcore-1.21.1-1.5.23.2446.jar",
+      "name": "Sophisticated Core",
+      "curseforge": {
+        "project": 618298,
+        "file": 9385313
+      }
+    },
+    {
+      "file": "sophisticatedstorage-1.21.1-1.6.13.2216.jar",
+      "name": "Sophisticated Storage",
+      "curseforge": {
+        "project": 619320,
+        "file": 9385611
+      }
+    },
+    {
+      "file": "sound-physics-remastered-neoforge-1.21.1-1.5.2.jar",
+      "name": "Sound Physics Remastered",
+      "curseforge": {
+        "project": 535489,
+        "file": 9279974
+      }
+    },
+    {
+      "file": "spark-1.10.124-neoforge.jar",
+      "name": "spark",
+      "curseforge": {
+        "project": 361579,
+        "file": 6225208
+      }
+    },
+    {
+      "file": "supermartijn642configlib-1.1.8-neoforge-mc1.21.jar",
+      "name": "SuperMartijn642's Config Lib",
+      "curseforge": {
+        "project": 438332,
+        "file": 5546996
+      }
+    },
+    {
+      "file": "supermartijn642corelib-1.1.26-neoforge-mc1.21.jar",
+      "name": "SuperMartijn642's Core Lib",
+      "curseforge": {
+        "project": 454372,
+        "file": 9352716
+      }
+    },
+    {
+      "file": "supplementaries-1.21.1-4.0.2-neoforge.jar",
+      "name": "Supplementaries",
+      "curseforge": {
+        "project": 412082,
+        "file": 9211734
+      }
+    },
+    {
+      "file": "tfmg-1.2.0.jar",
+      "name": "Create: The Factory Must Grow",
+      "url": "https://cdn.modrinth.com/data/USgVjXsk/versions/uDi14nbt/tfmg-1.2.0.jar",
+      "sha1": "b520f3687f60a69eb265ff5b9a16759b9e124103"
+    },
+    {
+      "file": "toms_storage-1.21-2.4.2.jar",
+      "name": "Tom's Simple Storage Mod",
+      "curseforge": {
+        "project": 378609,
+        "file": 8769956
+      }
+    },
+    {
+      "file": "transparent-neoforge-21.1.0.jar",
+      "name": "Transparent",
+      "curseforge": {
+        "project": 377582,
+        "file": 6565024
+      }
+    },
+    {
+      "file": "trashcans-1.1.2-neoforge-mc1.21.jar",
+      "name": "Trash Cans",
+      "curseforge": {
+        "project": 394535,
+        "file": 9289326
+      }
+    },
+    {
+      "file": "trashslot-neoforge-1.21.1-21.1.11.jar",
+      "name": "TrashSlot",
+      "curseforge": {
+        "project": 235577,
+        "file": 8163135
+      }
+    },
+    {
+      "file": "voicechat-neoforge-1.21.1-2.6.27.jar",
+      "name": "Simple Voice Chat",
+      "curseforge": {
+        "project": 416089,
+        "file": 9350472
+      }
+    }
+  ]
+}

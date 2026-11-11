@@ -1,0 +1,25 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "dev.sborka.incognita.mixin.compat",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "MonitorTargetDisplayBehaviorMixin",
+    "RaycastPacketMixin",
+    "BinocularsMixin",
+    "GuidedFuzeItemMixin",
+    "TrainStatusMixin",
+    "GlobeDisplaySourceMixin",
+    "AltitudeSensorDisplaySourceMixin"
+  ],
+  "client": [
+    "TomsClientUtilMixin",
+    "FlwDebugInfoMixin",
+    "I18nMixin",
+    "ClientSuggestionProviderMixin",
+    "SchematicEditScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

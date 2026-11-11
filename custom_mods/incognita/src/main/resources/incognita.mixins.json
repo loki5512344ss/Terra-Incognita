@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.sborka.incognita.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ServerPlayerMixin"
+  ],
+  "client": [
+    "KeyboardHandlerMixin",
+    "TranslatableContentsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

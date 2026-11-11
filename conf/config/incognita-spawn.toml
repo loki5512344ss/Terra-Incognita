@@ -1,0 +1,16 @@
+#Random spawn point when a player joins the world for the first time
+firstJoinRandom = true
+#Random respawn point after death when the player has no bed or respawn anchor
+respawnRandom = true
+#Minimum distance from the world center (0, 0)
+# Default: 0
+# Range: 0 ~ 29999000
+minRadius = 0
+#Maximum distance from the world center (0, 0)
+# Default: 1000
+# Range: 0 ~ 29999000
+maxRadius = 1000
+#How many random points to try before falling back to the world spawn
+# Default: 32
+# Range: 1 ~ 512
+attempts = 32

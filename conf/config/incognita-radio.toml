@@ -1,0 +1,26 @@
+#Normal chat is only delivered to players within chatRadius blocks (same dimension)
+localChat = true
+#Local chat radius in blocks
+# Default: 60
+# Range: 1 ~ 10000
+chatRadius = 60
+#Simple Voice Chat: creating or joining a group requires a radio in the inventory
+groupsNeedRadio = true
+#Lowest frequency, in tenths of MHz (300 = 30.0)
+# Default: 300
+# Range: 1 ~ 99999
+minFrequency = 300
+#Highest frequency, in tenths of MHz (1080 = 108.0)
+# Default: 1080
+# Range: 1 ~ 99999
+maxFrequency = 1080
+#Apply the radio voice effect (band-pass, distortion, static) to transmitted voice
+voiceEffect = true
+#Static level, 0 = none
+# Default: 0.02
+# Range: 0.0 ~ 0.5
+effectNoise = 0.02
+#Distortion amount, 1 = almost clean
+# Default: 2.5
+# Range: 1.0 ~ 10.0
+effectDrive = 2.5

@@ -1,0 +1,18 @@
+#Text shown instead of coordinates
+placeholderText = "???"
+#Reserved for displays that need a real number. The built-in hooks show placeholderText everywhere, so this has no visible effect yet
+# Default: 0.0
+# Range: -1.0E9 ~ 1.0E9
+numericFallback = 0.0
+#CONSTANT: always the placeholder. ROTATING: random numbers that change every rotatingIntervalSeconds
+#Allowed Values: CONSTANT, ROTATING
+mode = "CONSTANT"
+# Default: 3
+# Range: 1 ~ 3600
+rotatingIntervalSeconds = 3
+#Allow operators to use /incognita reveal on|off
+opCanReveal = true
+#Translation keys whose numeric arguments are replaced. A trailing * matches a prefix.
+#The effective list is this list UNION the mod's built-in defaults, so keys added in new mod versions apply without editing this file.
+#Entries here can only add keys; a built-in default cannot be removed (use /incognita reveal to see real values)
+translationKeys = ["commands.locate.*", "commands.teleport.success.location.*", "commands.setworldspawn.success", "commands.spreadplayers.success.*", "commands.worldborder.center.success", "commands.spawnpoint.success.*", "exception.createbigcannons.cannon_mount.*", "exception.createbigcannons.casting", "commands.sable.info.position", "tooltip.toms_storage.adv_wireless_terminal.bound"]

@@ -11,6 +11,7 @@ import java.util.List;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import org.slf4j.Logger;
@@ -35,7 +36,8 @@ public final class Incognita {
             module.init(modBus, container);
         }
         IncognitaTab.register(modBus);
-        if (FMLEnvironment.dist == Dist.CLIENT && System.getProperty("incognita.clientTest") != null) {
+        if (FMLEnvironment.dist == Dist.CLIENT && (System.getProperty("incognita.clientTest") != null
+            || java.nio.file.Files.exists(FMLPaths.GAMEDIR.get().resolve("incognita-clienttest.flag")))) {
             dev.sborka.incognita.devtest.ClientTestDriver.register();
         }
     }

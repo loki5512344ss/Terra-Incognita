@@ -44,7 +44,12 @@ public final class ClientTestDriver {
     private int wait;
     private boolean worldRequested;
 
-    private record Step(String name, int delayAfter, Runnable action) {}
+    @FunctionalInterface
+    private interface Action {
+        void run() throws Exception;
+    }
+
+    private record Step(String name, int delayAfter, Action action) {}
 
     private ClientTestDriver() {
         steps.add(new Step("settle", 100, () -> {
@@ -71,6 +76,7 @@ public final class ClientTestDriver {
             new CreativeModeInventoryScreen(mc.player, mc.player.connection.enabledFeatures(), true))));
         steps.add(new Step("creative-tab", 20, this::selectIncognitaTab));
         steps.add(new Step("creative-shot", 5, () -> shot("creative-tab")));
+        steps.add(new Step("quests-open", 40, this::openQuests));
         steps.add(new Step("close", 10, () -> mc.setScreen(null)));
         steps.add(new Step("done", 0, () -> {
             log("DONE");
@@ -115,6 +121,68 @@ public final class ClientTestDriver {
             new GameRules(), WorldDataConfiguration.DEFAULT);
         mc.createWorldOpenFlows().createFreshLevel(WORLD, settings, new WorldOptions(12345L, false, false),
             WorldPresets::createNormalWorldDimensions, mc.screen);
+    }
+
+    /** Opens the FTB Quests book by reflection (soft dependency) and queues one shot per chapter plus one quest view. */
+    private void openQuests() throws Exception {
+        Class<?> fileClass;
+        try {
+            fileClass = Class.forName("dev.ftb.mods.ftbquests.client.ClientQuestFile");
+        } catch (ClassNotFoundException e) {
+            log("FTB Quests not installed, skipping quests");
+            return;
+        }
+        Object file = fileClass.getField("INSTANCE").get(null);
+        if (file == null) {
+            log("ClientQuestFile.INSTANCE is null: quests not synced");
+            return;
+        }
+        Object screen = fileClass.getMethod("openGui").invoke(null);
+        List<?> chapters = (List<?>) file.getClass().getMethod("getAllChapters").invoke(file);
+        log("quests: " + chapters.size() + " chapters");
+        int at = index;
+        int n = 0;
+        for (Object chapter : chapters) {
+            String title = chapterTitle(chapter);
+            int num = n++;
+            steps.add(at++, new Step("chapter-" + num, 12, () -> {
+                invoke(screen, "selectChapter", chapter);
+                log("chapter " + num + ": " + title);
+            }));
+            steps.add(at++, new Step("chapter-" + num + "-shot", 3, () -> shot("quests-ch" + num)));
+            if (num == 1) {
+                steps.add(at++, new Step("quest-view", 12, () -> {
+                    List<?> quests = (List<?>) invoke(chapter, "getQuests");
+                    if (!quests.isEmpty()) {
+                        invoke(screen, "viewQuest", quests.get(0));
+                    }
+                }));
+                steps.add(at++, new Step("quest-view-shot", 3, () -> shot("quest-view")));
+                steps.add(at++, new Step("quest-view-close", 5, () -> invoke(screen, "closeQuest")));
+            }
+        }
+    }
+
+    private static String chapterTitle(Object chapter) {
+        try {
+            return ((Component) invoke(chapter, "getTitle")).getString();
+        } catch (Exception e) {
+            return "?";
+        }
+    }
+
+    /** Calls a public one-argument-or-less method by name, ignoring overload parameter types. */
+    private static Object invoke(Object target, String name, Object... args) {
+        for (Method m : target.getClass().getMethods()) {
+            if (m.getName().equals(name) && m.getParameterCount() == args.length) {
+                try {
+                    return m.invoke(target, args);
+                } catch (Exception e) {
+                    throw new IllegalStateException(name, e);
+                }
+            }
+        }
+        throw new IllegalStateException("no method " + name);
     }
 
     private void command(String cmd) {

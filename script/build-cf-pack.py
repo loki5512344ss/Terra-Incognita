@@ -83,6 +83,9 @@ def main():
         z.write(jars[-1], f"overrides/mods/{jars[-1].name}")
         for m in [] if args.no_external else external:
             z.write(fetch(m["url"], m["sha1"]), f"overrides/mods/{m['file']}")
+    with zipfile.ZipFile(out) as z:
+        if f"overrides/mods/{jars[-1].name}" not in z.namelist():
+            sys.exit(f"в архиве нет мода {jars[-1].name}")
     print(f"{out.relative_to(ROOT)}: {out.stat().st_size / 1e6:.1f} МБ, модов в manifest {len(cf)}, "
           f"в overrides {1 + (0 if args.no_external else len(external))}, файлов настроек {count}")
     if args.no_external and external:

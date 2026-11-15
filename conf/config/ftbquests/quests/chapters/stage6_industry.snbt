@@ -1,0 +1,600 @@
+{
+	autofocus_id: "1C93C15A5AEB0FD9"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "stage6_industry"
+	group: "21E3E8CB980B7B8A"
+	icon: {
+		count: 1
+		id: "tfmg:steel_mechanism"
+	}
+	id: "19046C8F78B9C928"
+	images: [
+		{
+			alpha: 26
+			height: 7.21875d
+			image: "tfmg:textures/item/crude_oil_bucket.png"
+			order: -1
+			rotation: 0.0d
+			width: 7.21875d
+			x: 3.25d
+			y: 2.8125d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/crude_oil_bucket.png"
+			order: -1
+			rotation: -15.0d
+			width: 1.0d
+			x: 4.46d
+			y: -1.94d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/diesel_bucket.png"
+			order: -1
+			rotation: -9.0d
+			width: 1.0d
+			x: 6.77d
+			y: -1.48d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/gasoline_bucket.png"
+			order: -1
+			rotation: -3.0d
+			width: 1.0d
+			x: 8.73d
+			y: -0.59d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/engine_cylinder.png"
+			order: -1
+			rotation: 3.0d
+			width: 1.0d
+			x: 10.16d
+			y: 0.63d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/crankshaft.png"
+			order: -1
+			rotation: 9.0d
+			width: 1.0d
+			x: 10.9d
+			y: 2.06d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/heavy_plate.png"
+			order: -1
+			rotation: 15.0d
+			width: 1.0d
+			x: 10.9d
+			y: 3.57d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createbigcannons:textures/item/packed_gunpowder.png"
+			order: -1
+			rotation: -10.0d
+			width: 1.0d
+			x: 10.16d
+			y: 5.0d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createbigcannons:textures/item/shot_balls.png"
+			order: -1
+			rotation: -4.0d
+			width: 1.0d
+			x: 8.73d
+			y: 6.22d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createbigcannons:textures/item/impact_fuze.png"
+			order: -1
+			rotation: 2.0d
+			width: 1.0d
+			x: 6.77d
+			y: 7.1d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createbigcannons:textures/item/recoil_spring.png"
+			order: -1
+			rotation: 8.0d
+			width: 1.0d
+			x: 4.46d
+			y: 7.57d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createbigcannons:textures/item/autocannon_cartridge.png"
+			order: -1
+			rotation: 14.0d
+			width: 1.0d
+			x: 2.04d
+			y: 7.57d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/crude_oil_bucket.png"
+			order: -1
+			rotation: -11.0d
+			width: 1.0d
+			x: -0.27d
+			y: 7.1d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/diesel_bucket.png"
+			order: -1
+			rotation: -5.0d
+			width: 1.0d
+			x: -2.23d
+			y: 6.22d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/gasoline_bucket.png"
+			order: -1
+			rotation: 1.0d
+			width: 1.0d
+			x: -3.66d
+			y: 5.0d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/engine_cylinder.png"
+			order: -1
+			rotation: 7.0d
+			width: 1.0d
+			x: -4.4d
+			y: 3.57d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/crankshaft.png"
+			order: -1
+			rotation: 13.0d
+			width: 1.0d
+			x: -4.4d
+			y: 2.06d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/heavy_plate.png"
+			order: -1
+			rotation: -12.0d
+			width: 1.0d
+			x: -3.66d
+			y: 0.63d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createbigcannons:textures/item/packed_gunpowder.png"
+			order: -1
+			rotation: -6.0d
+			width: 1.0d
+			x: -2.23d
+			y: -0.59d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createbigcannons:textures/item/shot_balls.png"
+			order: -1
+			rotation: 0.0d
+			width: 1.0d
+			x: -0.27d
+			y: -1.48d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createbigcannons:textures/item/impact_fuze.png"
+			order: -1
+			rotation: 6.0d
+			width: 1.0d
+			x: 2.04d
+			y: -1.94d
+		}
+	]
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["036B24005742EE4F"]
+			id: "1C93C15A5AEB0FD9"
+			tasks: [
+				{
+					id: "527F53A3774AEFBD"
+					item: {
+						count: 1
+						id: "tfmg:steel_mechanism"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: 2.8125d
+			shape: "gear"
+			size: 2.0d
+		}
+		{
+			dependencies: ["1C93C15A5AEB0FD9"]
+			id: "599F09C1CC31CB92"
+			tasks: [
+				{
+					id: "27A56A81D4098980"
+					item: {
+						count: 1
+						id: "kubejs:pressure_gauge"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["599F09C1CC31CB92"]
+			id: "7A7B3E8DCEBE49EE"
+			tasks: [
+				{
+					id: "02975435A8A4637E"
+					item: {
+						count: 1
+						id: "tfmg:pumpjack_base"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 0.0d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["7A7B3E8DCEBE49EE"]
+			id: "6C7DA9C39E84369A"
+			tasks: [
+				{
+					id: "534E2E123E392C45"
+					item: {
+						count: 1
+						id: "tfmg:steel_distillation_controller"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6C7DA9C39E84369A"]
+			id: "41DF17C065085D5B"
+			tasks: [
+				{
+					id: "165F6EB58FA42C44"
+					item: {
+						count: 1
+						id: "tfmg:diesel_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["41DF17C065085D5B"]
+			id: "7BF5F030B7EC13A8"
+			tasks: [
+				{
+					id: "3FCB73D028F05E6E"
+					item: {
+						count: 1
+						id: "createdieselgenerators:diesel_engine"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 0.0d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["7BF5F030B7EC13A8"]
+			id: "6383C6098CE1A2E7"
+			tasks: [
+				{
+					id: "516031EE3D1698AD"
+					item: {
+						count: 1
+						id: "createdieselgenerators:large_diesel_engine"
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6383C6098CE1A2E7"]
+			id: "0D17D0C727BB38B2"
+			tasks: [
+				{
+					id: "1D2CDA3704083BA9"
+					item: {
+						count: 1
+						id: "createdieselgenerators:huge_diesel_engine"
+					}
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1C93C15A5AEB0FD9"]
+			id: "1B43F5EAA670514E"
+			tasks: [
+				{
+					id: "328F14F2E5D19594"
+					item: {
+						count: 1
+						id: "createbigcannons:cannon_mount"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 1.875d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["1B43F5EAA670514E"]
+			id: "72418C86AFF50A58"
+			tasks: [
+				{
+					id: "3C1659847D84711E"
+					item: {
+						count: 1
+						id: "createbigcannons:cast_iron_cannon_barrel"
+					}
+					type: "item"
+				}
+				{
+					id: "336AB15419850920"
+					item: {
+						count: 1
+						id: "createbigcannons:cast_iron_cannon_chamber"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 1.875d
+		}
+		{
+			dependencies: ["72418C86AFF50A58"]
+			id: "00AFCD07235B807D"
+			tasks: [
+				{
+					id: "48898D5AF99A2F55"
+					item: {
+						count: 1
+						id: "createbigcannons:cannon_loader"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 1.875d
+		}
+		{
+			dependencies: ["00AFCD07235B807D"]
+			id: "328F1ACE0F5F0E43"
+			tasks: [
+				{
+					id: "5A58A2CF750E2BEC"
+					item: {
+						count: 1
+						id: "createbigcannons:powder_charge"
+					}
+					type: "item"
+				}
+				{
+					id: "63070B50C889A612"
+					item: {
+						count: 1
+						id: "createbigcannons:solid_shot"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 1.875d
+		}
+		{
+			dependencies: ["1C93C15A5AEB0FD9"]
+			id: "17B27771CDB86A5A"
+			tasks: [
+				{
+					id: "1F9BA2862DF14F42"
+					item: {
+						count: 1
+						id: "simulated:physics_assembler"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 3.75d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["17B27771CDB86A5A"]
+			id: "52253E940FA66413"
+			tasks: [
+				{
+					id: "59937EC3DF65559F"
+					item: {
+						count: 1
+						id: "aeronautics:white_envelope"
+					}
+					type: "item"
+				}
+				{
+					id: "4C7336873BF0BA89"
+					item: {
+						count: 1
+						id: "aeronautics:adjustable_burner"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["52253E940FA66413"]
+			id: "19E0E1CA2F8CE11B"
+			tasks: [
+				{
+					id: "1A12F401AE76FE60"
+					item: {
+						count: 1
+						id: "aeronautics:propeller_bearing"
+					}
+					type: "item"
+				}
+				{
+					id: "505E9E17A951B763"
+					item: {
+						count: 1
+						id: "aeronautics:wooden_propeller"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 3.75d
+		}
+		{
+			dependencies: ["19E0E1CA2F8CE11B"]
+			id: "49177163774D5CB6"
+			tasks: [
+				{
+					id: "68FECC8EF39EA045"
+					item: {
+						count: 1
+						id: "simulated:steering_wheel"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["49177163774D5CB6"]
+			id: "7F54ABF4B1F6A378"
+			tasks: [
+				{
+					id: "4059A07BBE02731A"
+					item: {
+						count: 1
+						id: "aeronautics:levitite"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 3.75d
+		}
+		{
+			dependencies: ["1C93C15A5AEB0FD9"]
+			id: "3B9DF804448D5E3A"
+			tasks: [
+				{
+					id: "0DC887E28B28842D"
+					item: {
+						count: 1
+						id: "create_radar:radar_bearing"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 5.625d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["3B9DF804448D5E3A"]
+			id: "7E76D5DF538EF134"
+			tasks: [
+				{
+					id: "493418AAE7FF5887"
+					item: {
+						count: 1
+						id: "create_radar:monitor"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 5.625d
+		}
+		{
+			dependencies: ["1C93C15A5AEB0FD9"]
+			id: "36192F56C7CCC3DC"
+			tasks: [
+				{
+					id: "0F7AD7FA6850D7D5"
+					item: {
+						count: 1
+						id: "create:netherite_diving_helmet"
+					}
+					type: "item"
+				}
+				{
+					id: "21203F98D29A2113"
+					item: {
+						count: 1
+						id: "create:netherite_diving_boots"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 5.625d
+		}
+	]
+}

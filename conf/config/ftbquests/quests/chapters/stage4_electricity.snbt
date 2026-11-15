@@ -1,0 +1,642 @@
+{
+	autofocus_id: "7F6E0F85C6D534C7"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "stage4_electricity"
+	group: "21E3E8CB980B7B8A"
+	icon: {
+		count: 1
+		id: "createaddition:electric_motor"
+	}
+	id: "5B2FAD26E95A38A9"
+	images: [
+		{
+			alpha: 26
+			height: 8.0625d
+			image: "createaddition:textures/item/copper_spool.png"
+			order: -1
+			rotation: 0.0d
+			width: 8.0625d
+			x: 3.375d
+			y: 3.25d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/copper_spool.png"
+			order: -1
+			rotation: -15.0d
+			width: 1.0d
+			x: 4.22d
+			y: -4.4d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/gold_spool.png"
+			order: -1
+			rotation: -9.0d
+			width: 1.0d
+			x: 5.82d
+			y: -3.66d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/copper_wire.png"
+			order: -1
+			rotation: -3.0d
+			width: 1.0d
+			x: 7.18d
+			y: -2.23d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/capacitor.png"
+			order: -1
+			rotation: 3.0d
+			width: 1.0d
+			x: 8.16d
+			y: -0.27d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/connector.png"
+			order: -1
+			rotation: 9.0d
+			width: 1.0d
+			x: 8.68d
+			y: 2.04d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/iron_rod.png"
+			order: -1
+			rotation: 15.0d
+			width: 1.0d
+			x: 8.68d
+			y: 4.46d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/electrum_ingot.png"
+			order: -1
+			rotation: -10.0d
+			width: 1.0d
+			x: 8.16d
+			y: 6.77d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/coal_coke.png"
+			order: -1
+			rotation: -4.0d
+			width: 1.0d
+			x: 7.18d
+			y: 8.73d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/fireproof_brick.png"
+			order: -1
+			rotation: 2.0d
+			width: 1.0d
+			x: 5.82d
+			y: 10.16d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/cast_iron_ingot.png"
+			order: -1
+			rotation: 8.0d
+			width: 1.0d
+			x: 4.22d
+			y: 10.9d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/heavy_plate.png"
+			order: -1
+			rotation: 14.0d
+			width: 1.0d
+			x: 2.53d
+			y: 10.9d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/molten_steel_bucket.png"
+			order: -1
+			rotation: -11.0d
+			width: 1.0d
+			x: 0.93d
+			y: 10.16d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/copper_spool.png"
+			order: -1
+			rotation: -5.0d
+			width: 1.0d
+			x: -0.43d
+			y: 8.73d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/gold_spool.png"
+			order: -1
+			rotation: 1.0d
+			width: 1.0d
+			x: -1.41d
+			y: 6.77d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/copper_wire.png"
+			order: -1
+			rotation: 7.0d
+			width: 1.0d
+			x: -1.93d
+			y: 4.46d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/capacitor.png"
+			order: -1
+			rotation: 13.0d
+			width: 1.0d
+			x: -1.93d
+			y: 2.04d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/connector.png"
+			order: -1
+			rotation: -12.0d
+			width: 1.0d
+			x: -1.41d
+			y: -0.27d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/iron_rod.png"
+			order: -1
+			rotation: -6.0d
+			width: 1.0d
+			x: -0.43d
+			y: -2.23d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "createaddition:textures/item/electrum_ingot.png"
+			order: -1
+			rotation: 0.0d
+			width: 1.0d
+			x: 0.93d
+			y: -3.66d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "tfmg:textures/item/coal_coke.png"
+			order: -1
+			rotation: 6.0d
+			width: 1.0d
+			x: 2.53d
+			y: -4.4d
+		}
+	]
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["0B4E57A5601D7897"]
+			id: "7F6E0F85C6D534C7"
+			tasks: [
+				{
+					id: "51A466DD8AB12AF1"
+					item: {
+						count: 1
+						id: "createaddition:rolling_mill"
+					}
+					type: "item"
+				}
+			]
+			x: 3.375d
+			y: -2.5d
+			shape: "gear"
+			size: 2.0d
+		}
+		{
+			dependencies: ["7F6E0F85C6D534C7"]
+			id: "20FA82989787B1DF"
+			tasks: [
+				{
+					id: "4B60231D5D5FC88F"
+					item: {
+						count: 1
+						id: "createaddition:spool"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["20FA82989787B1DF"]
+			id: "01B1A945E4A21C75"
+			tasks: [
+				{
+					id: "2D4FBDF857C76A8D"
+					item: {
+						count: 1
+						id: "createaddition:copper_spool"
+					}
+					type: "item"
+				}
+				{
+					id: "33039FE617D7F294"
+					item: {
+						count: 1
+						id: "createaddition:connector"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["01B1A945E4A21C75"]
+			id: "2CD9DA15A9C96299"
+			tasks: [
+				{
+					id: "6528B83C5B45447C"
+					item: {
+						count: 1
+						id: "createaddition:electric_motor"
+					}
+					type: "item"
+				}
+				{
+					id: "14F63DB5C8EF1BD7"
+					item: {
+						count: 1
+						id: "createaddition:alternator"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 3.0d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["2CD9DA15A9C96299"]
+			id: "3C015EC6D2B0A25A"
+			tasks: [
+				{
+					id: "30C481D01046B4E2"
+					item: {
+						count: 1
+						id: "createaddition:modular_accumulator"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3C015EC6D2B0A25A"]
+			id: "5A8C49CD88BD18EA"
+			tasks: [
+				{
+					id: "7D446387B14019BE"
+					item: {
+						count: 1
+						id: "createaddition:gold_spool"
+					}
+					type: "item"
+				}
+				{
+					id: "78A4914E899FA1DF"
+					item: {
+						count: 1
+						id: "createaddition:electrum_spool"
+					}
+					type: "item"
+				}
+				{
+					id: "181279D497237732"
+					item: {
+						count: 1
+						id: "createaddition:large_connector"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5A8C49CD88BD18EA"]
+			id: "3F91EABF91ADD92E"
+			tasks: [
+				{
+					id: "1A985DADC97E433A"
+					item: {
+						count: 1
+						id: "createaddition:redstone_relay"
+					}
+					type: "item"
+				}
+				{
+					id: "269FDEC0669D3E85"
+					item: {
+						count: 1
+						id: "createaddition:portable_energy_interface"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["3F91EABF91ADD92E"]
+			id: "73A5B365BD561262"
+			tasks: [
+				{
+					id: "49BB50A99AA215D0"
+					item: {
+						count: 1
+						id: "createaddition:tesla_coil"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7F6E0F85C6D534C7"]
+			id: "3620191021E6CC88"
+			tasks: [
+				{
+					id: "311507005140F0E1"
+					item: {
+						count: 1
+						id: "immersiveengineering:hammer"
+					}
+					type: "item"
+				}
+			]
+			x: 2.25d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3620191021E6CC88"]
+			id: "2772E4CA88966754"
+			tasks: [
+				{
+					id: "04C9E6614C5F495F"
+					item: {
+						count: 1
+						id: "immersiveengineering:wirecoil_copper"
+					}
+					type: "item"
+				}
+				{
+					id: "2869CD48080B1AE6"
+					item: {
+						count: 1
+						id: "immersiveengineering:connector_lv"
+					}
+					type: "item"
+				}
+			]
+			x: 2.25d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2772E4CA88966754"]
+			id: "16DDA2B525D7F361"
+			tasks: [
+				{
+					id: "1417C4F271E8BB1C"
+					item: {
+						count: 1
+						id: "immersiveengineering:dynamo"
+					}
+					type: "item"
+				}
+			]
+			x: 2.25d
+			y: 3.0d
+		}
+		{
+			dependencies: ["16DDA2B525D7F361"]
+			id: "29587EC80F27FF2F"
+			tasks: [
+				{
+					id: "7A41499BBB54FF10"
+					item: {
+						count: 1
+						id: "immersiveengineering:capacitor_lv"
+					}
+					type: "item"
+				}
+			]
+			x: 2.25d
+			y: 4.5d
+		}
+		{
+			dependencies: ["7F6E0F85C6D534C7"]
+			id: "621FE435A2FBBB0D"
+			tasks: [
+				{
+					id: "61A1CE0438C23F84"
+					item: {
+						count: 1
+						id: "tfmg:fireproof_bricks"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["621FE435A2FBBB0D"]
+			id: "2396E60EE3374696"
+			tasks: [
+				{
+					id: "3A41031D011EA7A2"
+					item: {
+						count: 1
+						id: "kubejs:thermocouple"
+					}
+					type: "item"
+				}
+				{
+					id: "58462FD2731AC8D9"
+					item: {
+						count: 1
+						id: "kubejs:refractory_lining"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2396E60EE3374696"]
+			id: "6D83BC4C05812434"
+			tasks: [
+				{
+					id: "394137C5B2AFEBBB"
+					item: {
+						count: 1
+						id: "tfmg:coke_oven"
+					}
+					type: "item"
+				}
+				{
+					id: "18C708072BBF2BD0"
+					item: {
+						count: 1
+						id: "tfmg:coal_coke"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["6D83BC4C05812434"]
+			id: "54D029C0137B0CF7"
+			tasks: [
+				{
+					id: "596763A7BF9492C7"
+					item: {
+						count: 1
+						id: "tfmg:blast_furnace_output"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["54D029C0137B0CF7"]
+			id: "036B24005742EE4F"
+			tasks: [
+				{
+					id: "3408BA75DF71D0A0"
+					item: {
+						count: 1
+						id: "tfmg:steel_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 6.0d
+			shape: "diamond"
+			size: 1.5d
+		}
+		{
+			dependencies: ["036B24005742EE4F"]
+			id: "50376331D94CB36C"
+			tasks: [
+				{
+					id: "55899C3008135994"
+					item: {
+						count: 1
+						id: "tfmg:heavy_plate"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["7F6E0F85C6D534C7"]
+			id: "490BA3F9D0D08D3A"
+			tasks: [
+				{
+					id: "7043F244746ED6F9"
+					item: {
+						count: 1
+						id: "createaddition:straw"
+					}
+					type: "item"
+				}
+			]
+			x: 6.75d
+			y: 0.0d
+		}
+		{
+			dependencies: ["490BA3F9D0D08D3A"]
+			id: "5E35A5FC1BC6D0DB"
+			tasks: [
+				{
+					id: "3928874EABFA8345"
+					item: {
+						count: 1
+						id: "createaddition:diamond_grit_sandpaper"
+					}
+					type: "item"
+				}
+			]
+			x: 6.75d
+			y: 1.5d
+		}
+		{
+			dependencies: ["5E35A5FC1BC6D0DB"]
+			id: "1AF12F228D58583E"
+			tasks: [
+				{
+					id: "58B2EB0C08A0F944"
+					item: {
+						count: 1
+						id: "createaddition:small_light_connector"
+					}
+					type: "item"
+				}
+				{
+					id: "7F300775263CA167"
+					item: {
+						count: 1
+						id: "createaddition:festive_spool"
+					}
+					type: "item"
+				}
+			]
+			x: 6.75d
+			y: 3.0d
+		}
+	]
+}

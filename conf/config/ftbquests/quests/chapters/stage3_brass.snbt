@@ -1,0 +1,721 @@
+{
+	autofocus_id: "0B4E57A5601D7897"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "stage3_brass"
+	group: "21E3E8CB980B7B8A"
+	icon: {
+		count: 1
+		id: "create:brass_casing"
+	}
+	id: "7F3F8DCEEA9E4452"
+	images: [
+		{
+			alpha: 26
+			height: 7.21875d
+			image: "create:textures/item/brass_ingot.png"
+			order: -1
+			rotation: 0.0d
+			width: 7.21875d
+			x: 4.0d
+			y: 2.8125d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/brass_ingot.png"
+			order: -1
+			rotation: -15.0d
+			width: 1.0d
+			x: 5.33d
+			y: -1.94d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/brass_sheet.png"
+			order: -1
+			rotation: -9.0d
+			width: 1.0d
+			x: 7.86d
+			y: -1.48d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/brass_nugget.png"
+			order: -1
+			rotation: -3.0d
+			width: 1.0d
+			x: 10.01d
+			y: -0.59d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/brass_hand.png"
+			order: -1
+			rotation: 3.0d
+			width: 1.0d
+			x: 11.57d
+			y: 0.63d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/precision_mechanism.png"
+			order: -1
+			rotation: 9.0d
+			width: 1.0d
+			x: 12.4d
+			y: 2.06d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/electron_tube.png"
+			order: -1
+			rotation: 15.0d
+			width: 1.0d
+			x: 12.4d
+			y: 3.57d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/polished_rose_quartz.png"
+			order: -1
+			rotation: -10.0d
+			width: 1.0d
+			x: 11.57d
+			y: 5.0d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/rose_quartz.png"
+			order: -1
+			rotation: -4.0d
+			width: 1.0d
+			x: 10.01d
+			y: 6.22d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/linked_controller.png"
+			order: -1
+			rotation: 2.0d
+			width: 1.0d
+			x: 7.86d
+			y: 7.1d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/filter.png"
+			order: -1
+			rotation: 8.0d
+			width: 1.0d
+			x: 5.33d
+			y: 7.57d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/attribute_filter.png"
+			order: -1
+			rotation: 14.0d
+			width: 1.0d
+			x: 2.67d
+			y: 7.57d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/extendo_grip.png"
+			order: -1
+			rotation: -11.0d
+			width: 1.0d
+			x: 0.14d
+			y: 7.1d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/brass_ingot.png"
+			order: -1
+			rotation: -5.0d
+			width: 1.0d
+			x: -2.01d
+			y: 6.22d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/brass_sheet.png"
+			order: -1
+			rotation: 1.0d
+			width: 1.0d
+			x: -3.57d
+			y: 5.0d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/brass_nugget.png"
+			order: -1
+			rotation: 7.0d
+			width: 1.0d
+			x: -4.4d
+			y: 3.57d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/brass_hand.png"
+			order: -1
+			rotation: 13.0d
+			width: 1.0d
+			x: -4.4d
+			y: 2.06d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/precision_mechanism.png"
+			order: -1
+			rotation: -12.0d
+			width: 1.0d
+			x: -3.57d
+			y: 0.63d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/electron_tube.png"
+			order: -1
+			rotation: -6.0d
+			width: 1.0d
+			x: -2.01d
+			y: -0.59d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/polished_rose_quartz.png"
+			order: -1
+			rotation: 0.0d
+			width: 1.0d
+			x: 0.14d
+			y: -1.48d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/rose_quartz.png"
+			order: -1
+			rotation: 6.0d
+			width: 1.0d
+			x: 2.67d
+			y: -1.94d
+		}
+	]
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["5F7359B8B5F2A6EA"]
+			id: "0B4E57A5601D7897"
+			tasks: [
+				{
+					id: "54C5C43EB68F6E4F"
+					item: {
+						count: 1
+						id: "create:brass_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: 2.8125d
+			shape: "gear"
+			size: 2.0d
+		}
+		{
+			dependencies: ["0B4E57A5601D7897"]
+			id: "409EC8A4147B7958"
+			tasks: [
+				{
+					id: "4F8D61C9A6AA9344"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+			shape: "hexagon"
+		}
+		{
+			dependencies: ["409EC8A4147B7958"]
+			id: "42F46883493F1690"
+			tasks: [
+				{
+					id: "1CE05EC39FC85A2B"
+					item: {
+						count: 1
+						id: "create:precision_mechanism"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 0.0d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["42F46883493F1690"]
+			id: "16EA06CAD183312F"
+			tasks: [
+				{
+					id: "5186B1A0DBC714E4"
+					item: {
+						count: 1
+						id: "create:mechanical_arm"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 0.0d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["16EA06CAD183312F"]
+			id: "160069157A54A137"
+			tasks: [
+				{
+					id: "49FB180940E3B9E0"
+					item: {
+						count: 1
+						id: "create:potato_cannon"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["160069157A54A137"]
+			id: "024D017AB4260FA4"
+			tasks: [
+				{
+					id: "2DBD001B5CCE6FCD"
+					item: {
+						count: 1
+						id: "create:extendo_grip"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["024D017AB4260FA4"]
+			id: "2F770EDF5E9A53CF"
+			tasks: [
+				{
+					id: "42AA40FE0A29C255"
+					item: {
+						count: 1
+						id: "create:wand_of_symmetry"
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2F770EDF5E9A53CF"]
+			id: "3D65CA3554DACA86"
+			tasks: [
+				{
+					id: "5B86279E6154F76E"
+					item: {
+						count: 1
+						id: "create:linked_controller"
+					}
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0B4E57A5601D7897"]
+			id: "31F6584EFCBA970A"
+			tasks: [
+				{
+					id: "5D96FE64BDC4C8FA"
+					item: {
+						count: 1
+						id: "create:brass_casing"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 1.875d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["31F6584EFCBA970A"]
+			id: "190074F08976D21D"
+			tasks: [
+				{
+					id: "236C04BE166A7641"
+					item: {
+						count: 1
+						id: "create:deployer"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 1.875d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["190074F08976D21D"]
+			id: "0724F3EA9E3EB41E"
+			tasks: [
+				{
+					id: "3B07901583B24328"
+					item: {
+						count: 1
+						id: "create:mechanical_crafter"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 1.875d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["0724F3EA9E3EB41E"]
+			id: "28669D4A04A7BE61"
+			tasks: [
+				{
+					id: "5E94630D2E3408E9"
+					item: {
+						count: 1
+						id: "create:mechanical_roller"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 1.875d
+		}
+		{
+			dependencies: ["28669D4A04A7BE61"]
+			id: "6B3CB0DA27ABEB99"
+			tasks: [
+				{
+					id: "4B9DA8A072E6428A"
+					item: {
+						count: 1
+						id: "create:rotation_speed_controller"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 1.875d
+		}
+		{
+			dependencies: ["6B3CB0DA27ABEB99"]
+			id: "65999D9C6717A802"
+			tasks: [
+				{
+					id: "0255B9591ED4060D"
+					item: {
+						count: 1
+						id: "create:sequenced_gearshift"
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: 1.875d
+		}
+		{
+			dependencies: ["65999D9C6717A802"]
+			id: "04A107AFEA7FFC6B"
+			tasks: [
+				{
+					id: "6A3C6620DB8CAD03"
+					item: {
+						count: 1
+						id: "create:adjustable_chain_gearshift"
+					}
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: 1.875d
+		}
+		{
+			dependencies: ["0B4E57A5601D7897"]
+			id: "28061CB26E1A0678"
+			tasks: [
+				{
+					id: "0344009FF01F9C2B"
+					item: {
+						count: 1
+						id: "create:brass_funnel"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 3.75d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["28061CB26E1A0678"]
+			id: "01006F5FC5E23319"
+			tasks: [
+				{
+					id: "1C25C8D723D1F8B6"
+					item: {
+						count: 1
+						id: "create:brass_tunnel"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["01006F5FC5E23319"]
+			id: "710968508301DDB3"
+			tasks: [
+				{
+					id: "3289303E9C21FBFE"
+					item: {
+						count: 1
+						id: "create:smart_chute"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 3.75d
+		}
+		{
+			dependencies: ["710968508301DDB3"]
+			id: "49D411F4FEB6C2DE"
+			tasks: [
+				{
+					id: "31CD3EC2364D16E3"
+					item: {
+						count: 1
+						id: "create:smart_fluid_pipe"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["49D411F4FEB6C2DE"]
+			id: "75316F2665E425C7"
+			tasks: [
+				{
+					id: "29506ECA86573ADE"
+					item: {
+						count: 1
+						id: "create:content_observer"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 3.75d
+		}
+		{
+			dependencies: ["75316F2665E425C7"]
+			id: "1A13255008976582"
+			tasks: [
+				{
+					id: "5399668F5DAAD8DE"
+					item: {
+						count: 1
+						id: "create:display_link"
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["1A13255008976582"]
+			id: "6EC725BEED339562"
+			tasks: [
+				{
+					id: "6893D5ECC51DD254"
+					item: {
+						count: 1
+						id: "create:nixie_tube"
+					}
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: 3.75d
+		}
+		{
+			dependencies: ["0B4E57A5601D7897"]
+			id: "698F0FFF17CCAF93"
+			tasks: [
+				{
+					id: "2635BACBE594E38C"
+					item: {
+						count: 1
+						id: "create:pulse_repeater"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 5.625d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["698F0FFF17CCAF93"]
+			id: "137AC1B2510ACE8D"
+			tasks: [
+				{
+					id: "70D4793EDAADAE55"
+					item: {
+						count: 1
+						id: "create:pulse_extender"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 5.625d
+		}
+		{
+			dependencies: ["137AC1B2510ACE8D"]
+			id: "06F5AF6DEDF89D4E"
+			tasks: [
+				{
+					id: "081658B20F37ABC4"
+					item: {
+						count: 1
+						id: "create:clockwork_bearing"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 5.625d
+		}
+		{
+			dependencies: ["06F5AF6DEDF89D4E"]
+			id: "52F53AE3B6951D2E"
+			tasks: [
+				{
+					id: "5E5DFFBEBD1BE151"
+					item: {
+						count: 1
+						id: "create:elevator_pulley"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 5.625d
+		}
+		{
+			dependencies: ["52F53AE3B6951D2E"]
+			id: "5C5192BE081B7DB2"
+			tasks: [
+				{
+					id: "3200B31E14BF3053"
+					item: {
+						count: 1
+						id: "create:contraption_controls"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 5.625d
+		}
+		{
+			dependencies: ["5C5192BE081B7DB2"]
+			id: "63A92EDEFF145DDF"
+			tasks: [
+				{
+					id: "40080BF4B41354A3"
+					item: {
+						count: 1
+						id: "create:cart_assembler"
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: 5.625d
+		}
+		{
+			dependencies: ["63A92EDEFF145DDF"]
+			id: "452FE2A2990212A4"
+			tasks: [
+				{
+					id: "09841E8C67309EF9"
+					item: {
+						count: 1
+						id: "create:controller_rail"
+					}
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: 5.625d
+		}
+		{
+			dependencies: ["452FE2A2990212A4"]
+			id: "69D1854D46A9F792"
+			tasks: [
+				{
+					id: "701132CC43F5C4C2"
+					item: {
+						count: 1
+						id: "create:steam_whistle"
+					}
+					type: "item"
+				}
+			]
+			x: 10.5d
+			y: 5.625d
+		}
+	]
+}

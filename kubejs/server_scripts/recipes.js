@@ -37,15 +37,13 @@ ServerEvents.recipes(event => {
     R: 'minecraft:redstone'
   }).id('sborka:radio')
 
-  // --- Проектор мультиблоков (наш мод incognita): лампа-линза, железные листы, точный механизм ---
-  event.shaped('incognita:projector', [
-    ' L ',
-    'SPS',
-    'SRS'
+  // --- Компас центра мира (наш мод incognita): обычный компас в латунных листах, указывает на 0 0 ---
+  event.shaped('incognita:origin_compass', [
+    ' B ',
+    'BCB',
+    ' B '
   ], {
-    L: 'minecraft:redstone_lamp',
-    S: 'create:iron_sheet',
-    P: 'create:precision_mechanism',
-    R: 'minecraft:redstone'
-  }).id('sborka:projector')
+    B: 'create:brass_sheet',
+    C: 'minecraft:compass'
+  }).id('sborka:origin_compass')
 })

@@ -1,0 +1,221 @@
+{
+	chapter.19046C8F78B9C928.chapter_subtitle: ["Oil, engines, cannons and the sky"]
+	chapter.19046C8F78B9C928.title: "6. Heavy industry"
+	chapter.24C6791C85D15F90.chapter_subtitle: ["Shafts, cogs and the first machines"]
+	chapter.24C6791C85D15F90.title: "1. Andesite"
+	chapter.2FEA7F27C95382C3.chapter_subtitle: ["Pipes, tanks and steam"]
+	chapter.2FEA7F27C95382C3.title: "2. Copper and fluids"
+	chapter.467B3D53C675C9E9.chapter_subtitle: ["Packages, stock and rails"]
+	chapter.467B3D53C675C9E9.title: "5. Logistics and trains"
+	chapter.5556FECB89D4939B.chapter_subtitle: ["Read this first: what is different here and how it works"]
+	chapter.5556FECB89D4939B.title: "Getting Started"
+	chapter.5B2FAD26E95A38A9.chapter_subtitle: ["Wires, motors and the blast furnace"]
+	chapter.5B2FAD26E95A38A9.title: "4. Electricity and steel"
+	chapter.7F3F8DCEEA9E4452.chapter_subtitle: ["Precision and automation"]
+	chapter.7F3F8DCEEA9E4452.title: "3. Brass"
+	chapter_group.21E3E8CB980B7B8A.title: "Terra Incognita"
+	file.0000000000000001.title: "Terra Incognita"
+	quest.036B24005742EE4F.quest_desc: [
+		"Blast furnace, molten steel, casting. Every recipe that asks for steel takes this ingot."
+		""
+		"Steel opens stage 6, &eHeavy industry&r."
+	]
+	quest.036B24005742EE4F.quest_subtitle: "The one and only steel"
+	quest.07D35ABEE8E840D3.quest_subtitle: "Tools"
+	quest.097A4CBE15399FE2.quest_desc: [
+		"The &esun&r and the &emoon&r rise in the &eeast&r and set in the &ewest&r. In the morning the sun is in the east, in the evening in the west."
+		""
+		"&eClouds&r always drift to the west. This works at any time of day."
+		""
+		"A &ecompass&r, once you can craft it, points to your spawn point."
+	]
+	quest.097A4CBE15399FE2.quest_subtitle: "A compass in the sky"
+	quest.097A4CBE15399FE2.title: "Sun and moon"
+	quest.0B4E57A5601D7897.quest_desc: [
+		"&eBrass&r opens smart machines: deployers, mechanical crafters, filters and controllers."
+		""
+		"The &eprecision mechanism&r is the key part of this stage. The compass and the radio need it. Each branch opens step by step."
+	]
+	quest.0B4E57A5601D7897.quest_subtitle: "Copper and zinc, heated"
+	quest.1266E483FD0E9F20.quest_subtitle: "Packages"
+	quest.17B27771CDB86A5A.quest_desc: ["Airships and flying machines are built from blocks, piece by piece. In a world without coordinates a view from above is worth a lot."]
+	quest.17B27771CDB86A5A.quest_subtitle: "Machines that leave the ground"
+	quest.189DB7B48428D3CF.quest_desc: [
+		"&eRight click&r switches the radio on and off."
+		""
+		"&eHold it in your hand&r and talk: everyone with a switched-on radio on the same frequency hears you at any distance, with static."
+		""
+		"&b/radio freq <MHz>&r tunes the frequency (30.0 to 108.0)."
+		""
+		"&b/r <text>&r sends a text message to the same frequency."
+	]
+	quest.189DB7B48428D3CF.quest_subtitle: "Same frequency, any distance"
+	quest.189DB7B48428D3CF.title: "How the radio works"
+	quest.1B43F5EAA670514E.quest_subtitle: "Artillery"
+	quest.1C4B150B8A8CAAA7.quest_subtitle: "Storage and the deep"
+	quest.1C93C15A5AEB0FD9.quest_desc: [
+		"The &esteel mechanism&r is the heavy cousin of the precision mechanism."
+		""
+		"Four branches go from it: oil and engines, artillery, flight and radar."
+	]
+	quest.1C93C15A5AEB0FD9.quest_subtitle: "Steel that moves"
+	quest.20FA82989787B1DF.quest_desc: ["Create Additions wires are for short runs: motors and chargers."]
+	quest.20FA82989787B1DF.quest_subtitle: "Light electrics"
+	quest.2396E60EE3374696.quest_desc: ["The &ethermocouple&r and the &erefractory lining&r are built by sequenced assembly. The coke oven, the blast stove and the furnace itself need them."]
+	quest.2396E60EE3374696.quest_subtitle: "Furnace parts"
+	quest.264F6C2DC0218409.quest_desc: [
+		"Several mods add steel and oil. Here each exists in &eone version&r only."
+		""
+		"&eSteel&r comes from the blast furnace of The Factory Must Grow. &eOil&r is pumped and distilled with the same mod."
+		""
+		"Recipes from other mods accept this steel and this fuel."
+	]
+	quest.264F6C2DC0218409.quest_subtitle: "No shortcuts"
+	quest.264F6C2DC0218409.title: "One steel, one oil"
+	quest.28061CB26E1A0678.quest_subtitle: "Smart logistics"
+	quest.29844BA2A2546B3C.quest_desc: [
+		"Remember the way back when you leave home. Build &etowers&r, light &elamps&r, lay &eroads and rails&r: they are how you navigate now."
+		""
+		"Tell friends where you are in words: \"past the lake, by the tall tower, look for smoke\"."
+	]
+	quest.29844BA2A2546B3C.quest_subtitle: "Landmarks are your map"
+	quest.29844BA2A2546B3C.title: "Finding your way"
+	quest.2A4FF3ED81E25203.quest_desc: [
+		"A compass needs a &eprecision mechanism&r here."
+		""
+		"It points to &eyour own spawn point&r: your bed, or the place where you last appeared if you have no bed."
+	]
+	quest.2A4FF3ED81E25203.quest_subtitle: "The way home"
+	quest.2A55E4ECF6567A43.quest_desc: [
+		"&eCardboard&r opens package logistics: packagers, frogports, stock tickers."
+		""
+		"&eTrain casing&r opens railways. In a world without coordinates a railway is also a road you cannot lose."
+	]
+	quest.2A55E4ECF6567A43.quest_subtitle: "Everything travels in a box"
+	quest.2CD9DA15A9C96299.quest_subtitle: "Rotation to power and back"
+	quest.31F6584EFCBA970A.quest_subtitle: "Automation"
+	quest.36192F56C7CCC3DC.quest_subtitle: "A walk through lava"
+	quest.3620191021E6CC88.quest_desc: ["Immersive Engineering is for long lines and heavy machines."]
+	quest.3620191021E6CC88.quest_subtitle: "Heavy electrics"
+	quest.369D420C48F88421.quest_subtitle: "Stock keeping"
+	quest.37592B85FD31945A.quest_subtitle: "Moving items"
+	quest.389B5B3129B649F3.quest_desc: [
+		"You appear at a &erandom place&r when you first join, and again every time you die without a bed."
+		""
+		"Sleep in a &ebed&r to set your home. Lose the bed and you lose the way home."
+	]
+	quest.389B5B3129B649F3.quest_subtitle: "Sleep before you travel"
+	quest.389B5B3129B649F3.title: "Death and beds"
+	quest.3B62A756E25F92CE.quest_subtitle: "Pipes and tanks"
+	quest.3B9DF804448D5E3A.quest_subtitle: "Eyes beyond the horizon"
+	quest.3F002FD6B1090FC9.quest_desc: [
+		"&eAndesite alloy&r opens basic kinetics: shafts, cogwheels, the press, the millstone, the mixer, drills and saws."
+		""
+		"Machines need rotation. Start with a &ewater wheel&r or a &ewindmill&r."
+	]
+	quest.3F002FD6B1090FC9.quest_subtitle: "Where every factory starts"
+	quest.409EC8A4147B7958.quest_desc: ["Some parts are built step by step on a belt: deploy, fill, press, repeat. The &eprecision mechanism&r is the first of them. Later the same method builds the parts of the blast furnace and the oil rig."]
+	quest.409EC8A4147B7958.quest_subtitle: "One item, many steps"
+	quest.409EC8A4147B7958.title: "Sequenced assembly"
+	quest.42B582D4ACEB31A2.quest_desc: [
+		"The pack is made for &ein-game voice&r. We recommend talking through the game's voice chat and the radio, not through outside apps: then distance and frequencies actually matter."
+		""
+		"Alone it is hard here. &eJoin into towns&r: a shared base, shared landmarks and a shared radio frequency make it much easier to find each other."
+	]
+	quest.42B582D4ACEB31A2.quest_subtitle: "Talk by voice, build towns"
+	quest.42B582D4ACEB31A2.title: "Play together"
+	quest.42F46883493F1690.quest_subtitle: "Precision"
+	quest.440FFCE345D97BEB.quest_desc: [
+		"This is a &eCreate&r modpack where &enobody knows where they are&r."
+		""
+		"The notes around this one explain what is changed and how to use it. Read a note and press the &acheckmark&r to mark it done. This one gives you &e15 bread&r for the road."
+		""
+		"After that, open the stage chapters on the left: they lead from andesite to heavy industry."
+	]
+	quest.440FFCE345D97BEB.quest_subtitle: "Start here"
+	quest.440FFCE345D97BEB.title: "Welcome to Terra Incognita"
+	quest.446232BD71A0783C.quest_subtitle: "Railways"
+	quest.45591406AE702E17.quest_desc: [
+		"There are &eno coordinates&r in this world. The F3 screen shows neither your position nor the direction you face, and chat, commands and other mods show placeholders in place of X Y Z."
+		""
+		"This is on purpose. You cannot send a friend three numbers, you have to explain the way."
+	]
+	quest.45591406AE702E17.quest_subtitle: "Not on F3, not anywhere"
+	quest.45591406AE702E17.title: "No coordinates"
+	quest.490BA3F9D0D08D3A.quest_subtitle: "Odds and ends"
+	quest.4CA0D1B701FE55E2.quest_desc: ["A compass wrapped in brass sheets. It points to the &ecentre of the world&r, the same point for everyone: a shared place to meet."]
+	quest.4CA0D1B701FE55E2.quest_subtitle: "The way to the centre"
+	quest.50D3912B7539F0FD.quest_desc: [
+		"Progress is split into six stages, one chapter each:"
+		""
+		"&71.&r Andesite  &72.&r Copper and fluids  &73.&r Brass"
+		""
+		"&74.&r Electricity and steel  &75.&r Logistics and trains  &76.&r Heavy industry"
+		""
+		"The &egear&r in the middle of a chapter opens the stage. &eDiamonds&r are its key machines."
+	]
+	quest.50D3912B7539F0FD.quest_subtitle: "From andesite to the sky"
+	quest.50D3912B7539F0FD.title: "Six stages"
+	quest.566B8936550C9A4D.quest_desc: [
+		"Chat is &elocal&r: only players within &e60 blocks&r see your message."
+		""
+		"To write to someone far away you need a radio: &b/r <text>&r."
+	]
+	quest.566B8936550C9A4D.quest_subtitle: "Heard within 60 blocks"
+	quest.566B8936550C9A4D.title: "Text chat"
+	quest.588C906CB5C41F0E.quest_subtitle: "Moving structures"
+	quest.599F09C1CC31CB92.quest_desc: ["Pumping and distilling oil needs the &epressure gauge&r."]
+	quest.599F09C1CC31CB92.quest_subtitle: "Oil and engines"
+	quest.5F7359B8B5F2A6EA.quest_desc: ["&eCopper casing&r and &eiron sheets&r open fluids: pipes, pumps, tanks, the spout and the steam engine, the first serious source of rotation."]
+	quest.5F7359B8B5F2A6EA.quest_subtitle: "Things start to flow"
+	quest.61438AC938544407.quest_desc: [
+		"Simple Voice Chat is installed. Your voice is heard at about &e48 blocks&r, a whisper at about half of that."
+		""
+		"Voice chat &egroups are switched off&r for everyone. Long-distance voice goes through the radio only."
+		""
+		"Set up your microphone in the voice chat menu (&bV&r by default)."
+	]
+	quest.61438AC938544407.quest_subtitle: "Talk to those nearby"
+	quest.61438AC938544407.title: "Voice chat"
+	quest.621FE435A2FBBB0D.quest_subtitle: "The road to steel"
+	quest.68FF1B07B1839831.quest_subtitle: "Fluids at work"
+	quest.698F0FFF17CCAF93.quest_subtitle: "Redstone and rides"
+	quest.6D6EF2E6F0E90114.quest_desc: [
+		"Many recipes are harder than usual and tied together. Do not craft from memory."
+		""
+		"Hover an item and press &bR&r to see how it is made, &bU&r to see what it is used for."
+	]
+	quest.6D6EF2E6F0E90114.quest_subtitle: "Check before you craft"
+	quest.6D6EF2E6F0E90114.title: "Recipes are changed"
+	quest.6FEE6AE08B1D54B5.quest_subtitle: "Rotation"
+	quest.77182E8748F6D8DF.quest_desc: [
+		"Precision mechanism, lightning rod as the antenna, iron sheets and redstone."
+		""
+		"How to use it is in the note &eHow the radio works&r above."
+	]
+	quest.77182E8748F6D8DF.quest_subtitle: "Long-distance voice"
+	quest.78320318B62C021A.quest_desc: [
+		"Every source gives &estress capacity&r, every machine consumes it. If consumption is higher, the whole network stops. Engineer's goggles show the numbers."
+		""
+		"A large cogwheel driving a small one doubles the speed and doubles the stress cost."
+	]
+	quest.78320318B62C021A.quest_subtitle: "Why the machine stopped"
+	quest.78320318B62C021A.title: "Stress and speed"
+	quest.7A0344E3214AC811.quest_subtitle: "Processing"
+	quest.7A7B3E8DCEBE49EE.quest_desc: ["Oil is pumped and distilled only with The Factory Must Grow machines."]
+	quest.7A7B3E8DCEBE49EE.quest_subtitle: "One oil for the whole pack"
+	quest.7BF5F030B7EC13A8.quest_subtitle: "Fuel into rotation"
+	quest.7C330F27218517C7.quest_desc: [
+		"Never played Create? Hover a Create item in the inventory and &ehold &bW&r: an animated scene shows how the machine works."
+		""
+		"&eEngineer's goggles&r show speed and stress of the machine you look at."
+	]
+	quest.7C330F27218517C7.quest_subtitle: "Hold W to ponder"
+	quest.7C330F27218517C7.title: "Learning Create"
+	quest.7F6E0F85C6D534C7.quest_desc: [
+		"The &erolling mill&r turns ingots into rods and wire. Electricity starts here."
+		""
+		"Three branches go from it: light electrics, heavy electrics and the road to &esteel&r."
+	]
+	quest.7F6E0F85C6D534C7.quest_subtitle: "Rods and wire"
+}

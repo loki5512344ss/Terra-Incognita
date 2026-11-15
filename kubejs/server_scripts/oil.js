@@ -6,16 +6,8 @@
 ServerEvents.recipes(event => {
   if (!Platform.isLoaded('tfmg')) return
 
-  // Immersive Engineering
-  const ieOil = ['refinery', 'diesel_generator', 'fermenter']
-  ieOil.forEach(id => event.remove({ output: 'immersiveengineering:' + id }))
-
-  // Create Diesel Generators: убираем добычу и перегонку нефти (есть у TFMG)
-  const cdgOil = [
-    'pumpjack_bearing', 'pumpjack_crank', 'pumpjack_head', 'pumpjack_hole',
-    'distillation_controller', 'oil_scanner'
-  ]
-  cdgOil.forEach(id => event.remove({ output: 'createdieselgenerators:' + id }))
+  // Машины из списка startup_scripts/removed.js: нефтяные IE и добыча/перегонка CDG (есть у TFMG)
+  global.terraRemoved.ieOil.concat(global.terraRemoved.cdgOil).forEach(id => event.remove({ output: id }))
   event.remove({ type: 'createdieselgenerators:distillation' })
 })
 

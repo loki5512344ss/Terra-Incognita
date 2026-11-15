@@ -1,0 +1,698 @@
+{
+	autofocus_id: "2A55E4ECF6567A43"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "stage5_logistics"
+	group: "21E3E8CB980B7B8A"
+	icon: {
+		count: 1
+		id: "create:railway_casing"
+	}
+	id: "467B3D53C675C9E9"
+	images: [
+		{
+			alpha: 26
+			height: 14.8125d
+			image: "create:textures/item/track.png"
+			order: -1
+			rotation: 0.0d
+			width: 14.8125d
+			x: -0.6500000000000004d
+			y: -2.125d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/track.png"
+			order: -1
+			rotation: -15.0d
+			width: 1.0d
+			x: 0.46d
+			y: -11.95d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/schedule.png"
+			order: -1
+			rotation: -9.0d
+			width: 1.0d
+			x: 2.63d
+			y: -11.57d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/pulp.png"
+			order: -1
+			rotation: -3.0d
+			width: 1.0d
+			x: 4.68d
+			y: -10.83d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/clipboard.png"
+			order: -1
+			rotation: 3.0d
+			width: 1.0d
+			x: 6.52d
+			y: -9.76d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/shopping_list.png"
+			order: -1
+			rotation: 9.0d
+			width: 1.0d
+			x: 8.09d
+			y: -8.39d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/transmitter.png"
+			order: -1
+			rotation: 15.0d
+			width: 1.0d
+			x: 9.32d
+			y: -6.78d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/logistical_dial.png"
+			order: -1
+			rotation: -10.0d
+			width: 1.0d
+			x: 10.17d
+			y: -4.99d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/package_filter.png"
+			order: -1
+			rotation: -4.0d
+			width: 1.0d
+			x: 10.61d
+			y: -3.09d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/minecart_coupling.png"
+			order: -1
+			rotation: 2.0d
+			width: 1.0d
+			x: 10.61d
+			y: -1.16d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/train_door.png"
+			order: -1
+			rotation: 8.0d
+			width: 1.0d
+			x: 10.17d
+			y: 0.74d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/cardboard_helmet.png"
+			order: -1
+			rotation: 14.0d
+			width: 1.0d
+			x: 9.32d
+			y: 2.53d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/track.png"
+			order: -1
+			rotation: -11.0d
+			width: 1.0d
+			x: 8.09d
+			y: 4.14d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/schedule.png"
+			order: -1
+			rotation: -5.0d
+			width: 1.0d
+			x: 6.52d
+			y: 5.51d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/pulp.png"
+			order: -1
+			rotation: 1.0d
+			width: 1.0d
+			x: 4.68d
+			y: 6.58d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/clipboard.png"
+			order: -1
+			rotation: 7.0d
+			width: 1.0d
+			x: 2.63d
+			y: 7.32d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/shopping_list.png"
+			order: -1
+			rotation: 13.0d
+			width: 1.0d
+			x: 0.46d
+			y: 7.7d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/transmitter.png"
+			order: -1
+			rotation: -12.0d
+			width: 1.0d
+			x: -1.76d
+			y: 7.7d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/logistical_dial.png"
+			order: -1
+			rotation: -6.0d
+			width: 1.0d
+			x: -3.93d
+			y: 7.32d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/package_filter.png"
+			order: -1
+			rotation: 0.0d
+			width: 1.0d
+			x: -5.98d
+			y: 6.58d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/minecart_coupling.png"
+			order: -1
+			rotation: 6.0d
+			width: 1.0d
+			x: -7.82d
+			y: 5.51d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/train_door.png"
+			order: -1
+			rotation: 12.0d
+			width: 1.0d
+			x: -9.39d
+			y: 4.14d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/cardboard_helmet.png"
+			order: -1
+			rotation: -13.0d
+			width: 1.0d
+			x: -10.62d
+			y: 2.53d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/track.png"
+			order: -1
+			rotation: -7.0d
+			width: 1.0d
+			x: -11.47d
+			y: 0.74d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/schedule.png"
+			order: -1
+			rotation: -1.0d
+			width: 1.0d
+			x: -11.91d
+			y: -1.16d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/pulp.png"
+			order: -1
+			rotation: 5.0d
+			width: 1.0d
+			x: -11.91d
+			y: -3.09d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/clipboard.png"
+			order: -1
+			rotation: 11.0d
+			width: 1.0d
+			x: -11.47d
+			y: -4.99d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/shopping_list.png"
+			order: -1
+			rotation: -14.0d
+			width: 1.0d
+			x: -10.62d
+			y: -6.78d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/transmitter.png"
+			order: -1
+			rotation: -8.0d
+			width: 1.0d
+			x: -9.39d
+			y: -8.39d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/logistical_dial.png"
+			order: -1
+			rotation: -2.0d
+			width: 1.0d
+			x: -7.82d
+			y: -9.76d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/package_filter.png"
+			order: -1
+			rotation: 4.0d
+			width: 1.0d
+			x: -5.98d
+			y: -10.83d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/minecart_coupling.png"
+			order: -1
+			rotation: 10.0d
+			width: 1.0d
+			x: -3.93d
+			y: -11.57d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/train_door.png"
+			order: -1
+			rotation: -15.0d
+			width: 1.0d
+			x: -1.76d
+			y: -11.95d
+		}
+	]
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["0B4E57A5601D7897"]
+			id: "2A55E4ECF6567A43"
+			tasks: [
+				{
+					id: "374F4F5D8D146284"
+					item: {
+						count: 1
+						id: "create:cardboard"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+			shape: "gear"
+			size: 2.0d
+		}
+		{
+			dependencies: ["2A55E4ECF6567A43"]
+			id: "1266E483FD0E9F20"
+			tasks: [
+				{
+					id: "6581A24E9F9F020D"
+					item: {
+						count: 1
+						id: "create:pulp"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -2.5d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["1266E483FD0E9F20"]
+			id: "0A307ECD6E1573FA"
+			tasks: [
+				{
+					id: "193923C217BA5089"
+					item: {
+						count: 1
+						id: "create:packager"
+					}
+					type: "item"
+				}
+				{
+					id: "70BE911842B3CA62"
+					item: {
+						count: 1
+						id: "create:repackager"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -4.0d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["0A307ECD6E1573FA"]
+			id: "74DD1672AE182EAE"
+			tasks: [
+				{
+					id: "0B38BEFE4948713E"
+					item: {
+						count: 1
+						id: "create:package_frogport"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["74DD1672AE182EAE"]
+			id: "7CD8C70A012F8F27"
+			tasks: [
+				{
+					id: "2DF527CC8551DCA3"
+					item: {
+						count: 1
+						id: "create:chain_conveyor"
+					}
+					type: "item"
+				}
+				{
+					id: "1628C076063163C2"
+					item: {
+						count: 1
+						id: "minecraft:chain"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -7.0d
+		}
+		{
+			dependencies: ["7CD8C70A012F8F27"]
+			id: "02A95D13323AA96A"
+			tasks: [
+				{
+					id: "448D3E79873BFBB3"
+					item: {
+						count: 1
+						id: "create:item_hatch"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -8.5d
+		}
+		{
+			dependencies: ["02A95D13323AA96A"]
+			id: "4B4ADF92427E4244"
+			tasks: [
+				{
+					id: "3142C1ACC2816B42"
+					item: {
+						count: 1
+						id: "create:placard"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -10.0d
+		}
+		{
+			dependencies: ["2A55E4ECF6567A43"]
+			id: "369D420C48F88421"
+			tasks: [
+				{
+					id: "08F9EB62969900B8"
+					item: {
+						count: 1
+						id: "create:stock_link"
+					}
+					type: "item"
+				}
+			]
+			x: 2.17d
+			y: 1.25d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["369D420C48F88421"]
+			id: "4C743863B3CDA560"
+			tasks: [
+				{
+					id: "324786DE8E07034E"
+					item: {
+						count: 1
+						id: "create:stock_ticker"
+					}
+					type: "item"
+				}
+			]
+			x: 3.46d
+			y: 2.0d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["4C743863B3CDA560"]
+			id: "32E5FA56793AF827"
+			tasks: [
+				{
+					id: "62144989CFA52707"
+					item: {
+						count: 1
+						id: "create:redstone_requester"
+					}
+					type: "item"
+				}
+			]
+			x: 4.76d
+			y: 2.75d
+		}
+		{
+			dependencies: ["32E5FA56793AF827"]
+			id: "098224E72B71B0C0"
+			tasks: [
+				{
+					id: "3A4E27DB3B3E9DD0"
+					item: {
+						count: 1
+						id: "create:factory_gauge"
+					}
+					type: "item"
+				}
+			]
+			x: 6.06d
+			y: 3.5d
+		}
+		{
+			dependencies: ["098224E72B71B0C0"]
+			id: "0D983129AC210171"
+			tasks: [
+				{
+					id: "19D05D8505B98E62"
+					item: {
+						count: 1
+						id: "create:transmitter"
+					}
+					type: "item"
+				}
+			]
+			x: 7.36d
+			y: 4.25d
+		}
+		{
+			dependencies: ["0D983129AC210171"]
+			id: "7B57D9491C1A7739"
+			tasks: [
+				{
+					id: "537A6ACDCF79D982"
+					item: {
+						count: 1
+						id: "create:clipboard"
+					}
+					type: "item"
+				}
+			]
+			x: 8.66d
+			y: 5.0d
+		}
+		{
+			dependencies: ["2A55E4ECF6567A43"]
+			id: "446232BD71A0783C"
+			tasks: [
+				{
+					id: "45FCA13986250045"
+					item: {
+						count: 1
+						id: "create:railway_casing"
+					}
+					type: "item"
+				}
+			]
+			x: -2.17d
+			y: 1.25d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["446232BD71A0783C"]
+			id: "4D4EA1BCAC72C3C3"
+			tasks: [
+				{
+					id: "6EDB3D0B39467200"
+					item: {
+						count: 1
+						id: "create:track"
+					}
+					type: "item"
+				}
+			]
+			x: -3.46d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4D4EA1BCAC72C3C3"]
+			id: "43A71BD4FA096784"
+			tasks: [
+				{
+					id: "41B5D9EBB8C560AB"
+					item: {
+						count: 1
+						id: "create:track_station"
+					}
+					type: "item"
+				}
+			]
+			x: -4.76d
+			y: 2.75d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["43A71BD4FA096784"]
+			id: "64F5BE5DCC9780E9"
+			tasks: [
+				{
+					id: "4F0432968F53802B"
+					item: {
+						count: 1
+						id: "create:controls"
+					}
+					type: "item"
+				}
+			]
+			x: -6.06d
+			y: 3.5d
+		}
+		{
+			dependencies: ["64F5BE5DCC9780E9"]
+			id: "441BEE23A5F6BFC9"
+			tasks: [
+				{
+					id: "0D244D879C6889A9"
+					item: {
+						count: 1
+						id: "create:schedule"
+					}
+					type: "item"
+				}
+			]
+			x: -7.36d
+			y: 4.25d
+		}
+		{
+			dependencies: ["441BEE23A5F6BFC9"]
+			id: "3B6FC74B4AD8A378"
+			tasks: [
+				{
+					id: "4FA33E9292456516"
+					item: {
+						count: 1
+						id: "create:track_signal"
+					}
+					type: "item"
+				}
+			]
+			x: -8.66d
+			y: 5.0d
+		}
+		{
+			dependencies: ["3B6FC74B4AD8A378"]
+			id: "1AAF778087D6F2BE"
+			tasks: [
+				{
+					id: "6F1E738385D388A9"
+					item: {
+						count: 1
+						id: "create:track_observer"
+					}
+					type: "item"
+				}
+			]
+			x: -9.96d
+			y: 5.75d
+		}
+	]
+}

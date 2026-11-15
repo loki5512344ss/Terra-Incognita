@@ -3,13 +3,8 @@
 ServerEvents.recipes(event => {
   if (!Platform.isLoaded('tfmg')) return
 
-  // Источники стали IE
-  event.remove({ output: 'immersiveengineering:ingot_steel' })
-  event.remove({ output: 'immersiveengineering:dust_steel' })
-
-  // Доменные печи IE больше не нужны: без них сталь IE не сделать
-  const dead = ['blast_furnace', 'advanced_blast_furnace', 'blastbrick', 'blastbrick_reinforced', 'blastfurnace_preheater']
-  dead.forEach(id => event.remove({ output: 'immersiveengineering:' + id }))
+  // Слиток и пыль стали IE и доменные печи IE (список — startup_scripts/removed.js)
+  global.terraRemoved.ieSteel.forEach(id => event.remove({ output: id }))
 
   // Рецепты IE, которые просили именно свой слиток, теперь принимают любую сталь (то есть TFMG)
   event.replaceInput({ mod: 'immersiveengineering' }, 'immersiveengineering:ingot_steel', '#c:ingots/steel')

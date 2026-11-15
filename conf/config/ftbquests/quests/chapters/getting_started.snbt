@@ -1,0 +1,462 @@
+{
+	autofocus_id: "440FFCE345D97BEB"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "getting_started"
+	group: "21E3E8CB980B7B8A"
+	icon: {
+		count: 1
+		id: "minecraft:writable_book"
+	}
+	id: "5556FECB89D4939B"
+	images: [
+		{
+			alpha: 26
+			height: 8.25d
+			image: "minecraft:textures/item/compass_16.png"
+			order: -1
+			rotation: 0.0d
+			width: 8.25d
+			x: 0.0d
+			y: 1.75d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/compass_16.png"
+			order: -1
+			rotation: -15.0d
+			width: 1.0d
+			x: 0.86d
+			y: -5.41d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/map.png"
+			order: -1
+			rotation: -9.0d
+			width: 1.0d
+			x: 2.5d
+			y: -4.71d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/writable_book.png"
+			order: -1
+			rotation: -3.0d
+			width: 1.0d
+			x: 3.89d
+			y: -3.38d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/bread.png"
+			order: -1
+			rotation: 3.0d
+			width: 1.0d
+			x: 4.9d
+			y: -1.54d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/clock_00.png"
+			order: -1
+			rotation: 9.0d
+			width: 1.0d
+			x: 5.43d
+			y: 0.62d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/spyglass.png"
+			order: -1
+			rotation: 15.0d
+			width: 1.0d
+			x: 5.43d
+			y: 2.88d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/lantern.png"
+			order: -1
+			rotation: -10.0d
+			width: 1.0d
+			x: 4.9d
+			y: 5.04d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/campfire.png"
+			order: -1
+			rotation: -4.0d
+			width: 1.0d
+			x: 3.89d
+			y: 6.88d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/oak_boat.png"
+			order: -1
+			rotation: 2.0d
+			width: 1.0d
+			x: 2.5d
+			y: 8.21d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/bell.png"
+			order: -1
+			rotation: 8.0d
+			width: 1.0d
+			x: 0.86d
+			y: 8.91d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/feather.png"
+			order: -1
+			rotation: 14.0d
+			width: 1.0d
+			x: -0.86d
+			y: 8.91d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/paper.png"
+			order: -1
+			rotation: -11.0d
+			width: 1.0d
+			x: -2.5d
+			y: 8.21d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/compass_16.png"
+			order: -1
+			rotation: -5.0d
+			width: 1.0d
+			x: -3.89d
+			y: 6.88d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/map.png"
+			order: -1
+			rotation: 1.0d
+			width: 1.0d
+			x: -4.9d
+			y: 5.04d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/writable_book.png"
+			order: -1
+			rotation: 7.0d
+			width: 1.0d
+			x: -5.43d
+			y: 2.88d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/bread.png"
+			order: -1
+			rotation: 13.0d
+			width: 1.0d
+			x: -5.43d
+			y: 0.62d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/clock_00.png"
+			order: -1
+			rotation: -12.0d
+			width: 1.0d
+			x: -4.9d
+			y: -1.54d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/spyglass.png"
+			order: -1
+			rotation: -6.0d
+			width: 1.0d
+			x: -3.89d
+			y: -3.38d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/lantern.png"
+			order: -1
+			rotation: 0.0d
+			width: 1.0d
+			x: -2.5d
+			y: -4.71d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "minecraft:textures/item/campfire.png"
+			order: -1
+			rotation: 6.0d
+			width: 1.0d
+			x: -0.86d
+			y: -5.41d
+		}
+	]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "440FFCE345D97BEB"
+			tasks: [
+				{
+					id: "770BDB11526192FC"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+			shape: "hexagon"
+			size: 2.0d
+			rewards: [
+				{
+					count: 15
+					id: "62C14FF3CD08D966"
+					item: {
+						count: 1
+						id: "minecraft:bread"
+					}
+					type: "item"
+				}
+			]
+		}
+		{
+			dependencies: ["440FFCE345D97BEB"]
+			id: "45591406AE702E17"
+			tasks: [
+				{
+					id: "09E5422BF8FCA43E"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: -3.5d
+			shape: "hexagon"
+		}
+		{
+			dependencies: ["440FFCE345D97BEB"]
+			id: "29844BA2A2546B3C"
+			tasks: [
+				{
+					id: "24052593584611C2"
+					type: "checkmark"
+				}
+			]
+			x: 1.75d
+			y: -3.0d
+			shape: "hexagon"
+		}
+		{
+			dependencies: ["440FFCE345D97BEB"]
+			id: "097A4CBE15399FE2"
+			tasks: [
+				{
+					id: "4279376B8B9E048D"
+					type: "checkmark"
+				}
+			]
+			x: 3.0d
+			y: -1.75d
+			shape: "hexagon"
+		}
+		{
+			dependencies: ["440FFCE345D97BEB"]
+			id: "42B582D4ACEB31A2"
+			tasks: [
+				{
+					id: "07BF6583301FBAFB"
+					type: "checkmark"
+				}
+			]
+			x: 3.5d
+			y: 0.0d
+			shape: "hexagon"
+		}
+		{
+			dependencies: ["440FFCE345D97BEB"]
+			id: "389B5B3129B649F3"
+			tasks: [
+				{
+					id: "5F40D9955A734CBB"
+					type: "checkmark"
+				}
+			]
+			x: 3.0d
+			y: 1.75d
+			shape: "hexagon"
+		}
+		{
+			dependencies: ["440FFCE345D97BEB"]
+			id: "566B8936550C9A4D"
+			tasks: [
+				{
+					id: "0D3225F62C1D482A"
+					type: "checkmark"
+				}
+			]
+			x: 1.75d
+			y: 3.0d
+			shape: "hexagon"
+		}
+		{
+			dependencies: ["440FFCE345D97BEB"]
+			id: "61438AC938544407"
+			tasks: [
+				{
+					id: "471F66593CE63F2E"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: 3.5d
+			shape: "hexagon"
+		}
+		{
+			dependencies: ["440FFCE345D97BEB"]
+			id: "189DB7B48428D3CF"
+			tasks: [
+				{
+					id: "546D79B14B8F18E0"
+					type: "checkmark"
+				}
+			]
+			x: -1.75d
+			y: 3.0d
+			shape: "hexagon"
+		}
+		{
+			dependencies: ["440FFCE345D97BEB"]
+			id: "6D6EF2E6F0E90114"
+			tasks: [
+				{
+					id: "2E30ED02617E5B8B"
+					type: "checkmark"
+				}
+			]
+			x: -3.0d
+			y: 1.75d
+			shape: "hexagon"
+		}
+		{
+			dependencies: ["440FFCE345D97BEB"]
+			id: "7C330F27218517C7"
+			tasks: [
+				{
+					id: "4C968D0AB7E204E0"
+					type: "checkmark"
+				}
+			]
+			x: -3.5d
+			y: 0.0d
+			shape: "hexagon"
+		}
+		{
+			dependencies: ["440FFCE345D97BEB"]
+			id: "50D3912B7539F0FD"
+			tasks: [
+				{
+					id: "1E07C3CCA072E1A3"
+					type: "checkmark"
+				}
+			]
+			x: -3.0d
+			y: -1.75d
+			shape: "hexagon"
+		}
+		{
+			dependencies: ["440FFCE345D97BEB"]
+			id: "264F6C2DC0218409"
+			tasks: [
+				{
+					id: "4CBD40A181199C8C"
+					type: "checkmark"
+				}
+			]
+			x: -1.75d
+			y: -3.0d
+			shape: "hexagon"
+		}
+		{
+			dependencies: ["42F46883493F1690"]
+			id: "2A4FF3ED81E25203"
+			tasks: [
+				{
+					id: "3539CD0C319A395D"
+					item: {
+						count: 1
+						id: "minecraft:compass"
+					}
+					type: "item"
+				}
+			]
+			x: -1.5d
+			y: 5.5d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["2A4FF3ED81E25203"]
+			id: "4CA0D1B701FE55E2"
+			tasks: [
+				{
+					id: "311F737E5D22A6AD"
+					item: {
+						count: 1
+						id: "incognita:origin_compass"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 7.0d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["42F46883493F1690"]
+			id: "77182E8748F6D8DF"
+			tasks: [
+				{
+					id: "14414C873AAAB402"
+					item: {
+						count: 1
+						id: "incognita:radio"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 5.5d
+			shape: "diamond"
+			size: 1.25d
+		}
+	]
+}

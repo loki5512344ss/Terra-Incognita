@@ -38,6 +38,12 @@ neoForge {
             client()
             systemProperty("neoforge.enabledGameTestNamespaces", modId)
         }
+        // Scenario runner: ./gradlew runClientTest -> screenshots in run/clientTest/screenshots/ct-*.png
+        register("clientTest") {
+            client()
+            gameDirectory.set(file("run/clientTest"))
+            systemProperty("incognita.clientTest", "1")
+        }
         register("server") {
             server()
             programArgument("--nogui")

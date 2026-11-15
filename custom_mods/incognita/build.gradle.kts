@@ -68,12 +68,10 @@ neoForge {
 repositories {
     mavenCentral()
     maven("https://maven.maxhenkel.de/repository/public") // Simple Voice Chat API
-    maven("https://maven.blamejared.com") // Immersive Engineering API
 }
 
 dependencies {
     compileOnly("de.maxhenkel.voicechat:voicechat-api:2.6.27")
-    compileOnly("blusunrize.immersiveengineering:ImmersiveEngineering:1.21.1-12.4.2-194:api")
     testImplementation(platform("org.junit:junit-bom:5.11.4"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")

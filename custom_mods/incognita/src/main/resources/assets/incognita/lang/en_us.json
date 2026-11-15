@@ -12,15 +12,7 @@
   "incognita.radio.need_hold": "Hold a radio in your hand",
   "incognita.radio.need_on": "Hold a switched-on radio to transmit",
   "incognita.radio.tuned": "Tuned to %s MHz",
-  "item.incognita.projector": "Multiblock Projector",
-  "item.incognita.projector.hint1": "Right click a block: place the ghost. Shift + scroll: pick a structure.",
-  "item.incognita.projector.hint2": "R rotate, Z mirror, X remove the ghost",
-  "incognita.projector.none": "No structures found",
-  "incognita.projector.status": "%s (%s/%s), rotation %s°, %s",
-  "incognita.projector.mirrored": "mirrored",
-  "incognita.projector.normal": "normal",
-  "key.categories.incognita": "Incognita",
-  "key.incognita.projector.rotate": "Projector: rotate",
-  "key.incognita.projector.mirror": "Projector: mirror",
-  "key.incognita.projector.clear": "Projector: remove ghost"
+  "itemGroup.incognita": "Terra Incognita",
+  "item.incognita.origin_compass": "Origin Compass",
+  "item.incognita.origin_compass.hint": "Points to the center of the world"
 }

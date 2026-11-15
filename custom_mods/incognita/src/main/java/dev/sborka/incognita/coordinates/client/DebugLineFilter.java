@@ -3,7 +3,7 @@ package dev.sborka.incognita.coordinates.client;
 import java.util.List;
 import java.util.regex.Pattern;
 
-/** Decides which F3 debug lines expose the player's position (vanilla 1.21.1 prefixes). */
+/** Decides which F3 debug lines expose the player's position or heading (vanilla 1.21.1 prefixes). */
 public final class DebugLineFilter {
     private static final Pattern FORMATTING = Pattern.compile("§.");
     private static final List<String> PREFIXES = List.of(
@@ -11,7 +11,9 @@ public final class DebugLineFilter {
         // Flywheel F3 render origin (a real block position near the camera)
         "Origin:",
         // Vanilla heightmap lines: "CH S: 63 M: 63" and "SH S: 63 O: 63 M: 63 F: 63", absolute surface Y at the player's column
-        "CH ", "SH ");
+        "CH ", "SH ",
+        // "Facing: north (Towards negative Z) (yaw / pitch)" is a free compass; the real one is gated behind a recipe
+        "Facing:");
 
     private DebugLineFilter() {}
 

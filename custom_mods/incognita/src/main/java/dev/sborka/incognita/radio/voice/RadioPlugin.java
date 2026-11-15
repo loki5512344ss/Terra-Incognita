@@ -11,6 +11,7 @@ import de.maxhenkel.voicechat.api.events.MicrophonePacketEvent;
 import de.maxhenkel.voicechat.api.events.VoicechatServerStartedEvent;
 import de.maxhenkel.voicechat.api.events.VoicechatServerStoppedEvent;
 import dev.sborka.incognita.Incognita;
+import dev.sborka.incognita.radio.RadioConfig;
 
 /** Simple Voice Chat entry point. Only ever loaded by the voice chat mod, so it is safe without it. */
 @ForgeVoicechatPlugin
@@ -54,6 +55,7 @@ public final class RadioPlugin implements VoicechatPlugin {
             .setName("Radio")
             .setDescription("Volume of voices received over the radio")
             .build());
+        if (RadioConfig.disableGroups()) GroupLock.apply();
         router = new RadioRouter(api);
     }
 

@@ -39,14 +39,6 @@ versionRange = "[0,)"
 ordering = "AFTER"
 side = "BOTH"
 
-# Soft integration with Immersive Engineering (projector shows its multiblocks)
-[[dependencies.${mod_id}]]
-modId = "immersiveengineering"
-type = "optional"
-versionRange = "[0,)"
-ordering = "AFTER"
-side = "BOTH"
-
 [[mixins]]
 config = "incognita.mixins.json"
 

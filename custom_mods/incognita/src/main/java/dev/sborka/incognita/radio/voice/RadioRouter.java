@@ -21,7 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Voice routing for radios. Runs on the voice thread, so it only reads {@link RadioDirectory}.
  * A speaker who holds a switched-on radio is heard (through the radio effect) by everyone whose switched-on
  * radio is tuned to the same frequency, at any distance. Listeners within normal voice range hear the real
- * voice anyway and are skipped. Groups need a radio in the inventory.
+ * voice anyway and are skipped. Voice chat groups are switched off (see {@link GroupLock}): the radio replaces them.
  */
 final class RadioRouter {
     private static final long IDLE_MILLIS = 30_000;
@@ -54,7 +54,7 @@ final class RadioRouter {
 
         void end() {
             if (open) {
-                send(effect.squelch(SQUELCH_SAMPLES));
+                if (RadioConfig.effect()) send(effect.squelch(SQUELCH_SAMPLES));
                 channel.flush();
                 open = false;
             }
@@ -78,7 +78,7 @@ final class RadioRouter {
         Entry me = RadioDirectory.get(id);
         pruneIdle(id);
 
-        if (RadioConfig.groupsNeedRadio() && sender.isInGroup() && (me == null || !me.hasRadio())) {
+        if (RadioConfig.disableGroups() && sender.isInGroup()) {
             sender.setGroup(null);
         }
         if (me == null || me.transmitFreq() < 0) {
@@ -90,7 +90,7 @@ final class RadioRouter {
             endSession(id);
             return;
         }
-        List<VoicechatConnection> targets = targets(me);
+        List<VoicechatConnection> targets = targets(me, event.getPacket().isWhispering());
         Session session = sessions.computeIfAbsent(id, Session::new);
         session.lastUsed = System.currentTimeMillis();
         if (targets.isEmpty()) {
@@ -112,14 +112,17 @@ final class RadioRouter {
         session.send(pcm);
     }
 
-    private List<VoicechatConnection> targets(Entry speaker) {
-        double hearing = api.getVoiceChatDistance();
+    private List<VoicechatConnection> targets(Entry speaker, boolean whispering) {
+        // A whisper carries about half as far as normal speech (24 of 48 blocks by default); the API does not expose the exact value
+        double hearing = whispering ? api.getVoiceChatDistance() / 2.0 : api.getVoiceChatDistance();
+        boolean echo = RadioConfig.selfEcho();
         List<VoicechatConnection> out = new ArrayList<>();
         for (Entry e : RadioDirectory.snapshot().values()) {
-            if (e.id().equals(speaker.id()) || !e.receiveFreqs().contains(speaker.transmitFreq())) {
+            if (!e.receiveFreqs().contains(speaker.transmitFreq())) {
                 continue;
             }
-            if (e.dimension().equals(speaker.dimension()) && e.distanceSqr(speaker) < hearing * hearing) {
+            boolean self = e.id().equals(speaker.id());
+            if (self ? !echo : e.dimension().equals(speaker.dimension()) && e.distanceSqr(speaker) < hearing * hearing) {
                 continue;
             }
             VoicechatConnection c = api.getConnectionOf(e.id());
@@ -130,22 +133,13 @@ final class RadioRouter {
         return out;
     }
 
+    /** Second line of defence behind {@link GroupLock}: refuse every group, whoever asks. */
     void onGroup(CreateGroupEvent event) {
-        blockWithoutRadio(event.getConnection(), event::cancel);
+        if (RadioConfig.disableGroups()) event.cancel();
     }
 
     void onGroup(JoinGroupEvent event) {
-        blockWithoutRadio(event.getConnection(), event::cancel);
-    }
-
-    private void blockWithoutRadio(VoicechatConnection connection, Runnable cancel) {
-        if (!RadioConfig.groupsNeedRadio() || connection == null || connection.getPlayer() == null) {
-            return;
-        }
-        Entry e = RadioDirectory.get(connection.getPlayer().getUuid());
-        if (e == null || !e.hasRadio()) {
-            cancel.run();
-        }
+        if (RadioConfig.disableGroups()) event.cancel();
     }
 
     private void endSession(UUID id) {

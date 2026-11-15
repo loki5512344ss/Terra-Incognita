@@ -8,7 +8,8 @@ public final class RadioConfig {
 
     private static final ModConfigSpec.BooleanValue LOCAL_CHAT;
     private static final ModConfigSpec.IntValue CHAT_RADIUS;
-    private static final ModConfigSpec.BooleanValue GROUPS_NEED_RADIO;
+    private static final ModConfigSpec.BooleanValue DISABLE_GROUPS;
+    private static final ModConfigSpec.BooleanValue SELF_ECHO;
     private static final ModConfigSpec.IntValue MIN_FREQ;
     private static final ModConfigSpec.IntValue MAX_FREQ;
     private static final ModConfigSpec.BooleanValue EFFECT;
@@ -21,8 +22,11 @@ public final class RadioConfig {
             .define("localChat", true);
         CHAT_RADIUS = b.comment("Local chat radius in blocks")
             .defineInRange("chatRadius", 60, 1, 10_000);
-        GROUPS_NEED_RADIO = b.comment("Simple Voice Chat: creating or joining a group requires a radio in the inventory")
-            .define("groupsNeedRadio", true);
+        DISABLE_GROUPS = b.comment("Simple Voice Chat: groups are switched off completely (nobody can create or join one,",
+                "the group button disappears). Long-distance voice only works through the radio. Applied when the server starts")
+            .define("disableGroups", true);
+        SELF_ECHO = b.comment("Testing aid: the speaker also hears their own radio transmission, so the radio can be checked alone")
+            .define("selfEcho", false);
         MIN_FREQ = b.comment("Lowest frequency, in tenths of MHz (300 = 30.0)")
             .defineInRange("minFrequency", 300, 1, 99_999);
         MAX_FREQ = b.comment("Highest frequency, in tenths of MHz (1080 = 108.0)")
@@ -46,8 +50,12 @@ public final class RadioConfig {
         try { return CHAT_RADIUS.get(); } catch (IllegalStateException e) { return 60; }
     }
 
-    public static boolean groupsNeedRadio() {
-        try { return GROUPS_NEED_RADIO.get(); } catch (IllegalStateException e) { return true; }
+    public static boolean disableGroups() {
+        try { return DISABLE_GROUPS.get(); } catch (IllegalStateException e) { return true; }
+    }
+
+    public static boolean selfEcho() {
+        try { return SELF_ECHO.get(); } catch (IllegalStateException e) { return false; }
     }
 
     public static int minFreq() {

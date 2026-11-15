@@ -21,7 +21,7 @@ public final class RadioDirectory {
     private static final int REFRESH_TICKS = 4;
 
     public record Entry(UUID id, String dimension, double x, double y, double z,
-                        boolean hasRadio, int transmitFreq, Set<Integer> receiveFreqs) {
+                        int transmitFreq, Set<Integer> receiveFreqs) {
         public double distanceSqr(Entry other) {
             double dx = x - other.x, dy = y - other.y, dz = z - other.z;
             return dx * dx + dy * dy + dz * dz;
@@ -48,14 +48,12 @@ public final class RadioDirectory {
         Map<UUID, Entry> next = new HashMap<>();
         for (ServerPlayer p : event.getServer().getPlayerList().getPlayers()) {
             Set<Integer> rx = new HashSet<>();
-            boolean has = false;
             for (ItemStack s : RadioFinder.all(p)) {
-                has = true;
                 RadioState st = RadioState.of(s);
                 if (st.on()) rx.add(st.freq());
             }
             next.put(p.getUUID(), new Entry(p.getUUID(), p.level().dimension().location().toString(),
-                p.getX(), p.getY(), p.getZ(), has, RadioFinder.transmitFreq(p), Set.copyOf(rx)));
+                p.getX(), p.getY(), p.getZ(), RadioFinder.transmitFreq(p), Set.copyOf(rx)));
         }
         snapshot = Map.copyOf(next);
     }

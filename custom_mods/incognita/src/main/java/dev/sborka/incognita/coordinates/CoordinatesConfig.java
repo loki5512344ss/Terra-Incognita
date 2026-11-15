@@ -41,6 +41,9 @@ public final class CoordinatesConfig {
         "item.storagedrawers.remote_group_upgrade_bound.bound",
         "message.storagedrawers.updated_remote_binding",
         "ftbquests.message.configurator_bound",
+        // Jade: the optional "coordinates" lines a player can switch on in the Jade settings
+        "jade.blockpos",
+        "narration.jade.blockpos",
         // Create Aero Radar: only the coordinate-bearing keys (status_drive/loop/ballistics carry RPM and angles)
         "item.create_aero_radar.radar_link.gun_a_selected",
         "item.create_aero_radar.radar_link.gun_b_selected",

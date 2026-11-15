@@ -4,8 +4,11 @@ localChat = true
 # Default: 60
 # Range: 1 ~ 10000
 chatRadius = 60
-#Simple Voice Chat: creating or joining a group requires a radio in the inventory
-groupsNeedRadio = true
+#Simple Voice Chat: groups are switched off completely (nobody can create or join one,
+#the group button disappears). Long-distance voice only works through the radio. Applied when the server starts
+disableGroups = true
+#Testing aid: the speaker also hears their own radio transmission, so the radio can be checked alone
+selfEcho = false
 #Lowest frequency, in tenths of MHz (300 = 30.0)
 # Default: 300
 # Range: 1 ~ 99999

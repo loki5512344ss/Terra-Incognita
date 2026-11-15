@@ -39,7 +39,7 @@ class DebugLineFilterTest {
 
     @Test
     void otherLinesAreKept() {
-        assertFalse(DebugLineFilter.isCoordinateLine("Facing: north (Towards negative Z) (45.0 / 0.0)"));
+        assertTrue(DebugLineFilter.isCoordinateLine("Facing: north (Towards negative Z) (45.0 / 0.0)"));
         assertFalse(DebugLineFilter.isCoordinateLine("Biome: minecraft:plains"));
         assertFalse(DebugLineFilter.isCoordinateLine("Local Difficulty: 1.50 // 0.00 (Day 0)"));
         assertFalse(DebugLineFilter.isCoordinateLine("Client Light: 15 (15 sky, 0 block)"));

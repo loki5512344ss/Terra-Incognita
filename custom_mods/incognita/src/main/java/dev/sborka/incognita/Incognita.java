@@ -1,8 +1,9 @@
 package dev.sborka.incognita;
 
+import dev.sborka.incognita.compass.CompassModule;
 import dev.sborka.incognita.coordinates.CoordinatesModule;
 import dev.sborka.incognita.core.IncognitaModule;
-import dev.sborka.incognita.projector.ProjectorModule;
+import dev.sborka.incognita.core.IncognitaTab;
 import dev.sborka.incognita.radio.RadioModule;
 import dev.sborka.incognita.spawn.SpawnModule;
 
@@ -23,7 +24,7 @@ public final class Incognita {
         new CoordinatesModule(),
         new SpawnModule(),
         new RadioModule(),
-        new ProjectorModule()
+        new CompassModule()
     );
 
     public Incognita(IEventBus modBus, ModContainer container) {
@@ -31,5 +32,6 @@ public final class Incognita {
             LOGGER.info("Loading module '{}'", module.id());
             module.init(modBus, container);
         }
+        IncognitaTab.register(modBus);
     }
 }

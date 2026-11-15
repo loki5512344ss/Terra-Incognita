@@ -2,15 +2,14 @@ package dev.sborka.incognita.radio;
 
 import dev.sborka.incognita.Incognita;
 import dev.sborka.incognita.core.IncognitaModule;
+import dev.sborka.incognita.core.IncognitaTab;
 import dev.sborka.incognita.radio.link.RadioState;
 import java.util.function.Supplier;
 import net.minecraft.core.component.DataComponentType;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -39,13 +38,7 @@ public final class RadioModule implements IncognitaModule {
     public void init(IEventBus modBus, ModContainer container) {
         COMPONENTS.register(modBus);
         ITEMS.register(modBus);
-        modBus.addListener(RadioModule::onCreativeTab);
+        IncognitaTab.add(RADIO);
         container.registerConfig(ModConfig.Type.COMMON, RadioConfig.SPEC, "incognita-radio.toml");
-    }
-
-    private static void onCreativeTab(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            event.accept(RADIO.get());
-        }
     }
 }

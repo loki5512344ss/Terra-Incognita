@@ -203,6 +203,14 @@ public final class ClientTestDriver {
             var prop = ItemProperties.getProperty(stack, ResourceLocation.withDefaultNamespace("angle"));
             float value = prop == null ? Float.NaN : prop.call(stack, mc.level, player, 0);
             log(entry + " angle=" + value + " playerYaw=" + player.getYRot());
+            if (entry.startsWith("incognita:")) {
+                double toOrigin = Math.atan2(-player.getZ(), -player.getX()) / (Math.PI * 2);
+                double yaw = player.getYRot() / 360.0;
+                double expected = 0.5 - (yaw - Math.floor(yaw) - 0.25 - toOrigin);
+                expected -= Math.floor(expected);
+                log("origin compass check: real pos " + player.position() + " expected angle=" + expected
+                    + " actual=" + value + " delta=" + Math.abs(expected - value));
+            }
         }
     }
 

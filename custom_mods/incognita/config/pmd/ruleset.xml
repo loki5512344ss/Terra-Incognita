@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<ruleset name="incognita"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+    <description>Incognita mod rules: real defects first, style noise left out.</description>
+
+    <rule ref="category/java/errorprone.xml">
+        <exclude name="MissingSerialVersionUID"/>
+        <exclude name="AvoidFieldNameMatchingMethodName"/>
+        <exclude name="AvoidLiteralsInIfCondition"/>
+        <exclude name="NullAssignment"/>
+        <exclude name="AssignmentInOperand"/>
+        <exclude name="ReturnEmptyCollectionRatherThanNull"/>
+        <exclude name="CloseResource"/>
+        <exclude name="ImplicitSwitchFallThrough"/>
+        <!-- Minecraft code compares Component/enum/registry instances by identity on purpose. -->
+        <exclude name="CompareObjectsWithEquals"/>
+        <!-- Compat and masking hooks must never crash the client, and a missing optional mod throws LinkageError. -->
+        <exclude name="AvoidCatchingThrowable"/>
+        <exclude name="AvoidDuplicateLiterals"/>
+        <exclude name="AvoidAccessibilityAlteration"/>
+    </rule>
+    <rule ref="category/java/bestpractices.xml">
+        <exclude name="GuardLogStatement"/>
+        <exclude name="SystemPrintln"/>
+        <exclude name="UnitTestContainsTooManyAsserts"/>
+        <exclude name="UnitTestAssertionsShouldIncludeMessage"/>
+        <exclude name="LooseCoupling"/>
+        <exclude name="OneDeclarationPerLine"/>
+        <exclude name="AvoidReassigningParameters"/>
+        <exclude name="ForLoopCanBeForeach"/>
+        <exclude name="UseVarargs"/>
+        <exclude name="MethodReturnsInternalArray"/>
+        <exclude name="ArrayIsStoredDirectly"/>
+        <exclude name="PreserveStackTrace"/>
+    </rule>
+    <rule ref="category/java/multithreading.xml">
+        <!-- The generator and buffer swap use simple monitors; a lock refactor adds risk for no gain. -->
+        <exclude name="AvoidSynchronizedAtMethodLevel"/>
+        <exclude name="AvoidSynchronizedStatement"/>
+        <exclude name="NonThreadSafeSingleton"/>
+        <exclude name="DoNotUseThreads"/>
+        <exclude name="AvoidUsingVolatile"/>
+        <exclude name="UseConcurrentHashMap"/>
+    </rule>
+    <rule ref="category/java/performance.xml">
+        <exclude name="AvoidInstantiatingObjectsInLoops"/>
+        <exclude name="ConsecutiveLiteralAppends"/>
+        <exclude name="RedundantFieldInitializer"/>
+        <exclude name="InsufficientStringBufferDeclaration"/>
+        <exclude name="OptimizableToArrayCall"/>
+    </rule>
+    <rule ref="category/java/design.xml/SimplifyBooleanReturns"/>
+    <rule ref="category/java/design.xml/SingularField"/>
+    <rule ref="category/java/design.xml/UselessOverridingMethod"/>
+    <rule ref="category/java/design.xml/AvoidThrowingNullPointerException"/>
+    <rule ref="category/java/codestyle.xml/UnnecessaryImport"/>
+    <rule ref="category/java/codestyle.xml/UnnecessaryModifier"/>
+    <!-- Parentheses keep math readable (shader-style formulas), so UselessParentheses is not enabled. -->
+</ruleset>

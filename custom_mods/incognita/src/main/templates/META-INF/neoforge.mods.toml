@@ -44,3 +44,6 @@ config = "incognita.mixins.json"
 
 [[mixins]]
 config = "incognita.compat.mixins.json"
+
+[[mixins]]
+config = "incognita.lighting.mixins.json"

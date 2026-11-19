@@ -13,13 +13,10 @@ import net.minecraft.client.tutorial.TutorialSteps;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.repository.PackRepository;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.DataPackConfig;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.LevelSettings;
@@ -37,21 +34,32 @@ import net.neoforged.neoforge.common.NeoForge;
 public final class ClientTestDriver {
     public static final String PROPERTY = "incognita.clientTest";
     private static final String WORLD = "clienttest";
+    private static final String VOID_WORLD = "clienttest-void";
+    /** The clouds scenario has its own normal world, so its views are not changed by the other scenarios. */
+    private static final String CLOUDS_SCENARIO = "clouds";
+    private static final String CLOUDS_WORLD = "clienttest-clouds";
+    /** Scenario names that run in the reused empty flat world instead of the normal one. */
+    private static final String VOID_SCENARIO = "skyvoid";
 
     private final Minecraft mc = Minecraft.getInstance();
     private final List<Step> steps = new ArrayList<>();
     private int index;
     private int wait;
     private boolean worldRequested;
+    private boolean voidWorld;
+    private String worldName = WORLD;
 
     @FunctionalInterface
-    private interface Action {
+    public interface Action {
         void run() throws Exception;
     }
 
-    private record Step(String name, int delayAfter, Action action) {}
+    public record Step(String name, int delayAfter, Action action) {}
 
     private ClientTestDriver() {
+        if (addScenarioSteps(scenario())) {
+            return;
+        }
         steps.add(new Step("settle", 100, () -> {
             mc.options.tutorialStep = TutorialSteps.NONE;
             mc.getTutorial().stop();
@@ -82,6 +90,50 @@ public final class ClientTestDriver {
             log("DONE");
             mc.stop();
         }));
+    }
+
+    /**
+     * Looks up {@code devtest.scenario.<Name>Scenario} by the scenario name and lets it add its steps. Each scenario is a
+     * class with {@code static void addSteps(List<Step>, ClientTestDriver)}. Returns false for the default GUI run.
+     */
+    private boolean addScenarioSteps(String name) {
+        if (name.isBlank() || "1".equals(name)) {
+            return false;
+        }
+        voidWorld = VOID_SCENARIO.equals(name);
+        worldName = voidWorld ? VOID_WORLD : name.startsWith(CLOUDS_SCENARIO) ? CLOUDS_WORLD : WORLD;
+        String base = voidWorld ? "sky" : name;
+        String cls = "dev.sborka.incognita.devtest.scenario." + Character.toUpperCase(base.charAt(0)) + base.substring(1)
+            + "Scenario";
+        try {
+            Class<?> type;
+            try {
+                type = Class.forName(cls);
+            } catch (ClassNotFoundException missing) {
+                // Further scenarios live in a subpackage to keep the package within its file limit.
+                type = Class.forName(cls.replace(".scenario.", ".scenario.extra."));
+            }
+            Method add = type.getDeclaredMethod("addSteps", List.class, ClientTestDriver.class);
+            add.invoke(null, steps, this);
+            return true;
+        } catch (ReflectiveOperationException e) {
+            log("unknown scenario '" + name + "' (" + cls + "): " + e);
+            return false;
+        }
+    }
+
+    /** Scenario name from the system property value or from the content of the flag file; blank means the default. */
+    private static String scenario() {
+        String value = System.getProperty(PROPERTY, "");
+        try {
+            java.nio.file.Path flag = net.neoforged.fml.loading.FMLPaths.GAMEDIR.get().resolve("incognita-clienttest.flag");
+            if (java.nio.file.Files.exists(flag)) {
+                value = java.nio.file.Files.readString(flag).trim();
+            }
+        } catch (java.io.IOException e) {
+            log("could not read the flag file: " + e.getMessage());
+        }
+        return value;
     }
 
     public static void register() {
@@ -115,12 +167,36 @@ public final class ClientTestDriver {
         wait = step.delayAfter();
     }
 
+    /** True when the scenario runs in the empty world: no terrain, no clouds, only the sky. */
+    public boolean isVoidWorld() {
+        return voidWorld;
+    }
+
+    /** Reuses the scenario's world between runs so screenshots compare the same place. */
     private void createWorld() {
-        log("creating world " + WORLD);
-        LevelSettings settings = new LevelSettings(WORLD, GameType.CREATIVE, false, Difficulty.PEACEFUL, true,
+        String name = worldName;
+        if (mc.getLevelSource().levelExists(name)) {
+            log("loading the existing world " + name);
+            mc.createWorldOpenFlows().openWorld(name, () -> { });
+            return;
+        }
+        log("creating world " + name);
+        LevelSettings settings = new LevelSettings(name, GameType.CREATIVE, false, Difficulty.PEACEFUL, true,
             new GameRules(), WorldDataConfiguration.DEFAULT);
-        mc.createWorldOpenFlows().createFreshLevel(WORLD, settings, new WorldOptions(12345L, false, false),
-            WorldPresets::createNormalWorldDimensions, mc.screen);
+        mc.createWorldOpenFlows().createFreshLevel(name, settings, new WorldOptions(12345L, false, false),
+            voidWorld ? ClientTestDriver::voidDimensions : WorldPresets::createNormalWorldDimensions, mc.screen);
+    }
+
+    /** Overworld with a flat generator that has no layers: nothing but sky. */
+    private static net.minecraft.world.level.levelgen.WorldDimensions voidDimensions(
+        net.minecraft.core.RegistryAccess access) {
+        var biome = access.registryOrThrow(net.minecraft.core.registries.Registries.BIOME)
+            .getHolderOrThrow(net.minecraft.world.level.biome.Biomes.PLAINS);
+        var flat = new net.minecraft.world.level.levelgen.flat.FlatLevelGeneratorSettings(
+            java.util.Optional.empty(), biome, List.of());
+        flat.updateLayers();
+        return WorldPresets.createNormalWorldDimensions(access).replaceOverworldGenerator(access,
+            new net.minecraft.world.level.levelgen.FlatLevelSource(flat));
     }
 
     /** Opens the FTB Quests book by reflection (soft dependency) and queues one shot per chapter plus one quest view. */
@@ -185,11 +261,11 @@ public final class ClientTestDriver {
         throw new IllegalStateException("no method " + name);
     }
 
-    private void command(String cmd) {
+    public void command(String cmd) {
         mc.player.connection.sendCommand(cmd);
     }
 
-    private void shot(String name) {
+    public void shot(String name) {
         net.minecraft.client.Screenshot.grab(mc.gameDirectory, "ct-" + name + ".png", mc.getMainRenderTarget(),
             msg -> log("screenshot " + name + ": " + msg.getString()));
     }
@@ -236,7 +312,7 @@ public final class ClientTestDriver {
         }
         for (Method m : CreativeModeInventoryScreen.class.getDeclaredMethods()) {
             if (m.getParameterCount() == 1 && m.getParameterTypes()[0] == CreativeModeTab.class
-                && m.getName().equals("selectTab")) {
+                && "selectTab".equals(m.getName())) {
                 m.setAccessible(true);
                 m.invoke(mc.screen, target);
                 log("selected tab " + target.getDisplayName().getString());
@@ -246,7 +322,7 @@ public final class ClientTestDriver {
         log("selectTab not found");
     }
 
-    private static void log(String msg) {
+    public static void log(String msg) {
         Incognita.LOGGER.info("[clientTest] {}", msg);
     }
 }

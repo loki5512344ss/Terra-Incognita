@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- Mixin classes are generated into the target by Mixin; bytecode rules do not apply to them. -->
+    <Match>
+        <Package name="~dev\.sborka\.incognita\..*mixin.*"/>
+    </Match>
+    <!-- Cloud mesh constants are shared read-only vertex data uploaded to the GPU. -->
+    <Match>
+        <Class name="dev.sborka.incognita.weather.clouds.gl.Mesh"/>
+        <Bug pattern="MS_MUTABLE_ARRAY,MS_PKGPROTECT"/>
+    </Match>
+    <!-- The spoofer wants a deterministic value per time interval, so it seeds a fresh Random on purpose. -->
+    <Match>
+        <Class name="dev.sborka.incognita.coordinates.Spoofer"/>
+        <Bug pattern="DMI_RANDOM_USED_ONLY_ONCE"/>
+    </Match>
+    <!-- Exposing mutable state is intentional in small value holders shared with the renderer. -->
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP,EI_EXPOSE_REP2,MS_EXPOSE_REP"/>
+    </Match>
+</FindBugsFilter>

@@ -1,0 +1,13 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "dev.sborka.incognita.lighting.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ClientLevelMixin",
+    "SodiumBlockRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

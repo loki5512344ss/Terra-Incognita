@@ -113,12 +113,24 @@ public final class CoordinatesConfig {
         }
     }
 
-    /** Effective key list: configured keys plus {@link #DEFAULT_KEYS}. */
+    /** The merged key set for one configured list. The set is read on every text component built, so it is cached. */
+    private record KeysCache(java.util.Collection<? extends String> source, Set<String> keys) {}
+
+    private static volatile KeysCache keysCache;
+    private static final Set<String> DEFAULTS_ONLY = Set.copyOf(effectiveKeys(List.of()));
+
+    /** Effective key list: configured keys plus {@link #DEFAULT_KEYS}. Immutable, rebuilt only when the config changes. */
     public static Set<String> translationKeys() {
         try {
-            return effectiveKeys(TRANSLATION_KEYS.get());
+            List<? extends String> configured = TRANSLATION_KEYS.get();
+            KeysCache cache = keysCache;
+            if (cache == null || cache.source() != configured) {
+                cache = new KeysCache(configured, Set.copyOf(effectiveKeys(configured)));
+                keysCache = cache;
+            }
+            return cache.keys();
         } catch (IllegalStateException notLoaded) {
-            return effectiveKeys(List.of());
+            return DEFAULTS_ONLY;
         }
     }
 

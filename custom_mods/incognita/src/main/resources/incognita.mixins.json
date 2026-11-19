@@ -8,7 +8,10 @@
   ],
   "client": [
     "KeyboardHandlerMixin",
-    "TranslatableContentsMixin"
+    "LevelRendererCloudsMixin",
+    "rain.LevelRendererRainMixin",
+    "TranslatableContentsMixin",
+    "sky.LevelRendererSkyMixin"
   ],
   "injectors": {
     "defaultRequire": 1

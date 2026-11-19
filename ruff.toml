@@ -1,0 +1,7 @@
+# Lint real defects in the helper scripts; style-only rules stay off.
+line-length = 130
+target-version = "py311"
+
+[lint]
+select = ["E", "F", "B", "W"]
+ignore = ["E401", "E501", "E701", "E702", "E731", "E741"]

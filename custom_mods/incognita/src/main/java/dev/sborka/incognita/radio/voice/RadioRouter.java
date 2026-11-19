@@ -43,7 +43,7 @@ final class RadioRouter {
         long lastUsed = System.currentTimeMillis();
 
         Session(UUID speaker) {
-            channel = api.createStaticAudioChannel(UUID.nameUUIDFromBytes(("incognita_radio:" + speaker).getBytes()));
+            channel = api.createStaticAudioChannel(UUID.nameUUIDFromBytes(("incognita_radio:" + speaker).getBytes(java.nio.charset.StandardCharsets.UTF_8)));
             channel.setBypassGroupIsolation(true);
             channel.setCategory(RadioPlugin.CATEGORY);
         }

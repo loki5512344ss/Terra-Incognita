@@ -2,6 +2,8 @@ plugins {
     `java-library`
     id("net.neoforged.moddev") version "2.0.148"
     idea
+    pmd
+    id("com.github.spotbugs") version "6.1.7"
 }
 
 val modId = property("mod_id") as String
@@ -42,7 +44,8 @@ neoForge {
         register("clientTest") {
             client()
             gameDirectory.set(file("run/clientTest"))
-            systemProperty("incognita.clientTest", "1")
+            // ./gradlew runClientTest -PctScenario=weather picks the scenario; the default runs the GUI checks.
+            systemProperty("incognita.clientTest", providers.gradleProperty("ctScenario").orElse("1").get())
         }
         register("server") {
             server()
@@ -74,13 +77,62 @@ neoForge {
 repositories {
     mavenCentral()
     maven("https://maven.maxhenkel.de/repository/public") // Simple Voice Chat API
+    exclusiveContent {
+        forRepository { maven("https://api.modrinth.com/maven") }
+        filter { includeGroup("maven.modrinth") }
+    }
+}
+
+// Sodium is compile-only (the lighting mixin targets its mesher). The published file is a jar-in-jar wrapper, so the
+// real classes (and the Fabric rendering API jars it bundles) are extracted from META-INF/jarjar.
+val sodiumWrapper: Configuration = configurations.create("sodiumWrapper") { isTransitive = false }
+val extractSodium = tasks.register<Sync>("extractSodium") {
+    from(zipTree(sodiumWrapper.elements.map { it.first().asFile })) {
+        include("META-INF/jarjar/*.jar")
+        eachFile { path = name }
+        includeEmptyDirs = false
+    }
+    into(layout.buildDirectory.dir("sodium-libs"))
 }
 
 dependencies {
+    sodiumWrapper("maven.modrinth:sodium:mc1.21.1-0.8.13-neoforge")
+    compileOnly(fileTree(layout.buildDirectory.dir("sodium-libs")) { include("*.jar") }.builtBy(extractSodium))
     compileOnly("de.maxhenkel.voicechat:voicechat-api:2.6.27")
     testImplementation(platform("org.junit:junit-bom:5.11.4"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation("com.tngtech.archunit:archunit-junit5:1.3.0") {
+        exclude(group = "org.slf4j") // NeoForge pins slf4j strictly; ArchUnit only needs the API that is already there
+    }
+}
+
+// Static analysis. Reports land in build/reports/{pmd,spotbugs}; `./gradlew check` runs them with the tests.
+pmd {
+    toolVersion = "7.8.0"
+    ruleSets = emptyList()
+    ruleSetFiles = files("config/pmd/ruleset.xml")
+    isConsoleOutput = true
+    isIgnoreFailures = false
+}
+
+tasks.pmdTest {
+    enabled = false // tests repeat literals and assert freely on purpose
+}
+
+tasks.pmdMain {
+    // Mixin classes are abstract with private injector methods that only Mixin calls; PMD reads them as defects.
+    exclude("**/mixin/**")
+}
+
+spotbugs {
+    toolVersion = "4.8.6"
+    excludeFilter.set(file("config/spotbugs/exclude.xml"))
+    ignoreFailures.set(false)
+}
+tasks.withType<com.github.spotbugs.snom.SpotBugsTask>().configureEach {
+    reports.create("html") { required.set(true) }
+    reports.create("xml") { required.set(true) }
 }
 
 val generateModMetadata = tasks.register<ProcessResources>("generateModMetadata") {
@@ -115,6 +167,12 @@ tasks.withType<JavaCompile>().configureEach {
 
 tasks.test {
     useJUnitPlatform()
+    // The NeoForge unit-test runner changes the working directory, so structure tests need the real project path.
+    systemProperty("incognita.projectDir", projectDir.absolutePath)
+}
+
+tasks.spotbugsTest {
+    enabled = false // analyse shipped code only
 }
 
 tasks.jar {

@@ -14,5 +14,10 @@
   "incognita.radio.tuned": "Настроено на %s МГц",
   "itemGroup.incognita": "Terra Incognita",
   "item.incognita.origin_compass": "Компас центра мира",
-  "item.incognita.origin_compass.hint": "Указывает на центр мира"
+  "item.incognita.origin_compass.hint": "Указывает на центр мира",
+  "block.incognita.lamp_red": "Красная тестовая лампа",
+  "block.incognita.lamp_green": "Зелёная тестовая лампа",
+  "block.incognita.lamp_blue": "Синяя тестовая лампа",
+  "block.incognita.lamp_purple": "Фиолетовая тестовая лампа",
+  "block.incognita.lamp_orange": "Оранжевая тестовая лампа"
 }

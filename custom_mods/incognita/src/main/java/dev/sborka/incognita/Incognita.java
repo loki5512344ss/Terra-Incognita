@@ -6,6 +6,7 @@ import dev.sborka.incognita.core.IncognitaModule;
 import dev.sborka.incognita.core.IncognitaTab;
 import dev.sborka.incognita.radio.RadioModule;
 import dev.sborka.incognita.spawn.SpawnModule;
+import dev.sborka.incognita.weather.WeatherModule;
 
 import java.util.List;
 import net.neoforged.api.distmarker.Dist;
@@ -27,7 +28,9 @@ public final class Incognita {
         new CoordinatesModule(),
         new SpawnModule(),
         new RadioModule(),
-        new CompassModule()
+        new CompassModule(),
+        new WeatherModule(),
+        new dev.sborka.incognita.lighting.LightingModule()
     );
 
     public Incognita(IEventBus modBus, ModContainer container) {

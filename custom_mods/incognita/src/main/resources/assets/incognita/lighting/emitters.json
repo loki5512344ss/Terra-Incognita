@@ -1,0 +1,299 @@
+{
+  "blocks": {
+    "incognita:lamp_red": {
+      "color": "#ff2020"
+    },
+    "incognita:lamp_green": {
+      "color": "#20ff30"
+    },
+    "incognita:lamp_blue": {
+      "color": "#2050ff"
+    },
+    "incognita:lamp_purple": {
+      "color": "#b030ff"
+    },
+    "incognita:lamp_orange": {
+      "color": "#ff8a10"
+    },
+    "minecraft:torch": {
+      "color": "#ff9a30"
+    },
+    "minecraft:wall_torch": {
+      "color": "#ff9a30"
+    },
+    "minecraft:soul_torch": {
+      "color": "#30a8ff"
+    },
+    "minecraft:soul_wall_torch": {
+      "color": "#30a8ff"
+    },
+    "minecraft:redstone_torch": {
+      "color": "#ff2a1a"
+    },
+    "minecraft:redstone_wall_torch": {
+      "color": "#ff2a1a"
+    },
+    "minecraft:lantern": {
+      "color": "#ffb050"
+    },
+    "minecraft:soul_lantern": {
+      "color": "#30a8ff"
+    },
+    "minecraft:campfire": {
+      "color": "#ff9030"
+    },
+    "minecraft:soul_campfire": {
+      "color": "#30a8ff"
+    },
+    "minecraft:fire": {
+      "color": "#ff8a28"
+    },
+    "minecraft:soul_fire": {
+      "color": "#30a8ff"
+    },
+    "minecraft:glowstone": {
+      "color": "#ffd070"
+    },
+    "minecraft:sea_lantern": {
+      "color": "#c8f4ff"
+    },
+    "minecraft:shroomlight": {
+      "color": "#ff9a48"
+    },
+    "minecraft:ochre_froglight": {
+      "color": "#ffd868"
+    },
+    "minecraft:verdant_froglight": {
+      "color": "#80ff98"
+    },
+    "minecraft:pearlescent_froglight": {
+      "color": "#f0a0ff"
+    },
+    "minecraft:end_rod": {
+      "color": "#f4f0ff"
+    },
+    "minecraft:glow_lichen": {
+      "color": "#a8ffc0"
+    },
+    "minecraft:magma_block": {
+      "color": "#ff6a20"
+    },
+    "minecraft:jack_o_lantern": {
+      "color": "#ffa030"
+    },
+    "minecraft:redstone_lamp": {
+      "color": "#ff9a60"
+    },
+    "minecraft:beacon": {
+      "color": "#e8f4ff"
+    },
+    "minecraft:respawn_anchor": {
+      "color": "#c050ff"
+    },
+    "minecraft:crying_obsidian": {
+      "color": "#8030ff"
+    },
+    "minecraft:candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:cave_vines": {
+      "color": "#ffc850"
+    },
+    "minecraft:cave_vines_plant": {
+      "color": "#ffc850"
+    },
+    "minecraft:amethyst_cluster": {
+      "color": "#b070ff"
+    },
+    "minecraft:large_amethyst_bud": {
+      "color": "#b070ff"
+    },
+    "minecraft:medium_amethyst_bud": {
+      "color": "#b070ff"
+    },
+    "minecraft:small_amethyst_bud": {
+      "color": "#b070ff"
+    },
+    "minecraft:sculk_catalyst": {
+      "color": "#40d0ff"
+    },
+    "minecraft:sculk_sensor": {
+      "color": "#40d0ff"
+    },
+    "minecraft:enchanting_table": {
+      "color": "#8090ff"
+    },
+    "minecraft:conduit": {
+      "color": "#80f0ff"
+    },
+    "minecraft:white_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:white_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:orange_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:orange_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:magenta_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:magenta_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:light_blue_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:light_blue_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:yellow_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:yellow_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:lime_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:lime_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:pink_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:pink_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:gray_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:gray_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:light_gray_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:light_gray_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:cyan_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:cyan_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:purple_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:purple_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:blue_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:blue_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:brown_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:brown_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:green_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:green_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:red_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:red_candle_cake": {
+      "color": "#ffb868"
+    },
+    "minecraft:black_candle": {
+      "color": "#ffb868"
+    },
+    "minecraft:black_candle_cake": {
+      "color": "#ffb868"
+    }
+  },
+  "items": {
+    "incognita:lamp_red": {
+      "color": "#ff2020",
+      "level": 14
+    },
+    "incognita:lamp_green": {
+      "color": "#20ff30",
+      "level": 14
+    },
+    "incognita:lamp_blue": {
+      "color": "#2050ff",
+      "level": 14
+    },
+    "incognita:lamp_purple": {
+      "color": "#b030ff",
+      "level": 14
+    },
+    "incognita:lamp_orange": {
+      "color": "#ff8a10",
+      "level": 14
+    },
+    "minecraft:torch": {
+      "color": "#ff9a30",
+      "level": 14
+    },
+    "minecraft:soul_torch": {
+      "color": "#30a8ff",
+      "level": 10
+    },
+    "minecraft:lantern": {
+      "color": "#ffb050",
+      "level": 15
+    },
+    "minecraft:soul_lantern": {
+      "color": "#30a8ff",
+      "level": 12
+    },
+    "minecraft:glowstone": {
+      "color": "#ffd070",
+      "level": 15
+    },
+    "minecraft:redstone_torch": {
+      "color": "#ff2a1a",
+      "level": 7
+    },
+    "minecraft:lava_bucket": {
+      "color": "#ff7a20",
+      "level": 15
+    },
+    "minecraft:blaze_rod": {
+      "color": "#ff9a20",
+      "level": 12
+    },
+    "minecraft:fire_charge": {
+      "color": "#ff8a28",
+      "level": 11
+    },
+    "minecraft:glow_berries": {
+      "color": "#ffc850",
+      "level": 6
+    },
+    "minecraft:glowstone_dust": {
+      "color": "#ffd070",
+      "level": 8
+    },
+    "minecraft:nether_star": {
+      "color": "#d8e8ff",
+      "level": 14
+    }
+  }
+}

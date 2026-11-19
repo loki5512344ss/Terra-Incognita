@@ -14,5 +14,10 @@
   "incognita.radio.tuned": "Tuned to %s MHz",
   "itemGroup.incognita": "Terra Incognita",
   "item.incognita.origin_compass": "Origin Compass",
-  "item.incognita.origin_compass.hint": "Points to the center of the world"
+  "item.incognita.origin_compass.hint": "Points to the center of the world",
+  "block.incognita.lamp_red": "Red Test Lamp",
+  "block.incognita.lamp_green": "Green Test Lamp",
+  "block.incognita.lamp_blue": "Blue Test Lamp",
+  "block.incognita.lamp_purple": "Purple Test Lamp",
+  "block.incognita.lamp_orange": "Orange Test Lamp"
 }

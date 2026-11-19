@@ -61,7 +61,6 @@ KineticGrip-1.21.1-1.0.5.jar
 konkrete_neoforge_1.9.9_MC_1.21.jar
 kubejs-create-neoforge-2101.3.1-build.18.jar
 kubejs-neoforge-2101.7.2-build.381.jar
-lambdynamiclights-4.8.11+1.21.1.jar
 letsdo-vinery-neoforge-1.5.6.jar
 lithostitched-1.8.1-neoforge-21.1.jar
 lootr-neoforge-1.21.1-1.11.38.127.jar
@@ -106,6 +105,7 @@ trashcans-1.1.2-neoforge-mc1.21.jar
 trashslot-neoforge-1.21.1-21.1.11.jar
 voicechat-neoforge-1.21.1-2.6.27.jar
 YungsApi-1.21.1-NeoForge-5.1.9.jar
+zakoopt-2.0.4-1.21.1-neoforge.jar
 ## disabled
 ftb-chunks-neoforge-2101.1.23.jar
 ImmersivePetroleum-1.21.1-4.5.0-39.jar

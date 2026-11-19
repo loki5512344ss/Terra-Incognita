@@ -1,6 +1,6 @@
-# Собирает мод Incognita и zip сборки в формате CurseForge.
-#  - push в main и pull request: zip лежит в артефактах запуска (хранится 30 дней)
-#  - тег вида v1.2.3: дополнительно создаётся релиз GitHub с этим zip и отдельным jar мода
+# Builds the Incognita mod and the pack zip in CurseForge format.
+#  - push to main and pull requests: the zip is kept in the run artifacts (30 days)
+#  - tag like v1.2.3: also creates a GitHub release with this zip and the mod jar on its own
 name: pack
 
 on:
@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0          # нужны теги: по ним считается версия сборки
+          fetch-depth: 0          # tags are needed: the pack version is derived from them
 
       - uses: actions/setup-java@v4
         with:
@@ -58,10 +58,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # тег с суффиксом (v0.1.0-alpha.1, v0.2.0-beta.3) публикуется как pre-release
+          # a tag with a suffix (v0.1.0-alpha.1, v0.2.0-beta.3) is published as a pre-release
           flags=()
           [[ "$GITHUB_REF_NAME" == *-* ]] && flags+=(--prerelease)
-          # кроме zip сборки отдельно прикладываем jar мода Incognita (в zip он лежит в overrides/mods)
-          jar=$(ls custom_mods/incognita/build/libs/incognita-*.jar | grep -v sources | tail -1)
+          # besides the pack zip, attach the Incognita jar on its own (inside the zip it lives in overrides/mods)
+          jar=$(find custom_mods/incognita/build/libs -maxdepth 1 -name 'incognita-*.jar' ! -name '*sources*' | sort | tail -1)
           gh release create "$GITHUB_REF_NAME" dist/*-curseforge.zip "$jar" \
             --title "Terra Incognita ${GITHUB_REF_NAME#v}" --generate-notes "${flags[@]}"

@@ -18,3 +18,4 @@ local_script/
 .superpowers/
 ref/
 __pycache__/
+.eclipse/

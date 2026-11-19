@@ -1,38 +1,38 @@
-// Усложнение машин TFMG: к цепочке сталь/нефть добавлены наши промежуточные предметы
-// (футеровка, термопара, манометр), которые собираются на Create sequenced assembly.
+// TFMG machine gates: our intermediate items are added to the steel/oil chain
+// (lining, thermocouple, pressure gauge), built with Create sequenced assembly.
 ServerEvents.recipes(event => {
   if (!Platform.isLoaded('tfmg')) return
 
   const sa = event.recipes.create
 
-  // --- Огнеупорная футеровка: латунь + огнеупорный кирпич + шлак ---
+  // --- Refractory lining: brass + fireproof brick + slag ---
   sa.sequenced_assembly(['kubejs:refractory_lining'], 'create:brass_sheet', [
     sa.deploying('kubejs:incomplete_refractory_lining', ['kubejs:incomplete_refractory_lining', 'tfmg:fireproof_brick']),
     sa.filling('kubejs:incomplete_refractory_lining', ['kubejs:incomplete_refractory_lining', Fluid.of('tfmg:molten_slag', 90)]),
     sa.pressing('kubejs:incomplete_refractory_lining', 'kubejs:incomplete_refractory_lining')
   ]).transitionalItem('kubejs:incomplete_refractory_lining').loops(2).id('sborka:refractory_lining')
 
-  // --- Термопара: железный лист + медная и константановая проволока ---
+  // --- Thermocouple: iron sheet + copper and constantan wire ---
   sa.sequenced_assembly(['kubejs:thermocouple'], 'create:iron_sheet', [
     sa.deploying('kubejs:incomplete_thermocouple', ['kubejs:incomplete_thermocouple', 'tfmg:copper_wire']),
     sa.deploying('kubejs:incomplete_thermocouple', ['kubejs:incomplete_thermocouple', 'tfmg:constantan_wire']),
     sa.pressing('kubejs:incomplete_thermocouple', 'kubejs:incomplete_thermocouple')
   ]).transitionalItem('kubejs:incomplete_thermocouple').loops(1).id('sborka:thermocouple')
 
-  // --- Манометр: латунный лист + стекло + электронная лампа ---
+  // --- Pressure gauge: brass sheet + glass + electron tube ---
   sa.sequenced_assembly(['kubejs:pressure_gauge'], 'create:brass_sheet', [
     sa.deploying('kubejs:incomplete_pressure_gauge', ['kubejs:incomplete_pressure_gauge', 'minecraft:glass_pane']),
     sa.deploying('kubejs:incomplete_pressure_gauge', ['kubejs:incomplete_pressure_gauge', 'create:electron_tube']),
     sa.pressing('kubejs:incomplete_pressure_gauge', 'kubejs:incomplete_pressure_gauge')
   ]).transitionalItem('kubejs:incomplete_pressure_gauge').loops(1).id('sborka:pressure_gauge')
 
-  // --- Гейты: переписываем крафты машин ---
+  // --- Gates: rewrite the machine recipes ---
   const redo = (id, output, count, pattern, key) => {
     event.remove({ id: 'tfmg:crafting/materials/' + id })
     event.shaped(Item.of(output, count), pattern, key).id('sborka:tfmg_' + id)
   }
 
-  // Доменная печь и сталь
+  // Blast furnace and steel
   redo('coke_oven', 'tfmg:coke_oven', 2, [' K ', 'CIC', ' C '], {
     K: 'kubejs:thermocouple', C: '#c:ingots/cast_iron', I: 'create:industrial_iron_block'
   })
@@ -51,7 +51,7 @@ ServerEvents.recipes(event => {
     K: 'kubejs:thermocouple', L: 'kubejs:refractory_lining'
   })
 
-  // Нефть: добыча и перегонка требуют манометр
+  // Oil: extraction and refining need a pressure gauge
   redo('pumpjack_base', 'tfmg:pumpjack_base', 1, ['STG', 'MCM', 'OQO'], {
     S: '#c:strings', T: 'tfmg:steel_fluid_tank', G: 'kubejs:pressure_gauge',
     M: 'tfmg:steel_mechanism', C: 'tfmg:heavy_machinery_casing', O: 'tfmg:steel_pipe', Q: 'tfmg:industrial_pipe'

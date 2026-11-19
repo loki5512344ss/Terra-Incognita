@@ -559,14 +559,6 @@
       }
     },
     {
-      "file": "lambdynamiclights-4.8.11+1.21.1.jar",
-      "name": "LambDynamicLights",
-      "curseforge": {
-        "project": 393442,
-        "file": 8780227
-      }
-    },
-    {
       "file": "letsdo-vinery-neoforge-1.5.6.jar",
       "name": "[Let's Do] Vinery",
       "curseforge": {
@@ -834,6 +826,14 @@
       "curseforge": {
         "project": 416089,
         "file": 9350472
+      }
+    },
+    {
+      "file": "zakoopt-2.0.4-1.21.1-neoforge.jar",
+      "name": "ZakoOpt",
+      "curseforge": {
+        "project": 1731365,
+        "file": 9407184
       }
     }
   ]

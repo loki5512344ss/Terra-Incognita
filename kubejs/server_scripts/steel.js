@@ -1,11 +1,11 @@
-// Одна сталь на всю сборку: сталь делает только TFMG (доменная печь -> расплав -> литейная форма).
-// Сталь IE остаётся в реестре, но больше нигде не крафтится; все рецепты, где нужна сталь, принимают тег c:ingots/steel.
+// One steel for the whole pack: only TFMG makes it (blast furnace -> melt -> casting mold).
+// IE steel stays in the registry but is no longer craftable; every recipe that needs steel accepts the c:ingots/steel tag.
 ServerEvents.recipes(event => {
   if (!Platform.isLoaded('tfmg')) return
 
-  // Слиток и пыль стали IE и доменные печи IE (список — startup_scripts/removed.js)
+  // IE steel ingot and dust and the IE blast furnaces (list in startup_scripts/removed.js)
   global.terraRemoved.ieSteel.forEach(id => event.remove({ output: id }))
 
-  // Рецепты IE, которые просили именно свой слиток, теперь принимают любую сталь (то есть TFMG)
+  // IE recipes that asked for the IE ingot now accept any steel (that is, TFMG steel)
   event.replaceInput({ mod: 'immersiveengineering' }, 'immersiveengineering:ingot_steel', '#c:ingots/steel')
 })

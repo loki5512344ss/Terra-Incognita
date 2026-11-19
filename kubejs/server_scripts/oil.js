@@ -1,17 +1,17 @@
-// Одна нефть: добыча и перегонка только из TFMG (качалка -> перегонка -> дизель/бензин/керосин).
-//  - Нефтяные машины IE убраны. Immersive Petroleum вырезан из сборки целиком (jar отключён).
-//  - Create Diesel Generators остаётся ради двигателей: они топятся тегами c:diesel / c:gasoline,
-//    в которые TFMG уже добавляет свои жидкости, так что двигатели работают на топливе TFMG без доработок.
-//    Свою добычу и перегонку нефти CDG теряет; биотопливо (этанол, растительное масло, биодизель) остаётся.
+// One oil: extraction and refining come only from TFMG (pumpjack -> distillation -> diesel/gasoline/kerosene).
+//  - IE oil machines are removed. Immersive Petroleum is cut from the pack entirely (jar disabled).
+//  - Create Diesel Generators stays for its engines: they burn the c:diesel / c:gasoline tags,
+//    which TFMG already fills with its fluids, so the engines run on TFMG fuel without changes.
+//    CDG loses its own oil extraction and refining; biofuel (ethanol, plant oil, biodiesel) stays.
 ServerEvents.recipes(event => {
   if (!Platform.isLoaded('tfmg')) return
 
-  // Машины из списка startup_scripts/removed.js: нефтяные IE и добыча/перегонка CDG (есть у TFMG)
+  // Machines from startup_scripts/removed.js: IE oil and CDG extraction/refining (TFMG has its own)
   global.terraRemoved.ieOil.concat(global.terraRemoved.cdgOil).forEach(id => event.remove({ output: id }))
   event.remove({ type: 'createdieselgenerators:distillation' })
 })
 
-// Месторождения нефти CDG в мире отключаем: пустой тег биомов (нефть генерирует TFMG)
+// Disable CDG oil deposits in the world with an empty biome tag (TFMG generates the oil)
 ServerEvents.tags('worldgen/biome', event => {
   if (!Platform.isLoaded('tfmg')) return
   event.removeAll('createdieselgenerators:oil_biomes')

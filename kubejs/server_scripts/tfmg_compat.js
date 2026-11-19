@@ -1,13 +1,13 @@
-// Совместимость IE и TFMG (раньше был датапак Alk1; датапаки не используем, всё на KubeJS).
+// IE and TFMG compatibility (this used to be the Alk1 datapack; we use no datapacks, everything is KubeJS).
 ServerEvents.tags('fluid', event => {
   if (!Platform.isLoaded('tfmg')) return
-  // Дрель IE работает на дизеле и бензине TFMG
+  // The IE drill runs on TFMG diesel and gasoline
   event.add('immersiveengineering:drill_fuel', ['tfmg:diesel', 'tfmg:gasoline'])
 })
 
 ServerEvents.recipes(event => {
   if (!Platform.isLoaded('tfmg')) return
-  // Пластиковый лист: вместо литья — прессование расплава в нагретом тазу (Create compacting)
+  // Plastic sheet: pressed from the melt in a heated basin (Create compacting) instead of casting
   event.remove({ id: 'tfmg:casting/plastic_sheet' })
   event.recipes.create.compacting('tfmg:plastic_sheet', Fluid.of('tfmg:molten_plastic', 250))
     .heated().id('sborka:plastic_sheet')

@@ -1,13 +1,13 @@
-// Предметы, вырезанные из сборки. Один список на всё:
-//  - server_scripts/steel.js и oil.js убирают их рецепты,
-//  - client_scripts/hide.js прячет их в JEI.
+// Items cut from the pack. One list for everything:
+//  - server_scripts/steel.js and oil.js remove their recipes,
+//  - client_scripts/hide.js hides them in JEI.
 global.terraRemoved = {
-  // Сталь IE: слиток и пыль больше не получить, доменные печи IE не нужны (сталь только от TFMG)
+  // IE steel: the ingot and dust are unobtainable, IE blast furnaces are not needed (steel comes only from TFMG)
   ieSteel: ['ingot_steel', 'dust_steel', 'blast_furnace', 'advanced_blast_furnace', 'blastbrick',
     'blastbrick_reinforced', 'blastfurnace_preheater'].map(id => 'immersiveengineering:' + id),
-  // Нефтяные машины IE (нефть только от TFMG)
+  // IE oil machines (oil comes only from TFMG)
   ieOil: ['refinery', 'diesel_generator', 'fermenter'].map(id => 'immersiveengineering:' + id),
-  // Добыча и перегонка нефти Create Diesel Generators (двигатели остаются)
+  // Create Diesel Generators oil extraction and refining (the engines stay)
   cdgOil: ['pumpjack_bearing', 'pumpjack_crank', 'pumpjack_head', 'pumpjack_hole',
     'distillation_controller', 'oil_scanner'].map(id => 'createdieselgenerators:' + id)
 }

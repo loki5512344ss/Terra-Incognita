@@ -1,6 +1,6 @@
-// Рецепты Terra Incognita (KubeJS 7, MC 1.21.1). Один файл на тему — разносить по мере роста.
+// Terra Incognita recipes (KubeJS 7, MC 1.21.1). One file per topic; split further as it grows.
 ServerEvents.recipes(event => {
-  // --- Create: миксер требует железный лист (пресс не трогаем — лист делается на прессе) ---
+  // --- Create: the mixer needs an iron sheet (the press is untouched because it makes the sheets) ---
   event.remove({ output: 'create:mechanical_mixer' })
   event.shaped('create:mechanical_mixer', [
     'SP',
@@ -13,31 +13,9 @@ ServerEvents.recipes(event => {
     W: 'create:whisk'
   }).id('sborka:mechanical_mixer')
 
-  // --- Ваниль: компас требует точный механизм ---
-  event.remove({ output: 'minecraft:compass' })
-  event.shaped('minecraft:compass', [
-    ' I ',
-    'IPI',
-    ' R '
-  ], {
-    I: 'create:iron_sheet',
-    P: 'create:precision_mechanism',
-    R: 'minecraft:redstone'
-  }).id('sborka:compass')
+  // The compass and radio moved to radio_gates.js (they need sequenced-assembly parts)
 
-  // --- Рация (наш мод incognita): точный механизм в центре, громоотвод-антенна, железные листы, редстоун ---
-  event.shaped('incognita:radio', [
-    ' L ',
-    'SPS',
-    ' R '
-  ], {
-    L: 'minecraft:lightning_rod',
-    S: 'create:iron_sheet',
-    P: 'create:precision_mechanism',
-    R: 'minecraft:redstone'
-  }).id('sborka:radio')
-
-  // --- Компас центра мира (наш мод incognita): обычный компас в латунных листах, указывает на 0 0 ---
+  // --- World-center compass (our incognita mod): a plain compass wrapped in brass sheets, points to 0 0 ---
   event.shaped('incognita:origin_compass', [
     ' B ',
     'BCB',

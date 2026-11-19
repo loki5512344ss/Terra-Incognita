@@ -4,5 +4,17 @@
   "item.kubejs.pressure_gauge": "Манометр",
   "item.kubejs.incomplete_refractory_lining": "Незаконченная огнеупорная футеровка",
   "item.kubejs.incomplete_thermocouple": "Незаконченная термопара",
-  "item.kubejs.incomplete_pressure_gauge": "Незаконченный манометр"
+  "item.kubejs.incomplete_pressure_gauge": "Незаконченный манометр",
+  "item.kubejs.copper_coil": "Медная катушка",
+  "item.kubejs.incomplete_copper_coil": "Незаконченная медная катушка",
+  "item.kubejs.quartz_oscillator": "Кварцевый резонатор",
+  "item.kubejs.incomplete_quartz_oscillator": "Незаконченный кварцевый резонатор",
+  "item.kubejs.magnetized_needle": "Намагниченная стрелка",
+  "item.kubejs.incomplete_magnetized_needle": "Незаконченная намагниченная стрелка",
+  "item.kubejs.radio_tuner": "Радиоконтур",
+  "item.kubejs.incomplete_radio_tuner": "Незаконченный радиоконтур",
+  "item.kubejs.optical_lens": "Оптическая линза",
+  "item.kubejs.incomplete_optical_lens": "Незаконченная оптическая линза",
+  "item.kubejs.signal_relay": "Реле сигнала",
+  "item.kubejs.propeller_hub": "Втулка винта"
 }

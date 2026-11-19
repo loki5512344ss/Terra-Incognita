@@ -4,5 +4,17 @@
   "item.kubejs.pressure_gauge": "Pressure Gauge",
   "item.kubejs.incomplete_refractory_lining": "Incomplete Refractory Lining",
   "item.kubejs.incomplete_thermocouple": "Incomplete Thermocouple",
-  "item.kubejs.incomplete_pressure_gauge": "Incomplete Pressure Gauge"
+  "item.kubejs.incomplete_pressure_gauge": "Incomplete Pressure Gauge",
+  "item.kubejs.copper_coil": "Copper Coil",
+  "item.kubejs.incomplete_copper_coil": "Incomplete Copper Coil",
+  "item.kubejs.quartz_oscillator": "Quartz Oscillator",
+  "item.kubejs.incomplete_quartz_oscillator": "Incomplete Quartz Oscillator",
+  "item.kubejs.magnetized_needle": "Magnetized Needle",
+  "item.kubejs.incomplete_magnetized_needle": "Incomplete Magnetized Needle",
+  "item.kubejs.radio_tuner": "Radio Tuner",
+  "item.kubejs.incomplete_radio_tuner": "Incomplete Radio Tuner",
+  "item.kubejs.optical_lens": "Optical Lens",
+  "item.kubejs.incomplete_optical_lens": "Incomplete Optical Lens",
+  "item.kubejs.signal_relay": "Signal Relay",
+  "item.kubejs.propeller_hub": "Propeller Hub"
 }

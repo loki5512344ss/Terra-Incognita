@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""Собирает zip сборки в формате CurseForge (импортируется в CurseForge App, Prism, ATLauncher и др.).
+"""Builds the pack zip in CurseForge format (imports into the CurseForge App, Prism, ATLauncher and others).
 
   script/build-cf-pack.py [--version 0.1.0] [--no-external]
 
-В архиве:
-  manifest.json   версия Minecraft, NeoForge и список модов с CurseForge (projectID/fileID);
-                  сами jar лаунчер скачивает сам
-  modlist.html    список модов для людей
-  overrides/      то, что копируется в папку игры: config, defaultconfigs, kubejs, наш мод Incognita
-                  и моды, которых нет на CurseForge (скачиваются по ссылке и проверяются по sha1)
+The archive contains:
+  manifest.json   Minecraft and NeoForge versions plus the CurseForge mod list (projectID/fileID);
+                  the launcher downloads the jars itself
+  modlist.html    human-readable mod list
+  overrides/      what gets copied into the game folder: config, defaultconfigs, kubejs, our Incognita mod
+                  and mods missing from CurseForge (downloaded by link and checked by sha1)
 
---no-external не кладёт в архив чужие моды не с CurseForge (их придётся ставить руками).
-Список модов берётся из mods/modlist.json (обновляется local_script/gen-mod-manifest.sh).
+--no-external leaves third-party mods that are not on CurseForge out of the archive (install them by hand).
+The mod list comes from mods/modlist.json (refreshed by local_script/gen-mod-manifest.sh).
 """
 import argparse, hashlib, html, json, subprocess, sys, urllib.request, zipfile
 from pathlib import Path
@@ -37,7 +37,7 @@ def fetch(url, sha1):
         req = urllib.request.Request(url, headers={"User-Agent": "modpack-build-script"})
         data = urllib.request.urlopen(req, timeout=120).read()
         if hashlib.sha1(data).hexdigest() != sha1:
-            sys.exit(f"sha1 не совпал: {url}")
+            sys.exit(f"sha1 mismatch: {url}")
         cache.write_bytes(data)
     return cache
 
@@ -53,11 +53,13 @@ def main():
     external = [m for m in modlist["mods"] if "curseforge" not in m]
     jars = sorted(p for p in (ROOT / "custom_mods/incognita/build/libs").glob("incognita-*.jar") if "sources" not in p.name)
     if not jars:
-        sys.exit("jar мода не найден, сначала script/build-mod.sh")
+        sys.exit("mod jar not found, run script/build-mod.sh first")
 
     manifest = {
         "minecraft": {"version": modlist["minecraft"],
-                      "modLoaders": [{"id": f"neoforge-{modlist['neoforge']}", "primary": True}]},
+                      "modLoaders": [{"id": f"neoforge-{modlist['neoforge']}", "primary": True}],
+                      # CurseForge launcher hint in MB; the audit recommends 6 GB, more only when GC pauses are frequent.
+                      "recommendedRam": 6144},
         "manifestType": "minecraftModpack",
         "manifestVersion": 1,
         "name": NAME,
@@ -85,11 +87,11 @@ def main():
             z.write(fetch(m["url"], m["sha1"]), f"overrides/mods/{m['file']}")
     with zipfile.ZipFile(out) as z:
         if f"overrides/mods/{jars[-1].name}" not in z.namelist():
-            sys.exit(f"в архиве нет мода {jars[-1].name}")
-    print(f"{out.relative_to(ROOT)}: {out.stat().st_size / 1e6:.1f} МБ, модов в manifest {len(cf)}, "
-          f"в overrides {1 + (0 if args.no_external else len(external))}, файлов настроек {count}")
+            sys.exit(f"the archive does not contain the mod {jars[-1].name}")
+    print(f"{out.relative_to(ROOT)}: {out.stat().st_size / 1e6:.1f} MB, mods in manifest {len(cf)}, "
+          f"in overrides {1 + (0 if args.no_external else len(external))}, config files {count}")
     if args.no_external and external:
-        print("Не вошли (ставить вручную): " + ", ".join(m["file"] for m in external))
+        print("Not included (install manually): " + ", ".join(m["file"] for m in external))
 
 
 if __name__ == "__main__":

@@ -2,6 +2,8 @@ docs/
 dist/
 *.jar
 !custom_mods/*/gradle/wrapper/gradle-wrapper.jar
+# Prebuilt jars of mods whose sources live outside this repository (OC2R, Hill Sphere).
+!custom_mods/*/libs/*.jar
 .gradle/
 build/
 run/

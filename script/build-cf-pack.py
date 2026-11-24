@@ -52,16 +52,24 @@ def main():
     modlist = json.loads((ROOT / "mods/modlist.json").read_text())
     cf = [m for m in modlist["mods"] if "curseforge" in m]
     external = [m for m in modlist["mods"] if "curseforge" not in m]
-    # our own mods built from custom_mods/: the newest jar of each, sources jars excluded
+    # our own mods: prebuilt jars live in custom_mods/<name>/libs and are tracked in git;
+    # a fresh local build in build/libs is used only when libs is absent.
     jars = []
     for name in ("incognita", "oc2r", "hillsphere"):
-        found = sorted(p for p in (ROOT / f"custom_mods/{name}/build/libs").glob(f"{name}-*.jar") if "sources" not in p.name)
+        found = None
+        for folder in ("libs", "build/libs"):
+            base = ROOT / f"custom_mods/{name}/{folder}"
+            candidates = sorted(p for p in base.glob(f"{name}-*.jar")
+                                if "sources" not in p.name and "javadoc" not in p.name) if base.is_dir() else []
+            if candidates:
+                found = candidates[-1]
+                break
         if found:
-            jars.append(found[-1])
+            jars.append(found)
         elif name == "incognita":
             sys.exit("mod jar not found, run script/build-mod.sh first")
         else:
-            print(f"warning: {name} jar not found in custom_mods/{name}/build/libs, the pack ships without it", file=sys.stderr)
+            print(f"warning: {name} jar not found in custom_mods/{name}/libs or build/libs, the pack ships without it", file=sys.stderr)
 
     manifest = {
         "minecraft": {"version": modlist["minecraft"],

@@ -71,16 +71,26 @@ def fetch_jar(mod, offline):
 
 
 def own_jars():
-    """Our jars: custom_mods/*/build/libs/*.jar (no sources/dev jars) and loose jars placed in mods/."""
+    """Our jars: tracked prebuilt jars in custom_mods/*/libs, local build/libs and loose jars in mods/."""
     found = []
-    for p in sorted((ROOT / "custom_mods").glob("*/build/libs/*.jar")) + sorted((ROOT / "mods").glob("*.jar")):
+    custom = ROOT / "custom_mods"
+    for project in sorted(custom.iterdir()) if custom.is_dir() else []:
+        if not project.is_dir():
+            continue
+        # the tracked prebuilt jar is the release copy; build/libs is the local fallback
+        for folder in ("libs", "build/libs"):
+            base = project / folder
+            if not base.is_dir():
+                continue
+            candidates = [p for p in sorted(base.glob("*.jar"))
+                          if not re.search(r"sources|javadoc|dev|slim", p.name)]
+            if candidates:
+                found.append(candidates[-1])
+                break
+    for p in sorted((ROOT / "mods").glob("*.jar")):
         if not re.search(r"sources|javadoc|dev|slim", p.name):
             found.append(p)
-    # keep the newest jar per project folder / name prefix
-    latest = {}
-    for p in found:
-        latest[(p.parent, re.split(r"-\d", p.name)[0])] = p
-    return list(latest.values())
+    return found
 
 
 def read_toml(jar):

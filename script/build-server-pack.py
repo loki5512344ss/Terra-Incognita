@@ -14,8 +14,10 @@ Mods are taken from mods/modlist.json (downloaded and cached in dist/cache/mods)
 
 The evidence for every decision is written to the report file (default mods/server-classification.md).
 The zip holds mods/, config/, defaultconfigs/, kubejs/ (server_scripts, startup_scripts, data), start.sh, start.bat,
-user_jvm_args.txt, server.properties and README-SERVER.txt. NeoForge itself is installed by the start script
-(NeoForge installer --installServer) so the zip stays small. eula.txt is deliberately not created.
+check-update.ps1, pack-version.txt, user_jvm_args.txt, server.properties and README-SERVER.txt. NeoForge itself is
+installed by the start script on the first run (installer --installServer) and reused afterwards, so the zip stays
+small. Every start checks GitHub releases and warns when the unpacked pack is not the latest. eula.txt is
+deliberately not created.
 """
 import argparse, hashlib, json, re, subprocess, sys, tomllib, urllib.parse, urllib.request, zipfile
 from pathlib import Path
@@ -199,16 +201,58 @@ sync-chunk-writes=false
 
 START_SH = """#!/usr/bin/env bash
 # Starts the Terra Incognita server. Needs Java 21 (java -version).
+# First run downloads and installs NeoForge; later runs use the installed copy.
 set -euo pipefail
 cd "$(dirname "$0")"
 NEOFORGE="{neoforge}"
 ARGS="libraries/net/neoforged/neoforge/$NEOFORGE/unix_args.txt"
+
+if ! command -v java >/dev/null 2>&1; then
+  echo "Java not found. Install Java 21 and make sure 'java -version' works." >&2
+  exit 1
+fi
+
 if [[ ! -f "$ARGS" ]]; then
-  echo "Installing NeoForge $NEOFORGE ..."
-  curl -fL -o neoforge-installer.jar "https://maven.neoforged.net/releases/net/neoforged/neoforge/$NEOFORGE/neoforge-$NEOFORGE-installer.jar"
+  echo "First run: downloading NeoForge $NEOFORGE ..."
+  URL="https://maven.neoforged.net/releases/net/neoforged/neoforge/$NEOFORGE/neoforge-$NEOFORGE-installer.jar"
+  if command -v curl >/dev/null 2>&1; then
+    curl -fL --retry 3 -o neoforge-installer.jar "$URL"
+  elif command -v wget >/dev/null 2>&1; then
+    wget -O neoforge-installer.jar "$URL"
+  else
+    echo "curl or wget is required for the first run." >&2
+    exit 1
+  fi
   java -jar neoforge-installer.jar --installServer
   rm -f neoforge-installer.jar neoforge-installer.jar.log
+  echo "NeoForge installed."
+else
+  echo "NeoForge $NEOFORGE already installed."
 fi
+
+# Update notice: compare the local pack version with the latest GitHub release.
+VERSION="$(cat pack-version.txt 2>/dev/null || echo unknown)"
+if [[ "$VERSION" != "unknown" ]] && command -v curl >/dev/null 2>&1; then
+  LATEST="$(curl -fsSL --max-time 5 https://api.github.com/repos/loki5512344ss/Terra-Incognita/releases/latest 2>/dev/null \\
+    | sed -n 's/.*"tag_name"[[:space:]]*:[[:space:]]*"\\([^"]*\\)".*/\\1/p' | head -1 || true)"
+  if [[ -z "$LATEST" ]]; then
+    LATEST="$(curl -fsSL --max-time 5 'https://api.github.com/repos/loki5512344ss/Terra-Incognita/tags?per_page=1' 2>/dev/null \\
+      | sed -n 's/.*"name"[[:space:]]*:[[:space:]]*"\\([^"]*\\)".*/\\1/p' | head -1 || true)"
+  fi
+  if [[ -n "$LATEST" ]]; then
+    LOCAL="${VERSION#v}"; LOCAL="${LOCAL%-dirty}"; LOCAL="${LOCAL%-[0-9]*-g*}"
+    REMOTE="${LATEST#v}"
+    if [[ "$LOCAL" != "$REMOTE" ]]; then
+      NEWEST="$(printf '%s\\n%s\\n' "$LOCAL" "$REMOTE" | sort -V 2>/dev/null | tail -1 || true)"
+      if [[ -n "$NEWEST" && "$NEWEST" == "$REMOTE" ]]; then
+        echo "WARNING: this server pack ($VERSION) is outdated; latest release is $LATEST."
+        echo "         https://github.com/loki5512344ss/Terra-Incognita/releases/latest"
+        echo "         Update by unpacking the new server zip over this folder (keep eula.txt, world/ and server.properties)."
+      fi
+    fi
+  fi
+fi
+
 if ! grep -qi '^eula=true' eula.txt 2>/dev/null; then
   echo "Read https://aka.ms/MinecraftEULA and, if you agree, put eula=true into eula.txt (created on first start)."
 fi
@@ -217,18 +261,44 @@ exec java @user_jvm_args.txt @"$ARGS" nogui "$@"
 
 START_BAT = """@echo off
 REM Starts the Terra Incognita server. Needs Java 21 (java -version).
+REM First run downloads and installs NeoForge; later runs use the installed copy.
 cd /d "%~dp0"
 set NEOFORGE={neoforge}
 set ARGS=libraries\\net\\neoforged\\neoforge\\%NEOFORGE%\\win_args.txt
+where java >nul 2>&1 || (echo Java not found. Install Java 21 and make sure "java -version" works. & pause & exit /b 1)
 if not exist "%ARGS%" (
-  echo Installing NeoForge %NEOFORGE% ...
-  curl -fL -o neoforge-installer.jar https://maven.neoforged.net/releases/net/neoforged/neoforge/%NEOFORGE%/neoforge-%NEOFORGE%-installer.jar || exit /b 1
+  echo First run: downloading NeoForge %NEOFORGE% ...
+  curl -fL --retry 3 -o neoforge-installer.jar https://maven.neoforged.net/releases/net/neoforged/neoforge/%NEOFORGE%/neoforge-%NEOFORGE%-installer.jar || exit /b 1
   java -jar neoforge-installer.jar --installServer || exit /b 1
   del neoforge-installer.jar neoforge-installer.jar.log 2>nul
+  echo NeoForge installed.
+) else (
+  echo NeoForge %NEOFORGE% already installed.
 )
+if exist check-update.ps1 powershell -NoProfile -ExecutionPolicy Bypass -File check-update.ps1
 findstr /b /i "eula=true" eula.txt >nul 2>&1 || echo Read https://aka.ms/MinecraftEULA and, if you agree, put eula=true into eula.txt (created on first start).
 java @user_jvm_args.txt @%ARGS% nogui %*
 pause
+"""
+
+CHECK_PS1 = """# Warns when the unpacked server pack is not the latest GitHub release.
+$local = (Get-Content (Join-Path $PSScriptRoot 'pack-version.txt') -Raw -ErrorAction SilentlyContinue)
+if (-not $local) { exit 0 }
+$local = $local.Trim()
+try {
+  $latest = (Invoke-RestMethod 'https://api.github.com/repos/loki5512344ss/Terra-Incognita/releases/latest' -TimeoutSec 5).tag_name
+} catch {
+  try { $latest = (Invoke-RestMethod 'https://api.github.com/repos/loki5512344ss/Terra-Incognita/tags?per_page=1' -TimeoutSec 5)[0].name }
+  catch { exit 0 }
+}
+if (-not $latest) { exit 0 }
+$ln = $local -replace '^v', '' -replace '-dirty$', '' -replace '-[0-9]+-g[0-9a-f]+$', ''
+$rn = $latest -replace '^v', ''
+if ($ln -ne $rn) {
+  Write-Host "WARNING: this server pack ($local) differs from the latest release ($latest)."
+  Write-Host "         https://github.com/loki5512344ss/Terra-Incognita/releases/latest"
+  Write-Host "         Update by unpacking the new server zip over this folder (keep eula.txt, world/ and server.properties)."
+}
 """
 
 README = """Terra Incognita - dedicated server pack {version}
@@ -239,7 +309,11 @@ First run
   2. Run ./start.sh (Linux/macOS) or start.bat (Windows). The first run downloads and installs NeoForge {neoforge}
      (needs internet), then the server starts and stops because the EULA is not accepted.
   3. Read https://aka.ms/MinecraftEULA. If you agree, set eula=true in eula.txt. This pack never sets it for you.
-  4. Run the start script again. The first world generation takes a while.
+  4. Run the start script again. NeoForge is already installed, so it starts without downloading. The first world
+     generation takes a while.
+
+Update check: every start compares pack-version.txt with the latest GitHub release and prints a warning when they
+differ. It needs internet for a few seconds; offline starts simply skip the check.
 
 Settings
   - user_jvm_args.txt: heap (-Xms6G -Xmx6G by default, lower it on a small machine) and G1 flags.
@@ -306,11 +380,14 @@ def main():
             if f.is_file() and f.relative_to(kj).parts[0] not in KUBEJS_SKIP and f.name != ".gitkeep":
                 z.write(f, f"kubejs/{f.relative_to(kj)}")
         fmt = {"neoforge": ml["neoforge"], "mc": ml["minecraft"], "version": args.version}
-        for name, text, mode in (("start.sh", START_SH, 0o755), ("start.bat", START_BAT.replace("\n", "\r\n"), 0o644)):
+        scripts = (("start.sh", START_SH, 0o755), ("start.bat", START_BAT.replace("\n", "\r\n"), 0o644),
+                   ("check-update.ps1", CHECK_PS1.replace("\n", "\r\n"), 0o644))
+        for name, text, mode in scripts:
             zi = zipfile.ZipInfo(name)
             zi.external_attr = (0o100000 | mode) << 16
             zi.compress_type = zipfile.ZIP_DEFLATED
             z.writestr(zi, text.replace("{neoforge}", fmt["neoforge"]))
+        z.writestr("pack-version.txt", args.version + "\n")
         z.writestr("user_jvm_args.txt", "# JVM arguments (docs/perf.md). Heap: lower on a small machine.\n" + "\n".join(JVM_ARGS) + "\n")
         z.writestr("server.properties", SERVER_PROPERTIES)
         z.writestr("README-SERVER.txt", README.format(**fmt))

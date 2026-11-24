@@ -15,4 +15,9 @@ StartupEvents.registry('item', event => {
   // Parts made in the crafting table
   event.create('signal_relay')
   event.create('propeller_hub')
+
+  // Transitional items for the OC2R sequenced assemblies (transistors and circuit boards)
+  ;['transistor', 'circuit_board'].forEach(id => {
+    event.create('incomplete_' + id, 'create:sequenced_assembly').texture('kubejs:item/incomplete_' + id)
+  })
 })

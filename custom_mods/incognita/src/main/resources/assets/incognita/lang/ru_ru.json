@@ -19,5 +19,8 @@
   "block.incognita.lamp_green": "Зелёная тестовая лампа",
   "block.incognita.lamp_blue": "Синяя тестовая лампа",
   "block.incognita.lamp_purple": "Фиолетовая тестовая лампа",
-  "block.incognita.lamp_orange": "Оранжевая тестовая лампа"
+  "block.incognita.lamp_orange": "Оранжевая тестовая лампа",
+  "incognita.presence.menu": "В главном меню",
+  "incognita.presence.loading": "Загружает мир",
+  "incognita.presence.exploring": "Ищет путь без координат"
 }

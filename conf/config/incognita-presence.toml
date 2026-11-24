@@ -1,0 +1,18 @@
+#Show what you are doing in Discord (Rich Presence). Needs the Discord desktop client running
+enabled = true
+#Discord application id from the developer portal (General Information)
+applicationId = "1574849152070848593"
+#Asset key of the large picture, uploaded under Rich Presence -> Art Assets
+largeImageKey = "logo"
+#Tooltip of the large picture
+largeImageText = "Terra Incognita"
+#Show the presence in the main menu too
+showInMenu = true
+#How often the presence is refreshed, in seconds
+# Default: 15
+# Range: 5 ~ 120
+updateSeconds = 15
+#Optional link button under the presence; leave empty to hide it
+buttonLabel = "GitHub"
+#URL of the button
+buttonUrl = "https://github.com/loki5512344ss/Terra-Incognita"

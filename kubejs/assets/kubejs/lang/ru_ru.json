@@ -16,5 +16,7 @@
   "item.kubejs.optical_lens": "Оптическая линза",
   "item.kubejs.incomplete_optical_lens": "Незаконченная оптическая линза",
   "item.kubejs.signal_relay": "Реле сигнала",
-  "item.kubejs.propeller_hub": "Втулка винта"
+  "item.kubejs.propeller_hub": "Втулка винта",
+  "item.kubejs.incomplete_transistor": "Незаконченный транзистор",
+  "item.kubejs.incomplete_circuit_board": "Незаконченная плата"
 }

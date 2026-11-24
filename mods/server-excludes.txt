@@ -1,0 +1,16 @@
+# Overrides for script/build-server-pack.py. Format: "exclude|include <jar-substring or modid>  # reason".
+# Modrinth marks these "server_side=optional" but they only add client UI/visuals, so they stay off the server.
+exclude fancymenu          # menu customisation, client UI only
+exclude konkrete           # FancyMenu library
+exclude melody             # FancyMenu audio library
+exclude appleskin          # HUD overlay
+exclude enchdesc           # tooltip text only
+# JEI stays on the server: on 1.21.1 the client-only build disables the "+" recipe transfer and
+# item cheat/delete; the same jar on both sides restores them. mezz_config is its required library
+# (side=BOTH). Do not "optimise" these two away.
+include jei-1.21.1
+include mezz_config
+exclude JustEnoughProfessions  # JEI plugin
+exclude sound-physics      # client audio processing
+exclude trashslot          # client inventory slot, no server logic
+exclude better-advanced-tooltips  # client tooltips

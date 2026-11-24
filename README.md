@@ -49,7 +49,9 @@ world without coordinates, a view from above is worth a lot.
 | **World** | Oh The Biomes We've Gone, new trees and structures |
 | **Home life** | Farmer's Delight, Vinery, decoration blocks, a working photo camera |
 | **Guidance** | FTB Quests, JEI |
-| **Our own mod** | Incognita: hidden coordinates, random respawn, radio |
+| **Our own mod** | Incognita: hidden coordinates, random respawn, radio, weather, Discord status |
+| **Computers** | OpenComputers II (OC2R): computers, robots, networks |
+| **Gravity** | Hill Sphere: placeable gravity cores and gravite ore |
 
 The full list with versions is in [`mods/manifest.txt`](mods/manifest.txt).
 
@@ -116,7 +118,9 @@ GNU LGPL v3 or later, see [LICENSE](LICENSE).
 | **Мир** | Oh The Biomes We've Gone, новые деревья и структуры |
 | **Быт** | Farmer's Delight, Vinery, декоративные блоки, рабочий фотоаппарат |
 | **Подсказки** | FTB Quests, JEI |
-| **Наш мод** | Incognita: скрытые координаты, случайный респавн, рация |
+| **Наш мод** | Incognita: скрытые координаты, случайный респавн, рация, погода, статус в Discord |
+| **Компьютеры** | OpenComputers II (OC2R): компьютеры, роботы, сети |
+| **Гравитация** | Hill Sphere: устанавливаемые гравитационные ядра и руда гравит |
 
 Полный список с версиями лежит в [`mods/manifest.txt`](mods/manifest.txt).
 

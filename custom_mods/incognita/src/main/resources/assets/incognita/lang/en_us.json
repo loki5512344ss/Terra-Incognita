@@ -19,5 +19,8 @@
   "block.incognita.lamp_green": "Green Test Lamp",
   "block.incognita.lamp_blue": "Blue Test Lamp",
   "block.incognita.lamp_purple": "Purple Test Lamp",
-  "block.incognita.lamp_orange": "Orange Test Lamp"
+  "block.incognita.lamp_orange": "Orange Test Lamp",
+  "incognita.presence.menu": "In the main menu",
+  "incognita.presence.loading": "Loading the world",
+  "incognita.presence.exploring": "Finding a way without coordinates"
 }

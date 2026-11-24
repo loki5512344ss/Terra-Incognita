@@ -46,14 +46,22 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--version", default=default_version())
     ap.add_argument("--no-external", action="store_true")
+    ap.add_argument("--with-server", action="store_true", help="also build the dedicated-server zip (script/build-server-pack.py)")
     args = ap.parse_args()
 
     modlist = json.loads((ROOT / "mods/modlist.json").read_text())
     cf = [m for m in modlist["mods"] if "curseforge" in m]
     external = [m for m in modlist["mods"] if "curseforge" not in m]
-    jars = sorted(p for p in (ROOT / "custom_mods/incognita/build/libs").glob("incognita-*.jar") if "sources" not in p.name)
-    if not jars:
-        sys.exit("mod jar not found, run script/build-mod.sh first")
+    # our own mods built from custom_mods/: the newest jar of each, sources jars excluded
+    jars = []
+    for name in ("incognita", "oc2r", "hillsphere"):
+        found = sorted(p for p in (ROOT / f"custom_mods/{name}/build/libs").glob(f"{name}-*.jar") if "sources" not in p.name)
+        if found:
+            jars.append(found[-1])
+        elif name == "incognita":
+            sys.exit("mod jar not found, run script/build-mod.sh first")
+        else:
+            print(f"warning: {name} jar not found in custom_mods/{name}/build/libs, the pack ships without it", file=sys.stderr)
 
     manifest = {
         "minecraft": {"version": modlist["minecraft"],
@@ -70,6 +78,10 @@ def main():
     }
     rows = [f"<li>{html.escape(m['name'])}</li>" for m in sorted(modlist["mods"], key=lambda m: m["name"].lower())]
     rows.append("<li>Incognita</li>")
+    if any(j.name.startswith("oc2r-") for j in jars):
+        rows.append("<li>OC2R</li>")
+    if any(j.name.startswith("hillsphere-") for j in jars):
+        rows.append("<li>Hill Sphere</li>")
 
     out = ROOT / "dist" / f"TerraIncognita-{args.version}-curseforge.zip"
     out.parent.mkdir(exist_ok=True)
@@ -82,16 +94,20 @@ def main():
                 if f.is_file() and f.name != ".gitkeep":
                     z.write(f, f"overrides/{dst}/{f.relative_to(ROOT / src)}")
                     count += 1
-        z.write(jars[-1], f"overrides/mods/{jars[-1].name}")
+        for j in jars:
+            z.write(j, f"overrides/mods/{j.name}")
         for m in [] if args.no_external else external:
             z.write(fetch(m["url"], m["sha1"]), f"overrides/mods/{m['file']}")
     with zipfile.ZipFile(out) as z:
-        if f"overrides/mods/{jars[-1].name}" not in z.namelist():
-            sys.exit(f"the archive does not contain the mod {jars[-1].name}")
+        for j in jars:
+            if f"overrides/mods/{j.name}" not in z.namelist():
+                sys.exit(f"the archive does not contain the mod {j.name}")
     print(f"{out.relative_to(ROOT)}: {out.stat().st_size / 1e6:.1f} MB, mods in manifest {len(cf)}, "
-          f"in overrides {1 + (0 if args.no_external else len(external))}, config files {count}")
+          f"in overrides {len(jars) + (0 if args.no_external else len(external))}, config files {count}")
     if args.no_external and external:
         print("Not included (install manually): " + ", ".join(m["file"] for m in external))
+    if args.with_server:
+        subprocess.run([sys.executable, str(ROOT / "script/build-server-pack.py"), "--version", args.version], check=True)
 
 
 if __name__ == "__main__":

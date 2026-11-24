@@ -16,5 +16,7 @@
   "item.kubejs.optical_lens": "Optical Lens",
   "item.kubejs.incomplete_optical_lens": "Incomplete Optical Lens",
   "item.kubejs.signal_relay": "Signal Relay",
-  "item.kubejs.propeller_hub": "Propeller Hub"
+  "item.kubejs.propeller_hub": "Propeller Hub",
+  "item.kubejs.incomplete_transistor": "Incomplete Transistor",
+  "item.kubejs.incomplete_circuit_board": "Incomplete Circuit Board"
 }

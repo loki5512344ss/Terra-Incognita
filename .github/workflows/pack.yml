@@ -1,4 +1,4 @@
-# Builds the Incognita mod and the pack zip in CurseForge format.
+# Builds the Incognita mod, the pack zip in CurseForge format and the dedicated-server zip.
 #  - push to main and pull requests: the zip is kept in the run artifacts (30 days)
 #  - tag like v1.2.3: also creates a GitHub release with this zip and the mod jar on its own
 name: pack
@@ -35,12 +35,12 @@ jobs:
       - name: Build and test the Incognita mod
         run: script/build-mod.sh
 
-      - name: Build the CurseForge pack
+      - name: Build the CurseForge pack and the server pack
         run: |
           if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
-            python3 script/build-cf-pack.py --version "${GITHUB_REF_NAME#v}"
+            python3 script/build-cf-pack.py --with-server --version "${GITHUB_REF_NAME#v}"
           else
-            python3 script/build-cf-pack.py
+            python3 script/build-cf-pack.py --with-server
           fi
 
       - uses: actions/upload-artifact@v4
@@ -48,6 +48,7 @@ jobs:
           name: TerraIncognita-curseforge
           path: |
             dist/*-curseforge.zip
+            dist/*-server.zip
             custom_mods/incognita/build/libs/incognita-*.jar
             !custom_mods/incognita/build/libs/*-sources.jar
           if-no-files-found: error
@@ -63,5 +64,5 @@ jobs:
           [[ "$GITHUB_REF_NAME" == *-* ]] && flags+=(--prerelease)
           # besides the pack zip, attach the Incognita jar on its own (inside the zip it lives in overrides/mods)
           jar=$(find custom_mods/incognita/build/libs -maxdepth 1 -name 'incognita-*.jar' ! -name '*sources*' | sort | tail -1)
-          gh release create "$GITHUB_REF_NAME" dist/*-curseforge.zip "$jar" \
+          gh release create "$GITHUB_REF_NAME" dist/*-curseforge.zip dist/*-server.zip "$jar" \
             --title "Terra Incognita ${GITHUB_REF_NAME#v}" --generate-notes "${flags[@]}"

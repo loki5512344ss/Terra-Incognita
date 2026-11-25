@@ -27,16 +27,15 @@ ServerEvents.recipes(event => {
     B: 'create:brass_sheet', I: 'create:iron_sheet', S: 'create:shaft'
   }).id('sborka:propeller_hub')
 
-  // --- 1. Brass-tier Create machines need a precision mechanism and brass ---
+  // --- 1. Brass tier ---
+  // The deployer must NOT need a precision mechanism: the mechanism itself is assembled with deployers.
   redo('create:deployer', 1, ['H', 'C', 'P'], {
-    H: 'create:brass_hand', C: 'create:andesite_casing', P: 'create:precision_mechanism'
+    H: 'create:electron_tube', C: 'create:brass_casing', P: 'create:brass_hand'
   }, 'deployer')
   redo('create:mechanical_crafter', 3, ['T', 'B', 'P'], {
     T: 'minecraft:crafting_table', B: 'create:brass_casing', P: 'create:precision_mechanism'
   }, 'mechanical_crafter')
-  redo('create:encased_fan', 1, ['S', 'B', 'P'], {
-    S: 'create:shaft', B: 'create:brass_casing', P: 'create:propeller'
-  }, 'encased_fan')
+  // The encased fan stays vanilla: washing and smelting are needed long before brass.
 
   // --- 2. Electricity: coils and an oscillator make motors and capacitors ---
   if (Platform.isLoaded('createaddition')) {

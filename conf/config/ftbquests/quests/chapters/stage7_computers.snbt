@@ -1,0 +1,694 @@
+{
+	autofocus_id: "05CB6A8B737BD9D9"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "stage7_computers"
+	group: "21E3E8CB980B7B8A"
+	icon: {
+		count: 1
+		id: "oc2r:computer"
+	}
+	id: "38D78BB65A70E6CF"
+	images: [
+		{
+			alpha: 26
+			height: 7.21875d
+			image: "oc2r:textures/item/components/cpu/cpu_tier_3.png"
+			order: -1
+			rotation: 0.0d
+			width: 7.21875d
+			x: 1.75d
+			y: 2.8125d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "oc2r:textures/item/components/cpu/cpu_tier_3.png"
+			order: -1
+			rotation: -15.0d
+			width: 1.0d
+			x: 2.97d
+			y: -1.91d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "oc2r:textures/item/components/cpu/cpu_tier_4.png"
+			order: -1
+			rotation: -9.0d
+			width: 1.0d
+			x: 5.22d
+			y: -1.19d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "oc2r:textures/item/components/gpu/gpu_tier_2.png"
+			order: -1
+			rotation: -3.0d
+			width: 1.0d
+			x: 6.95d
+			y: 0.14d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "oc2r:textures/item/components/memory/memory_large.png"
+			order: -1
+			rotation: 3.0d
+			width: 1.0d
+			x: 7.88d
+			y: 1.87d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "oc2r:textures/item/components/materials/network_cable.png"
+			order: -1
+			rotation: 9.0d
+			width: 1.0d
+			x: 7.88d
+			y: 3.75d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "oc2r:textures/item/components/materials/circuit_board.png"
+			order: -1
+			rotation: 15.0d
+			width: 1.0d
+			x: 6.95d
+			y: 5.49d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "oc2r:textures/item/components/materials/transistor.png"
+			order: -1
+			rotation: -10.0d
+			width: 1.0d
+			x: 5.22d
+			y: 6.81d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "oc2r:textures/item/components/silicon/silicon_wafer.png"
+			order: -1
+			rotation: -4.0d
+			width: 1.0d
+			x: 2.97d
+			y: 7.53d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "oc2r:textures/item/components/silicon/silicon.png"
+			order: -1
+			rotation: 2.0d
+			width: 1.0d
+			x: 0.53d
+			y: 7.53d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "oc2r:textures/item/components/silicon/silicon_blend.png"
+			order: -1
+			rotation: 8.0d
+			width: 1.0d
+			x: -1.72d
+			y: 6.81d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "oc2r:textures/item/components/silicon/raw_silicon_wafer.png"
+			order: -1
+			rotation: 14.0d
+			width: 1.0d
+			x: -3.45d
+			y: 5.49d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "kubejs:textures/item/signal_relay.png"
+			order: -1
+			rotation: -11.0d
+			width: 1.0d
+			x: -4.38d
+			y: 3.75d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "kubejs:textures/item/optical_lens.png"
+			order: -1
+			rotation: -5.0d
+			width: 1.0d
+			x: -4.38d
+			y: 1.87d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "kubejs:textures/item/magnetized_needle.png"
+			order: -1
+			rotation: 1.0d
+			width: 1.0d
+			x: -3.45d
+			y: 0.14d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "oc2r:textures/item/components/cpu/cpu_tier_3.png"
+			order: -1
+			rotation: 7.0d
+			width: 1.0d
+			x: -1.72d
+			y: -1.19d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "oc2r:textures/item/components/cpu/cpu_tier_4.png"
+			order: -1
+			rotation: 13.0d
+			width: 1.0d
+			x: 0.53d
+			y: -1.91d
+		}
+	]
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["2CD9DA15A9C96299"]
+			id: "05CB6A8B737BD9D9"
+			tasks: [
+				{
+					id: "03F08ABA79C9A82B"
+					item: {
+						count: 1
+						id: "oc2r:silicon_blend"
+					}
+					type: "item"
+				}
+				{
+					id: "67B609037C5C78BA"
+					item: {
+						count: 1
+						id: "oc2r:silicon"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: 2.8125d
+			shape: "gear"
+			size: 2.0d
+		}
+		{
+			dependencies: ["05CB6A8B737BD9D9"]
+			id: "09B6A15579F0BB90"
+			tasks: [
+				{
+					id: "7240BD26D548DBAB"
+					item: {
+						count: 1
+						id: "oc2r:transistor"
+					}
+					type: "item"
+				}
+				{
+					id: "79A592C77F768F27"
+					item: {
+						count: 1
+						id: "oc2r:circuit_board"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["09B6A15579F0BB90"]
+			id: "2AAF0138A0CD18BC"
+			tasks: [
+				{
+					id: "27828222AE303519"
+					item: {
+						count: 1
+						id: "oc2r:bus_cable"
+					}
+					type: "item"
+				}
+				{
+					id: "10C1C61C8EC40A7E"
+					item: {
+						count: 1
+						id: "oc2r:bus_interface"
+					}
+					type: "item"
+				}
+				{
+					id: "04629B2C2D0A440D"
+					item: {
+						count: 1
+						id: "oc2r:network_cable"
+					}
+					type: "item"
+				}
+				{
+					id: "28DA810F4F3533AE"
+					item: {
+						count: 1
+						id: "oc2r:network_connector"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2AAF0138A0CD18BC"]
+			id: "10827936DDB5336C"
+			tasks: [
+				{
+					id: "50BCBE7B1C87351E"
+					item: {
+						count: 1
+						id: "oc2r:cpu_tier_1"
+					}
+					type: "item"
+				}
+				{
+					id: "61E90B80D4D8E162"
+					item: {
+						count: 1
+						id: "oc2r:cpu_tier_2"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 0.0d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["10827936DDB5336C"]
+			id: "1480A2DE0E4487D2"
+			tasks: [
+				{
+					id: "42B6979E8538F495"
+					item: {
+						count: 1
+						id: "oc2r:cpu_tier_3"
+					}
+					type: "item"
+				}
+				{
+					id: "37F9363F61148DC9"
+					item: {
+						count: 1
+						id: "oc2r:cpu_tier_4"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1480A2DE0E4487D2"]
+			id: "71C7F81695C57CC6"
+			tasks: [
+				{
+					id: "5B98D0C94BC418AC"
+					item: {
+						count: 1
+						id: "oc2r:gpu_tier_1"
+					}
+					type: "item"
+				}
+				{
+					id: "0ECD8D62BE8BA2C7"
+					item: {
+						count: 1
+						id: "oc2r:gpu_tier_2"
+					}
+					type: "item"
+				}
+				{
+					id: "16BB02CAA5F7C944"
+					item: {
+						count: 1
+						id: "oc2r:gpu_tier_3"
+					}
+					type: "item"
+				}
+				{
+					id: "5116BFAF71C1CB89"
+					item: {
+						count: 1
+						id: "oc2r:gpu_tier_4"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["05CB6A8B737BD9D9"]
+			id: "74D0F6DA4B9B632D"
+			tasks: [
+				{
+					id: "06C667EE71EF58FE"
+					item: {
+						count: 1
+						id: "oc2r:memory_small"
+					}
+					type: "item"
+				}
+				{
+					id: "5014DC20CD8D9E44"
+					item: {
+						count: 1
+						id: "oc2r:memory_medium"
+					}
+					type: "item"
+				}
+				{
+					id: "40B3E58D29535E7F"
+					item: {
+						count: 1
+						id: "oc2r:memory_large"
+					}
+					type: "item"
+				}
+				{
+					id: "72C24A573B078861"
+					item: {
+						count: 1
+						id: "oc2r:memory_extra_large"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 1.875d
+		}
+		{
+			dependencies: ["74D0F6DA4B9B632D"]
+			id: "2462CB6ABF43F9A2"
+			tasks: [
+				{
+					id: "22D950ED89D0E728"
+					item: {
+						count: 1
+						id: "oc2r:hard_drive_small"
+					}
+					type: "item"
+				}
+				{
+					id: "6B235AB17E582842"
+					item: {
+						count: 1
+						id: "oc2r:hard_drive_medium"
+					}
+					type: "item"
+				}
+				{
+					id: "209339967876202A"
+					item: {
+						count: 1
+						id: "oc2r:hard_drive_large"
+					}
+					type: "item"
+				}
+				{
+					id: "344CDA6A346AB3C9"
+					item: {
+						count: 1
+						id: "oc2r:hard_drive_extra_large"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 1.875d
+		}
+		{
+			dependencies: ["2462CB6ABF43F9A2"]
+			id: "3900E078476900F0"
+			tasks: [
+				{
+					id: "6F8E9756C27B7FF3"
+					item: {
+						count: 1
+						id: "oc2r:flash_memory"
+					}
+					type: "item"
+				}
+				{
+					id: "5D8DD6F0EC70AB6B"
+					item: {
+						count: 1
+						id: "oc2r:flash_memory_medium"
+					}
+					type: "item"
+				}
+				{
+					id: "71C19AF14C9FDAA6"
+					item: {
+						count: 1
+						id: "oc2r:floppy"
+					}
+					type: "item"
+				}
+				{
+					id: "25A81CCB06994831"
+					item: {
+						count: 1
+						id: "oc2r:floppy_modern"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 1.875d
+		}
+		{
+			dependencies: ["05CB6A8B737BD9D9"]
+			id: "0B94BC3E0A1B253A"
+			tasks: [
+				{
+					id: "5DC8429EEFC2B37D"
+					item: {
+						count: 1
+						id: "oc2r:computer"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 3.75d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["0B94BC3E0A1B253A"]
+			id: "2AEDEA4EA7EDB9F3"
+			tasks: [
+				{
+					id: "23687B0FF0FE4C27"
+					item: {
+						count: 1
+						id: "oc2r:tablet"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["2AEDEA4EA7EDB9F3"]
+			id: "16E26C004F7CD7A3"
+			tasks: [
+				{
+					id: "54805BC4CF19DD29"
+					item: {
+						count: 1
+						id: "oc2r:robot"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 3.75d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["16E26C004F7CD7A3"]
+			id: "26DAD52686B696E2"
+			tasks: [
+				{
+					id: "2531E4572B4E4367"
+					item: {
+						count: 1
+						id: "oc2r:keyboard"
+					}
+					type: "item"
+				}
+				{
+					id: "51E9B8EF706D40EE"
+					item: {
+						count: 1
+						id: "oc2r:projector"
+					}
+					type: "item"
+				}
+				{
+					id: "6D5018DEBC684286"
+					item: {
+						count: 1
+						id: "oc2r:redstone_interface"
+					}
+					type: "item"
+				}
+				{
+					id: "7684E86F49DB4CF0"
+					item: {
+						count: 1
+						id: "oc2r:machine_interface"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["26DAD52686B696E2"]
+			id: "1926EFCC8B80AAF4"
+			tasks: [
+				{
+					id: "4AB4CE2083AE6263"
+					item: {
+						count: 1
+						id: "oc2r:scanner_module"
+					}
+					type: "item"
+				}
+				{
+					id: "13143A7A3044F5EE"
+					item: {
+						count: 1
+						id: "oc2r:inventory_operations_module"
+					}
+					type: "item"
+				}
+				{
+					id: "42BD197BA3FD45FB"
+					item: {
+						count: 1
+						id: "oc2r:block_operations_module"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 3.75d
+		}
+		{
+			dependencies: ["05CB6A8B737BD9D9"]
+			id: "0BB1631FCC4AC1D2"
+			tasks: [
+				{
+					id: "22419735FBE0D755"
+					item: {
+						count: 1
+						id: "oc2r:network_hub"
+					}
+					type: "item"
+				}
+				{
+					id: "050B3ADFE58B2A45"
+					item: {
+						count: 1
+						id: "oc2r:network_switch"
+					}
+					type: "item"
+				}
+				{
+					id: "5446FBBD7900396E"
+					item: {
+						count: 1
+						id: "oc2r:wireless_access_point"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 5.625d
+		}
+		{
+			dependencies: ["0BB1631FCC4AC1D2"]
+			id: "4EF267D74987F1BF"
+			tasks: [
+				{
+					id: "4E5310A7F55B15D2"
+					item: {
+						count: 1
+						id: "oc2r:internet_gateway"
+					}
+					type: "item"
+				}
+				{
+					id: "3D247789D7DD5C0B"
+					item: {
+						count: 1
+						id: "oc2r:network_tunnel_card"
+					}
+					type: "item"
+				}
+				{
+					id: "3B2F275977DF20D6"
+					item: {
+						count: 1
+						id: "oc2r:network_tunnel_module"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 5.625d
+		}
+		{
+			dependencies: ["4EF267D74987F1BF"]
+			id: "0AB5515F4EE49294"
+			tasks: [
+				{
+					id: "79B2478A750A28A7"
+					item: {
+						count: 1
+						id: "oc2r:gps_tower"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 5.625d
+			shape: "diamond"
+			size: 1.5d
+		}
+	]
+}

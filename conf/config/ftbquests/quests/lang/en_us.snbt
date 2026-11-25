@@ -5,6 +5,8 @@
 	chapter.24C6791C85D15F90.title: "1. Andesite"
 	chapter.2FEA7F27C95382C3.chapter_subtitle: ["Pipes, tanks and steam"]
 	chapter.2FEA7F27C95382C3.title: "2. Copper and fluids"
+	chapter.38D78BB65A70E6CF.chapter_subtitle: ["Silicon, code and navigation towers"]
+	chapter.38D78BB65A70E6CF.title: "7. Computers and networks"
 	chapter.467B3D53C675C9E9.chapter_subtitle: ["Packages, stock and rails"]
 	chapter.467B3D53C675C9E9.title: "5. Logistics and trains"
 	chapter.5556FECB89D4939B.chapter_subtitle: ["Read this first: what is different here and how it works"]
@@ -21,6 +23,16 @@
 		"Steel opens stage 6, &eHeavy industry&r."
 	]
 	quest.036B24005742EE4F.quest_subtitle: "The one and only steel"
+	quest.05CB6A8B737BD9D9.quest_desc: [
+		"OC2R emulates a &eRISC-V&r computer: CPU, memory, firmware, disks and devices. Here computers are &elate-game&r machinery, not a crafting-table detour."
+		""
+		"Sand and quartz become &esilicon wafers&r: mixed, smelted, pressed."
+		""
+		"Full docs: &bhttps://wiki.loki-code.dev/ru/start&r"
+		""
+		"Four branches: chips, memory and storage, computers and robots, GPS network."
+	]
+	quest.05CB6A8B737BD9D9.quest_subtitle: "From sand to silicon"
 	quest.07D35ABEE8E840D3.quest_subtitle: "Tools"
 	quest.097A4CBE15399FE2.quest_desc: [
 		"The &esun&r and the &emoon&r rise in the &eeast&r and set in the &ewest&r. In the morning the sun is in the east, in the evening in the west."
@@ -31,13 +43,35 @@
 	]
 	quest.097A4CBE15399FE2.quest_subtitle: "A compass in the sky"
 	quest.097A4CBE15399FE2.title: "Sun and moon"
+	quest.09B6A15579F0BB90.quest_desc: ["Transistors and circuit boards are built by &esequenced assembly&r on a Create belt, not in the crafting table."]
+	quest.09B6A15579F0BB90.quest_subtitle: "Chips"
+	quest.0AB5515F4EE49294.quest_desc: ["&eGPS tower&r returns the world coordinates of its own base. In relative mode it shows offset from the main tower (45 blocks range). It needs steel, tier-3 CPU and a &esignal relay&r. Docs: &bhttps://wiki.loki-code.dev/ru/block/gps_tower&r"]
+	quest.0AB5515F4EE49294.quest_subtitle: "Navigation in a world without coordinates"
 	quest.0B4E57A5601D7897.quest_desc: [
 		"&eBrass&r opens smart machines: deployers, mechanical crafters, filters and controllers."
 		""
 		"The &eprecision mechanism&r is the key part of this stage. The compass and the radio need it. Each branch opens step by step."
 	]
 	quest.0B4E57A5601D7897.quest_subtitle: "Copper and zinc, heated"
+	quest.0B94BC3E0A1B253A.quest_desc: ["Recipe needs &esteel&r and a &emechanical crafter&r. The case already contains &eLinux firmware&r. Open it with a &bwrench&r and install CPU + 4 memory modules."]
+	quest.0B94BC3E0A1B253A.quest_subtitle: "The first computer"
+	quest.0BB1631FCC4AC1D2.quest_subtitle: "Networks"
+	quest.0EB5415787ED636F.quest_desc: ["New rails, track switches, semaphores, couplers and the conductor's cap."]
+	quest.0EB5415787ED636F.quest_subtitle: "Steam 'n' Rails"
+	quest.10827936DDB5336C.quest_desc: ["Each CPU tier eats the previous one, built in the &emechanical crafter&r. Tier 1 is iron, tier 2 is gold, tier 3 needs diamonds, tier 4 emeralds."]
+	quest.10827936DDB5336C.quest_subtitle: "Processors"
+	quest.11F74592A02F5C64.quest_desc: [
+		"Place a &etrack station&r, set a &eschedule&r on the train. The &erailways navigator&r (tablet) finds routes between stations and shows delays. &eAdvanced displays&r on platforms show departure times."
+		""
+		"Steam 'n' Rails adds &etrack switches&r and &esemaphores&r for large networks."
+	]
+	quest.11F74592A02F5C64.quest_subtitle: "Schedule and navigator"
+	quest.11F74592A02F5C64.title: "How to run trains"
 	quest.1266E483FD0E9F20.quest_subtitle: "Packages"
+	quest.15C96D3D31B513F3.quest_desc: ["Design n' Decor and Interiors add furniture, lamps, chairs and decor blocks that fit the Create style. Build a base you actually want to live in."]
+	quest.15C96D3D31B513F3.quest_subtitle: "Decor and comfort"
+	quest.16E26C004F7CD7A3.quest_desc: ["Robot = computer on legs: steel frame, pistons, same components inside. It has a &elocal position&r and a compass, calibrate with &bcalibrate()&r. See &bhttps://wiki.loki-code.dev/ru/robotics/navigation&r"]
+	quest.16E26C004F7CD7A3.quest_subtitle: "A robot that works"
 	quest.17B27771CDB86A5A.quest_desc: ["Airships and flying machines are built from blocks, piece by piece. In a world without coordinates a view from above is worth a lot."]
 	quest.17B27771CDB86A5A.quest_subtitle: "Machines that leave the ground"
 	quest.189DB7B48428D3CF.quest_desc: [
@@ -52,6 +86,8 @@
 	quest.189DB7B48428D3CF.quest_subtitle: "Same frequency, any distance"
 	quest.189DB7B48428D3CF.title: "How the radio works"
 	quest.1B43F5EAA670514E.quest_subtitle: "Artillery"
+	quest.1B8A58AA6E4A5CC1.quest_desc: ["Find routes between stations, see delays and departure times."]
+	quest.1B8A58AA6E4A5CC1.quest_subtitle: "Route navigator"
 	quest.1C4B150B8A8CAAA7.quest_subtitle: "Storage and the deep"
 	quest.1C93C15A5AEB0FD9.quest_desc: [
 		"The &esteel mechanism&r is the heavy cousin of the precision mechanism."
@@ -63,6 +99,8 @@
 	quest.20FA82989787B1DF.quest_subtitle: "Light electrics"
 	quest.2396E60EE3374696.quest_desc: ["The &ethermocouple&r and the &erefractory lining&r are built by sequenced assembly. The coke oven, the blast stove and the furnace itself need them."]
 	quest.2396E60EE3374696.quest_subtitle: "Furnace parts"
+	quest.2462CB6ABF43F9A2.quest_desc: ["Drives use &emagnetized needles&r, the same part the compass needs. Linux boots from the built-in flash, disks are for data."]
+	quest.2462CB6ABF43F9A2.quest_subtitle: "Storage"
 	quest.264F6C2DC0218409.quest_desc: [
 		"Several mods add steel and oil. Here each exists in &eone version&r only."
 		""
@@ -92,6 +130,11 @@
 		"&eTrain casing&r opens railways. In a world without coordinates a railway is also a road you cannot lose."
 	]
 	quest.2A55E4ECF6567A43.quest_subtitle: "Everything travels in a box"
+	quest.2ADCBEF262A03097.quest_desc: ["Let it Walk: build mechs and spider tanks from blocks. Legs plan every step themselves, climb stairs and slopes. Needs steel and Sable."]
+	quest.2ADCBEF262A03097.quest_subtitle: "Walking machines"
+	quest.2BC5ACE780F1C139.quest_desc: ["&eChairs&r (Interiors) - sit on them, they work on moving contraptions. &eLamps and frontlights&r (Design n' Decor) - industrial light for walls and ceilings."]
+	quest.2BC5ACE780F1C139.quest_subtitle: "Furniture and lamps"
+	quest.2BC5ACE780F1C139.title: "How to decorate"
 	quest.2CD9DA15A9C96299.quest_subtitle: "Rotation to power and back"
 	quest.31F6584EFCBA970A.quest_subtitle: "Automation"
 	quest.36192F56C7CCC3DC.quest_subtitle: "A walk through lava"
@@ -142,9 +185,18 @@
 	]
 	quest.45591406AE702E17.quest_subtitle: "Not on F3, not anywhere"
 	quest.45591406AE702E17.title: "No coordinates"
+	quest.478C28635AD3A619.quest_desc: [
+		"&eCoke oven&r burns coal into &ecoke&r. &eBlast stove&r preheats air. &eBlast furnace&r (3x3x3 multiblock) smelts iron + coke into molten steel. Pour into &ecasting mold&r for ingots."
+		""
+		"The furnace needs &ewater cooling&r (mechanical pump + water source) and &ethermocouples&r for control. Without water it overheats and breaks."
+	]
+	quest.478C28635AD3A619.quest_subtitle: "Coke, air, water"
+	quest.478C28635AD3A619.title: "How to make steel"
 	quest.490BA3F9D0D08D3A.quest_subtitle: "Odds and ends"
 	quest.4CA0D1B701FE55E2.quest_desc: ["A compass wrapped in brass sheets. It points to the &ecentre of the world&r, the same point for everyone: a shared place to meet."]
 	quest.4CA0D1B701FE55E2.quest_subtitle: "The way to the centre"
+	quest.4EF267D74987F1BF.quest_desc: ["Ender pearls open the way out."]
+	quest.4EF267D74987F1BF.quest_subtitle: "The internet"
 	quest.50D3912B7539F0FD.quest_desc: [
 		"Progress is split into six stages, one chapter each:"
 		""
@@ -166,6 +218,8 @@
 	quest.588C906CB5C41F0E.quest_subtitle: "Moving structures"
 	quest.599F09C1CC31CB92.quest_desc: ["Pumping and distilling oil needs the &epressure gauge&r."]
 	quest.599F09C1CC31CB92.quest_subtitle: "Oil and engines"
+	quest.5F5A8A9001816DAC.quest_desc: ["Steel tracks for tracked vehicles on Aeronautics contraptions."]
+	quest.5F5A8A9001816DAC.quest_subtitle: "Tracks for aircraft"
 	quest.5F7359B8B5F2A6EA.quest_desc: ["&eCopper casing&r and &eiron sheets&r open fluids: pipes, pumps, tanks, the spout and the steam engine, the first serious source of rotation."]
 	quest.5F7359B8B5F2A6EA.quest_subtitle: "Things start to flow"
 	quest.61438AC938544407.quest_desc: [
@@ -188,6 +242,8 @@
 	quest.6D6EF2E6F0E90114.quest_subtitle: "Check before you craft"
 	quest.6D6EF2E6F0E90114.title: "Recipes are changed"
 	quest.6FEE6AE08B1D54B5.quest_subtitle: "Rotation"
+	quest.74D0F6DA4B9B632D.quest_desc: ["Start with 4 small modules (32 MiB total), then upgrade."]
+	quest.74D0F6DA4B9B632D.quest_subtitle: "Memory"
 	quest.77182E8748F6D8DF.quest_desc: [
 		"Precision mechanism, lightning rod as the antenna, iron sheets and redstone."
 		""
@@ -201,6 +257,13 @@
 	]
 	quest.78320318B62C021A.quest_subtitle: "Why the machine stopped"
 	quest.78320318B62C021A.title: "Stress and speed"
+	quest.790B959C5229C198.quest_desc: [
+		"Place the &ewalker core&r, attach &eleg hinges&r, build legs from any blocks, add &efeet&r. Sit in &epilot controls&r to drive. Legs climb stairs automatically. Jet feet let you fly."
+		""
+		"Tracks from Create: Tracks mount on Aeronautics contraptions for ground vehicles."
+	]
+	quest.790B959C5229C198.quest_subtitle: "Legs, core, pilot controls"
+	quest.790B959C5229C198.title: "How to build a walker"
 	quest.7A0344E3214AC811.quest_subtitle: "Processing"
 	quest.7A7B3E8DCEBE49EE.quest_desc: ["Oil is pumped and distilled only with The Factory Must Grow machines."]
 	quest.7A7B3E8DCEBE49EE.quest_subtitle: "One oil for the whole pack"

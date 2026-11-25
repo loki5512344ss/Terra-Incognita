@@ -5,14 +5,14 @@ ServerEvents.recipes(event => {
 
   const sa = event.recipes.create
 
-  // --- Refractory lining: brass + fireproof brick + slag ---
+  // --- Refractory lining: brass + fireproof brick + slag (loops 2) ---
   sa.sequenced_assembly(['kubejs:refractory_lining'], 'create:brass_sheet', [
     sa.deploying('kubejs:incomplete_refractory_lining', ['kubejs:incomplete_refractory_lining', 'tfmg:fireproof_brick']),
     sa.filling('kubejs:incomplete_refractory_lining', ['kubejs:incomplete_refractory_lining', Fluid.of('tfmg:molten_slag', 90)]),
     sa.pressing('kubejs:incomplete_refractory_lining', 'kubejs:incomplete_refractory_lining')
   ]).transitionalItem('kubejs:incomplete_refractory_lining').loops(2).id('sborka:refractory_lining')
 
-  // --- Thermocouple: iron sheet + copper and constantan wire ---
+  // --- Thermocouple: iron sheet + copper and constantan wire (needs rolling mill wire) ---
   sa.sequenced_assembly(['kubejs:thermocouple'], 'create:iron_sheet', [
     sa.deploying('kubejs:incomplete_thermocouple', ['kubejs:incomplete_thermocouple', 'tfmg:copper_wire']),
     sa.deploying('kubejs:incomplete_thermocouple', ['kubejs:incomplete_thermocouple', 'tfmg:constantan_wire']),
@@ -32,16 +32,18 @@ ServerEvents.recipes(event => {
     event.shaped(Item.of(output, count), pattern, key).id('sborka:tfmg_' + id)
   }
 
-  // Blast furnace and steel
-  redo('coke_oven', 'tfmg:coke_oven', 2, [' K ', 'CIC', ' C '], {
-    K: 'kubejs:thermocouple', C: '#c:ingots/cast_iron', I: 'create:industrial_iron_block'
+  // Blast furnace and steel: water cooling (pump) and thermocouples
+  redo('coke_oven', 'tfmg:coke_oven', 2, [' K ', 'CIC', ' P '], {
+    K: 'kubejs:thermocouple', C: '#c:ingots/cast_iron', I: 'create:industrial_iron_block',
+    P: 'create:mechanical_pump'
   })
-  redo('blast_stove', 'tfmg:blast_stove', 2, ['CCK', 'TT ', 'FL '], {
+  redo('blast_stove', 'tfmg:blast_stove', 2, ['CCK', 'TTK', 'FLP'], {
     C: 'tfmg:cast_iron_pipe', T: 'tfmg:cast_iron_fluid_tank', F: 'tfmg:fireproof_bricks',
-    L: 'kubejs:refractory_lining', K: 'kubejs:thermocouple'
+    L: 'kubejs:refractory_lining', K: 'kubejs:thermocouple', P: 'create:mechanical_pump'
   })
-  redo('blast_furnace_output', 'tfmg:blast_furnace_output', 1, ['BCB', 'CQC', 'BLB'], {
-    B: 'tfmg:fireproof_bricks', C: 'tfmg:cast_iron_pipe', Q: '#c:storage_blocks/cast_iron', L: 'kubejs:refractory_lining'
+  redo('blast_furnace_output', 'tfmg:blast_furnace_output', 1, ['BCB', 'KQC', 'BLP'], {
+    B: 'tfmg:fireproof_bricks', C: 'tfmg:cast_iron_pipe', Q: '#c:storage_blocks/cast_iron',
+    L: 'kubejs:refractory_lining', K: 'kubejs:thermocouple', P: 'create:mechanical_pump'
   })
   redo('blast_furnace_reinforcement', 'tfmg:blast_furnace_reinforcement', 4, ['IOB', 'IOL', 'IOB'], {
     I: '#c:ingots/steel', O: 'tfmg:heavy_plate', B: 'tfmg:fireproof_bricks', L: 'kubejs:refractory_lining'

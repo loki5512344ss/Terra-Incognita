@@ -9,5 +9,10 @@ global.terraRemoved = {
   ieOil: ['refinery', 'diesel_generator', 'fermenter'].map(id => 'immersiveengineering:' + id),
   // Create Diesel Generators oil extraction and refining (the engines stay)
   cdgOil: ['pumpjack_bearing', 'pumpjack_crank', 'pumpjack_head', 'pumpjack_hole',
-    'distillation_controller', 'oil_scanner'].map(id => 'createdieselgenerators:' + id)
+    'distillation_controller', 'oil_scanner'].map(id => 'createdieselgenerators:' + id),
+  // Supplementaries globes show world coordinates when spun - breaks the no-coordinates rule
+  suppGlobes: ['globe', 'globe_sepia'].map(id => 'supplementaries:' + id),
+  // Create: Connected catalysts for mods that are not in the pack: no textures and nothing to use them for
+  noTexture: ['fan_enriched_catalyst', 'fan_ending_catalyst_dragons_breath', 'fan_transmutation_catalyst',
+    'fan_glooming_catalyst', 'fan_soul_stripping_catalyst'].map(id => 'create_connected:' + id)
 }

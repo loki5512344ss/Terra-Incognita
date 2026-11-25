@@ -12,13 +12,13 @@
 	images: [
 		{
 			alpha: 26
-			height: 7.21875d
+			height: 8.625d
 			image: "create:textures/item/brass_ingot.png"
 			order: -1
 			rotation: 0.0d
-			width: 7.21875d
+			width: 8.625d
 			x: 4.0d
-			y: 2.8125d
+			y: 3.75d
 		}
 		{
 			alpha: 90
@@ -27,7 +27,7 @@
 			order: -1
 			rotation: -15.0d
 			width: 1.0d
-			x: 5.33d
+			x: 5.21d
 			y: -1.94d
 		}
 		{
@@ -37,7 +37,7 @@
 			order: -1
 			rotation: -9.0d
 			width: 1.0d
-			x: 7.86d
+			x: 7.53d
 			y: -1.48d
 		}
 		{
@@ -47,8 +47,8 @@
 			order: -1
 			rotation: -3.0d
 			width: 1.0d
-			x: 10.01d
-			y: -0.59d
+			x: 9.57d
+			y: -0.6d
 		}
 		{
 			alpha: 90
@@ -57,8 +57,8 @@
 			order: -1
 			rotation: 3.0d
 			width: 1.0d
-			x: 11.57d
-			y: 0.63d
+			x: 11.15d
+			y: 0.64d
 		}
 		{
 			alpha: 90
@@ -67,8 +67,8 @@
 			order: -1
 			rotation: 9.0d
 			width: 1.0d
-			x: 12.4d
-			y: 2.06d
+			x: 12.16d
+			y: 2.13d
 		}
 		{
 			alpha: 90
@@ -77,8 +77,8 @@
 			order: -1
 			rotation: 15.0d
 			width: 1.0d
-			x: 12.4d
-			y: 3.57d
+			x: 12.5d
+			y: 3.75d
 		}
 		{
 			alpha: 90
@@ -87,8 +87,8 @@
 			order: -1
 			rotation: -10.0d
 			width: 1.0d
-			x: 11.57d
-			y: 5.0d
+			x: 12.16d
+			y: 5.37d
 		}
 		{
 			alpha: 90
@@ -97,8 +97,8 @@
 			order: -1
 			rotation: -4.0d
 			width: 1.0d
-			x: 10.01d
-			y: 6.22d
+			x: 11.15d
+			y: 6.86d
 		}
 		{
 			alpha: 90
@@ -107,8 +107,8 @@
 			order: -1
 			rotation: 2.0d
 			width: 1.0d
-			x: 7.86d
-			y: 7.1d
+			x: 9.57d
+			y: 8.1d
 		}
 		{
 			alpha: 90
@@ -117,8 +117,8 @@
 			order: -1
 			rotation: 8.0d
 			width: 1.0d
-			x: 5.33d
-			y: 7.57d
+			x: 7.53d
+			y: 8.98d
 		}
 		{
 			alpha: 90
@@ -127,8 +127,8 @@
 			order: -1
 			rotation: 14.0d
 			width: 1.0d
-			x: 2.67d
-			y: 7.57d
+			x: 5.21d
+			y: 9.44d
 		}
 		{
 			alpha: 90
@@ -137,8 +137,8 @@
 			order: -1
 			rotation: -11.0d
 			width: 1.0d
-			x: 0.14d
-			y: 7.1d
+			x: 2.79d
+			y: 9.44d
 		}
 		{
 			alpha: 90
@@ -147,8 +147,8 @@
 			order: -1
 			rotation: -5.0d
 			width: 1.0d
-			x: -2.01d
-			y: 6.22d
+			x: 0.47d
+			y: 8.98d
 		}
 		{
 			alpha: 90
@@ -157,8 +157,8 @@
 			order: -1
 			rotation: 1.0d
 			width: 1.0d
-			x: -3.57d
-			y: 5.0d
+			x: -1.57d
+			y: 8.1d
 		}
 		{
 			alpha: 90
@@ -167,8 +167,8 @@
 			order: -1
 			rotation: 7.0d
 			width: 1.0d
-			x: -4.4d
-			y: 3.57d
+			x: -3.15d
+			y: 6.86d
 		}
 		{
 			alpha: 90
@@ -177,8 +177,8 @@
 			order: -1
 			rotation: 13.0d
 			width: 1.0d
-			x: -4.4d
-			y: 2.06d
+			x: -4.16d
+			y: 5.37d
 		}
 		{
 			alpha: 90
@@ -187,8 +187,8 @@
 			order: -1
 			rotation: -12.0d
 			width: 1.0d
-			x: -3.57d
-			y: 0.63d
+			x: -4.5d
+			y: 3.75d
 		}
 		{
 			alpha: 90
@@ -197,8 +197,8 @@
 			order: -1
 			rotation: -6.0d
 			width: 1.0d
-			x: -2.01d
-			y: -0.59d
+			x: -4.16d
+			y: 2.13d
 		}
 		{
 			alpha: 90
@@ -207,8 +207,8 @@
 			order: -1
 			rotation: 0.0d
 			width: 1.0d
-			x: 0.14d
-			y: -1.48d
+			x: -3.15d
+			y: 0.64d
 		}
 		{
 			alpha: 90
@@ -217,7 +217,27 @@
 			order: -1
 			rotation: 6.0d
 			width: 1.0d
-			x: 2.67d
+			x: -1.57d
+			y: -0.6d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/linked_controller.png"
+			order: -1
+			rotation: 12.0d
+			width: 1.0d
+			x: 0.47d
+			y: -1.48d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/filter.png"
+			order: -1
+			rotation: -13.0d
+			width: 1.0d
+			x: 2.79d
 			y: -1.94d
 		}
 	]
@@ -238,7 +258,7 @@
 				}
 			]
 			x: -2.5d
-			y: 2.8125d
+			y: 3.75d
 			shape: "gear"
 			size: 2.0d
 		}
@@ -716,6 +736,109 @@
 			]
 			x: 10.5d
 			y: 5.625d
+		}
+		{
+			dependencies: ["0B4E57A5601D7897"]
+			id: "15C96D3D31B513F3"
+			tasks: [
+				{
+					id: "59B33202170B0BF3"
+					item: {
+						count: 1
+						id: "dndecor:brass_lamp"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 7.5d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["15C96D3D31B513F3"]
+			id: "5D63C4B18CCF6F83"
+			tasks: [
+				{
+					id: "477E97ECEE16D607"
+					item: {
+						count: 1
+						id: "dndecor:brass_catwalk"
+					}
+					type: "item"
+				}
+				{
+					id: "7297A7FD16D9B7C2"
+					item: {
+						count: 1
+						id: "dndecor:brass_floor"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["5D63C4B18CCF6F83"]
+			id: "4E06141509BE30EE"
+			tasks: [
+				{
+					id: "0A43C79138299D69"
+					item: {
+						count: 1
+						id: "interiors:red_chair"
+					}
+					type: "item"
+				}
+				{
+					id: "480A4BA6DDC98A05"
+					item: {
+						count: 1
+						id: "interiors:red_floor_chair"
+					}
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["4E06141509BE30EE"]
+			id: "05B592F138B0E670"
+			tasks: [
+				{
+					id: "24614B756E3C6303"
+					item: {
+						count: 1
+						id: "dndecor:brass_frontlight"
+					}
+					type: "item"
+				}
+				{
+					id: "4A0945A1FB3DA66D"
+					item: {
+						count: 1
+						id: "dndecor:brass_sheet_metal"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["05B592F138B0E670"]
+			id: "2BC5ACE780F1C139"
+			tasks: [
+				{
+					id: "103594FB7868E8E8"
+					type: "checkmark"
+				}
+			]
+			x: 6.0d
+			y: 7.5d
+			shape: "hexagon"
 		}
 	]
 }

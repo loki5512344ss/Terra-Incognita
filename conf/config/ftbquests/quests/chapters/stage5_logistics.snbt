@@ -12,13 +12,13 @@
 	images: [
 		{
 			alpha: 26
-			height: 14.8125d
+			height: 16.875d
 			image: "create:textures/item/track.png"
 			order: -1
 			rotation: 0.0d
-			width: 14.8125d
-			x: -0.6500000000000004d
-			y: -2.125d
+			width: 16.875d
+			x: 0.75d
+			y: 0.75d
 		}
 		{
 			alpha: 90
@@ -27,8 +27,8 @@
 			order: -1
 			rotation: -15.0d
 			width: 1.0d
-			x: 0.46d
-			y: -11.95d
+			x: 1.68d
+			y: -11.96d
 		}
 		{
 			alpha: 90
@@ -37,8 +37,8 @@
 			order: -1
 			rotation: -9.0d
 			width: 1.0d
-			x: 2.63d
-			y: -11.57d
+			x: 3.51d
+			y: -11.61d
 		}
 		{
 			alpha: 90
@@ -47,8 +47,8 @@
 			order: -1
 			rotation: -3.0d
 			width: 1.0d
-			x: 4.68d
-			y: -10.83d
+			x: 5.27d
+			y: -10.93d
 		}
 		{
 			alpha: 90
@@ -57,8 +57,8 @@
 			order: -1
 			rotation: 3.0d
 			width: 1.0d
-			x: 6.52d
-			y: -9.76d
+			x: 6.9d
+			y: -9.92d
 		}
 		{
 			alpha: 90
@@ -67,8 +67,8 @@
 			order: -1
 			rotation: 9.0d
 			width: 1.0d
-			x: 8.09d
-			y: -8.39d
+			x: 8.37d
+			y: -8.63d
 		}
 		{
 			alpha: 90
@@ -77,8 +77,8 @@
 			order: -1
 			rotation: 15.0d
 			width: 1.0d
-			x: 9.32d
-			y: -6.78d
+			x: 9.63d
+			y: -7.08d
 		}
 		{
 			alpha: 90
@@ -87,8 +87,8 @@
 			order: -1
 			rotation: -10.0d
 			width: 1.0d
-			x: 10.17d
-			y: -4.99d
+			x: 10.64d
+			y: -5.32d
 		}
 		{
 			alpha: 90
@@ -97,8 +97,8 @@
 			order: -1
 			rotation: -4.0d
 			width: 1.0d
-			x: 10.61d
-			y: -3.09d
+			x: 11.39d
+			y: -3.39d
 		}
 		{
 			alpha: 90
@@ -107,8 +107,8 @@
 			order: -1
 			rotation: 2.0d
 			width: 1.0d
-			x: 10.61d
-			y: -1.16d
+			x: 11.85d
+			y: -1.35d
 		}
 		{
 			alpha: 90
@@ -117,8 +117,8 @@
 			order: -1
 			rotation: 8.0d
 			width: 1.0d
-			x: 10.17d
-			y: 0.74d
+			x: 12.0d
+			y: 0.75d
 		}
 		{
 			alpha: 90
@@ -127,8 +127,8 @@
 			order: -1
 			rotation: 14.0d
 			width: 1.0d
-			x: 9.32d
-			y: 2.53d
+			x: 11.85d
+			y: 2.85d
 		}
 		{
 			alpha: 90
@@ -137,8 +137,8 @@
 			order: -1
 			rotation: -11.0d
 			width: 1.0d
-			x: 8.09d
-			y: 4.14d
+			x: 11.39d
+			y: 4.89d
 		}
 		{
 			alpha: 90
@@ -147,8 +147,8 @@
 			order: -1
 			rotation: -5.0d
 			width: 1.0d
-			x: 6.52d
-			y: 5.51d
+			x: 10.64d
+			y: 6.82d
 		}
 		{
 			alpha: 90
@@ -157,8 +157,8 @@
 			order: -1
 			rotation: 1.0d
 			width: 1.0d
-			x: 4.68d
-			y: 6.58d
+			x: 9.63d
+			y: 8.58d
 		}
 		{
 			alpha: 90
@@ -167,8 +167,8 @@
 			order: -1
 			rotation: 7.0d
 			width: 1.0d
-			x: 2.63d
-			y: 7.32d
+			x: 8.37d
+			y: 10.13d
 		}
 		{
 			alpha: 90
@@ -177,8 +177,8 @@
 			order: -1
 			rotation: 13.0d
 			width: 1.0d
-			x: 0.46d
-			y: 7.7d
+			x: 6.9d
+			y: 11.42d
 		}
 		{
 			alpha: 90
@@ -187,8 +187,8 @@
 			order: -1
 			rotation: -12.0d
 			width: 1.0d
-			x: -1.76d
-			y: 7.7d
+			x: 5.27d
+			y: 12.43d
 		}
 		{
 			alpha: 90
@@ -197,8 +197,8 @@
 			order: -1
 			rotation: -6.0d
 			width: 1.0d
-			x: -3.93d
-			y: 7.32d
+			x: 3.51d
+			y: 13.11d
 		}
 		{
 			alpha: 90
@@ -207,8 +207,8 @@
 			order: -1
 			rotation: 0.0d
 			width: 1.0d
-			x: -5.98d
-			y: 6.58d
+			x: 1.68d
+			y: 13.46d
 		}
 		{
 			alpha: 90
@@ -217,8 +217,8 @@
 			order: -1
 			rotation: 6.0d
 			width: 1.0d
-			x: -7.82d
-			y: 5.51d
+			x: -0.18d
+			y: 13.46d
 		}
 		{
 			alpha: 90
@@ -227,8 +227,8 @@
 			order: -1
 			rotation: 12.0d
 			width: 1.0d
-			x: -9.39d
-			y: 4.14d
+			x: -2.01d
+			y: 13.11d
 		}
 		{
 			alpha: 90
@@ -237,8 +237,8 @@
 			order: -1
 			rotation: -13.0d
 			width: 1.0d
-			x: -10.62d
-			y: 2.53d
+			x: -3.77d
+			y: 12.43d
 		}
 		{
 			alpha: 90
@@ -247,8 +247,8 @@
 			order: -1
 			rotation: -7.0d
 			width: 1.0d
-			x: -11.47d
-			y: 0.74d
+			x: -5.4d
+			y: 11.42d
 		}
 		{
 			alpha: 90
@@ -257,8 +257,8 @@
 			order: -1
 			rotation: -1.0d
 			width: 1.0d
-			x: -11.91d
-			y: -1.16d
+			x: -6.87d
+			y: 10.13d
 		}
 		{
 			alpha: 90
@@ -267,8 +267,8 @@
 			order: -1
 			rotation: 5.0d
 			width: 1.0d
-			x: -11.91d
-			y: -3.09d
+			x: -8.13d
+			y: 8.58d
 		}
 		{
 			alpha: 90
@@ -277,8 +277,8 @@
 			order: -1
 			rotation: 11.0d
 			width: 1.0d
-			x: -11.47d
-			y: -4.99d
+			x: -9.14d
+			y: 6.82d
 		}
 		{
 			alpha: 90
@@ -287,8 +287,8 @@
 			order: -1
 			rotation: -14.0d
 			width: 1.0d
-			x: -10.62d
-			y: -6.78d
+			x: -9.89d
+			y: 4.89d
 		}
 		{
 			alpha: 90
@@ -297,8 +297,8 @@
 			order: -1
 			rotation: -8.0d
 			width: 1.0d
-			x: -9.39d
-			y: -8.39d
+			x: -10.35d
+			y: 2.85d
 		}
 		{
 			alpha: 90
@@ -307,8 +307,8 @@
 			order: -1
 			rotation: -2.0d
 			width: 1.0d
-			x: -7.82d
-			y: -9.76d
+			x: -10.5d
+			y: 0.75d
 		}
 		{
 			alpha: 90
@@ -317,8 +317,8 @@
 			order: -1
 			rotation: 4.0d
 			width: 1.0d
-			x: -5.98d
-			y: -10.83d
+			x: -10.35d
+			y: -1.35d
 		}
 		{
 			alpha: 90
@@ -327,8 +327,8 @@
 			order: -1
 			rotation: 10.0d
 			width: 1.0d
-			x: -3.93d
-			y: -11.57d
+			x: -9.89d
+			y: -3.39d
 		}
 		{
 			alpha: 90
@@ -337,8 +337,68 @@
 			order: -1
 			rotation: -15.0d
 			width: 1.0d
-			x: -1.76d
-			y: -11.95d
+			x: -9.14d
+			y: -5.32d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/cardboard_helmet.png"
+			order: -1
+			rotation: -9.0d
+			width: 1.0d
+			x: -8.13d
+			y: -7.08d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/track.png"
+			order: -1
+			rotation: -3.0d
+			width: 1.0d
+			x: -6.87d
+			y: -8.63d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/schedule.png"
+			order: -1
+			rotation: 3.0d
+			width: 1.0d
+			x: -5.4d
+			y: -9.92d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/pulp.png"
+			order: -1
+			rotation: 9.0d
+			width: 1.0d
+			x: -3.77d
+			y: -10.93d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/clipboard.png"
+			order: -1
+			rotation: 15.0d
+			width: 1.0d
+			x: -2.01d
+			y: -11.61d
+		}
+		{
+			alpha: 90
+			height: 1.0d
+			image: "create:textures/item/shopping_list.png"
+			order: -1
+			rotation: -10.0d
+			width: 1.0d
+			x: -0.18d
+			y: -11.96d
 		}
 	]
 	order_index: 5
@@ -491,8 +551,8 @@
 					type: "item"
 				}
 			]
-			x: 2.17d
-			y: 1.25d
+			x: 2.5d
+			y: 0.0d
 			shape: "diamond"
 			size: 1.25d
 		}
@@ -509,8 +569,8 @@
 					type: "item"
 				}
 			]
-			x: 3.46d
-			y: 2.0d
+			x: 4.0d
+			y: 0.0d
 			shape: "diamond"
 			size: 1.25d
 		}
@@ -527,8 +587,8 @@
 					type: "item"
 				}
 			]
-			x: 4.76d
-			y: 2.75d
+			x: 5.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["32E5FA56793AF827"]
@@ -543,8 +603,8 @@
 					type: "item"
 				}
 			]
-			x: 6.06d
-			y: 3.5d
+			x: 7.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["098224E72B71B0C0"]
@@ -559,8 +619,8 @@
 					type: "item"
 				}
 			]
-			x: 7.36d
-			y: 4.25d
+			x: 8.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["0D983129AC210171"]
@@ -575,8 +635,8 @@
 					type: "item"
 				}
 			]
-			x: 8.66d
-			y: 5.0d
+			x: 10.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["2A55E4ECF6567A43"]
@@ -591,8 +651,8 @@
 					type: "item"
 				}
 			]
-			x: -2.17d
-			y: 1.25d
+			x: 0.0d
+			y: 2.5d
 			shape: "diamond"
 			size: 1.25d
 		}
@@ -609,8 +669,8 @@
 					type: "item"
 				}
 			]
-			x: -3.46d
-			y: 2.0d
+			x: 0.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["4D4EA1BCAC72C3C3"]
@@ -625,8 +685,8 @@
 					type: "item"
 				}
 			]
-			x: -4.76d
-			y: 2.75d
+			x: 0.0d
+			y: 5.5d
 			shape: "diamond"
 			size: 1.25d
 		}
@@ -643,8 +703,8 @@
 					type: "item"
 				}
 			]
-			x: -6.06d
-			y: 3.5d
+			x: 0.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["64F5BE5DCC9780E9"]
@@ -659,8 +719,8 @@
 					type: "item"
 				}
 			]
-			x: -7.36d
-			y: 4.25d
+			x: 0.0d
+			y: 8.5d
 		}
 		{
 			dependencies: ["441BEE23A5F6BFC9"]
@@ -675,8 +735,8 @@
 					type: "item"
 				}
 			]
-			x: -8.66d
-			y: 5.0d
+			x: 0.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["3B6FC74B4AD8A378"]
@@ -691,8 +751,105 @@
 					type: "item"
 				}
 			]
-			x: -9.96d
-			y: 5.75d
+			x: 0.0d
+			y: 11.5d
+		}
+		{
+			dependencies: ["2A55E4ECF6567A43"]
+			id: "0EB5415787ED636F"
+			tasks: [
+				{
+					id: "360D9034A10FADF3"
+					item: {
+						count: 1
+						id: "railways:blue_conductor_cap"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: 0.0d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["0EB5415787ED636F"]
+			id: "240B54B0F6ADAB4E"
+			tasks: [
+				{
+					id: "67D5BFCDC7A1AAE7"
+					item: {
+						count: 1
+						id: "railways:knuckle_coupler"
+					}
+					type: "item"
+				}
+				{
+					id: "126726E3C0AD5868"
+					item: {
+						count: 1
+						id: "railways:semaphore"
+					}
+					type: "item"
+				}
+				{
+					id: "219CC9D61D0E05F4"
+					item: {
+						count: 1
+						id: "railways:track_switch_andesite"
+					}
+					type: "item"
+				}
+			]
+			x: -4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["240B54B0F6ADAB4E"]
+			id: "1B8A58AA6E4A5CC1"
+			tasks: [
+				{
+					id: "129386B269B67ACB"
+					item: {
+						count: 1
+						id: "createrailwaysnavigator:navigator"
+					}
+					type: "item"
+				}
+			]
+			x: -5.5d
+			y: 0.0d
+			shape: "diamond"
+			size: 1.25d
+		}
+		{
+			dependencies: ["1B8A58AA6E4A5CC1"]
+			id: "669D3B07AB7EEF14"
+			tasks: [
+				{
+					id: "7DE8B60A2ED8F604"
+					item: {
+						count: 1
+						id: "createrailwaysnavigator:advanced_display"
+					}
+					type: "item"
+				}
+			]
+			x: -7.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["669D3B07AB7EEF14"]
+			id: "11F74592A02F5C64"
+			tasks: [
+				{
+					id: "6EC774A1728F4C35"
+					type: "checkmark"
+				}
+			]
+			x: -8.5d
+			y: 0.0d
+			shape: "hexagon"
 		}
 	]
 }

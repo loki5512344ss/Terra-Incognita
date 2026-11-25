@@ -30,14 +30,14 @@ ServerEvents.recipes(event => {
   ]).transitionalItem('kubejs:incomplete_radio_tuner').loops(1).id('sborka:radio_tuner')
 
   // Radio: the radio tuner replaces the redstone at the bottom
-  event.remove({ id: 'sborka:radio' })
+  event.remove({ id: 'incognita:radio' })
   event.shaped('incognita:radio', [' L ', 'SPS', ' T '], {
     L: 'minecraft:lightning_rod', S: 'create:iron_sheet',
     P: 'create:precision_mechanism', T: 'kubejs:radio_tuner'
   }).id('sborka:radio')
 
   // Compass: a magnetized needle replaces the redstone
-  event.remove({ id: 'sborka:compass' })
+  event.remove({ id: 'minecraft:compass' })
   event.shaped('minecraft:compass', [' I ', 'IPI', ' N '], {
     I: 'create:iron_sheet', P: 'create:precision_mechanism', N: 'kubejs:magnetized_needle'
   }).id('sborka:compass')

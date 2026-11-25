@@ -1,5 +1,12 @@
 // Terra Incognita recipes (KubeJS 7, MC 1.21.1). One file per topic; split further as it grows.
 ServerEvents.recipes(event => {
+  global.terraRemoved.noTexture.forEach(id => event.remove({ output: id }))
+
+  // Create Deco ships this recipe in a broken format (the game rejects it), so it is declared again here
+  if (Platform.isLoaded('createdeco')) {
+    event.shapeless('create:placard', ['#createdeco:placards', 'minecraft:white_dye']).id('sborka:createdeco_placard')
+  }
+
   // --- Create: the mixer needs an iron sheet (the press is untouched because it makes the sheets) ---
   event.remove({ output: 'create:mechanical_mixer' })
   event.shaped('create:mechanical_mixer', [

@@ -53,7 +53,7 @@ def source(mod):
     cf = mod.get("curseforge")
     if cf:
         fid = str(cf["file"])
-        return f"https://edge.forgecdn.net/files/{fid[:4]}/{fid[4:].lstrip('0') or '0'}/{mod['file']}", None
+        return f"https://edge.forgecdn.net/files/{fid[:4]}/{fid[4:].lstrip('0') or '0'}/{urllib.parse.quote(mod['file'])}", None
     return mod["url"], mod.get("sha1")
 
 

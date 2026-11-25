@@ -102,6 +102,9 @@ def main():
                 if f.is_file() and f.name != ".gitkeep":
                     z.write(f, f"overrides/{dst}/{f.relative_to(ROOT / src)}")
                     count += 1
+        # only the pack defaults (GUI scale, music off); the game fills in every other option itself
+        z.write(ROOT / "conf/options.txt", "overrides/options.txt")
+        count += 1
         for j in jars:
             z.write(j, f"overrides/mods/{j.name}")
         for m in [] if args.no_external else external:

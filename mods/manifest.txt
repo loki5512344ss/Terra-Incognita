@@ -131,3 +131,4 @@ configurable-3.5.3+1.21.1-neoforge.jar
 
 dragonlib-3.0.29+mc1.21.1-neoforge.jar
 interiors-0.6.1 v3.jar
+skinrestorer-2.11.1+1.21-neoforge.jar

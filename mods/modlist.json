@@ -285,8 +285,10 @@
     {
       "file": "aerocopycats-1.1.1.jar",
       "name": "Copycats+ aeronautics weight",
-      "url": "https://cdn.modrinth.com/data/wjpmYU1u/versions/wsXjRa7l/aerocopycats-1.1.1.jar",
-      "sha1": "3a93862421d0a8cdae1e3a3d7f0d4bd01e049007"
+      "curseforge": {
+        "project": 1520961,
+        "file": 7977632
+      }
     },
     {
       "file": "alltheleaks-1.1.14-1.21.1-neoforge.jar",
@@ -967,6 +969,13 @@
         "project": 1312371,
         "file": 9043865
       }
+    },
+    {
+      "file": "skinrestorer-2.11.1+1.21-neoforge.jar",
+      "name": "Skin Restorer",
+      "url": "https://cdn.modrinth.com/data/ghrZDhGW/versions/VW4OYPBP/skinrestorer-2.11.1%2B1.21-neoforge.jar",
+      "sha1": "1926e526d84143daab4afcc3bb109caa385261ae",
+      "serverOnly": true
     },
     {
       "file": "sodium-neoforge-0.8.13+mc1.21.1.jar",

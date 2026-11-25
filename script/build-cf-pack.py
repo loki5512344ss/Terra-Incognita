@@ -50,8 +50,10 @@ def main():
     args = ap.parse_args()
 
     modlist = json.loads((ROOT / "mods/modlist.json").read_text())
-    cf = [m for m in modlist["mods"] if "curseforge" in m]
-    external = [m for m in modlist["mods"] if "curseforge" not in m]
+    # "serverOnly" mods go into the server pack only
+    client_mods = [m for m in modlist["mods"] if not m.get("serverOnly")]
+    cf = [m for m in client_mods if "curseforge" in m]
+    external = [m for m in client_mods if "curseforge" not in m]
     # our own mods: prebuilt jars live in custom_mods/<name>/libs and are tracked in git;
     # a fresh local build in build/libs is used only when libs is absent.
     jars = []
@@ -84,7 +86,7 @@ def main():
         "files": [{"projectID": m["curseforge"]["project"], "fileID": m["curseforge"]["file"], "required": True} for m in cf],
         "overrides": "overrides",
     }
-    rows = [f"<li>{html.escape(m['name'])}</li>" for m in sorted(modlist["mods"], key=lambda m: m["name"].lower())]
+    rows = [f"<li>{html.escape(m['name'])}</li>" for m in sorted(client_mods, key=lambda m: m["name"].lower())]
     rows.append("<li>Incognita</li>")
     if any(j.name.startswith("oc2r-") for j in jars):
         rows.append("<li>OC2R</li>")

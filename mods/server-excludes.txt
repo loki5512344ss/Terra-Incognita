@@ -12,5 +12,5 @@ include jei-1.21.1
 include mezz_config
 exclude JustEnoughProfessions  # JEI plugin
 exclude sound-physics      # client audio processing
-exclude trashslot          # client inventory slot, no server logic
+include trashslot          # needs the server half: without it the client disables the mod with an error
 exclude better-advanced-tooltips  # client tooltips

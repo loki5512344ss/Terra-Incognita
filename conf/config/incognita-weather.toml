@@ -1,4 +1,4 @@
-#Dense atmospheric fog banks
+#Rare dense fog: a weather event that rolls in for a few minutes
 enabled = true
 #Strongest fog density, 0 to 1
 # Default: 0.9
@@ -8,11 +8,11 @@ maxIntensity = 0.9
 # Default: 12
 # Range: 2 ~ 256
 minDistance = 12
-#How often fog banks appear (1 = default, higher = more often)
+#How often fog happens (1 = about once per 8 game days, higher = more often)
 # Default: 1.0
 # Range: 0.1 ~ 10.0
 frequency = 1.0
-#Extra fog around sunrise
+#A fog that happens around sunrise is thicker
 morningFog = true
 
 [clouds]

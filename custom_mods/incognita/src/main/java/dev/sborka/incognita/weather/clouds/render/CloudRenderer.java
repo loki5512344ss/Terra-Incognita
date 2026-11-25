@@ -1,5 +1,6 @@
 package dev.sborka.incognita.weather.clouds.render;
 
+import dev.sborka.incognita.weather.fog.control.FogOverride;
 import dev.sborka.incognita.Incognita;
 import dev.sborka.incognita.weather.WeatherState;
 import dev.sborka.incognita.weather.clouds.config.CloudConfig;
@@ -194,7 +195,7 @@ final class CloudRenderer implements AutoCloseable {
         rotation.positiveZ(forward).negate();
 
         float cover = (float) WeatherState.cloudiness(level.getGameTime(), level.getDayTime(), rain, thunder,
-            FogConfig.frequency(), FogConfig.morningFog());
+            FogOverride.client().frequency(FogConfig.frequency()), FogConfig.morningFog());
         float cloudBase = level.effects().getCloudHeight() + settings.baseOffset();
         visiblePuffs = 0;
         for (int b = 0; b < BandSpec.COUNT; b++) {
@@ -309,7 +310,7 @@ final class CloudRenderer implements AutoCloseable {
         float rain = level.getRainLevel(partialTick);
         float thunder = level.getThunderLevel(partialTick);
         float cover = (float) WeatherState.cloudiness(level.getGameTime(), level.getDayTime(), rain, thunder,
-            FogConfig.frequency(), FogConfig.morningFog());
+            FogOverride.client().frequency(FogConfig.frequency()), FogConfig.morningFog());
         CloudLight.Result light = CloudLight.compute(sun[1], cover, rain, thunder, settings.density());
         float sign = CloudLight.sunLights(sun[1]) ? 1.0f : -1.0f;
         lightDir[0] = sun[0] * sign;

@@ -21,6 +21,55 @@ class FogModelTest {
     }
 
     @Test
+    void fogIsARareEvent() {
+        long total = 0;
+        long foggy = 0;
+        for (long t = 0; t < 48_000_000L; t += 200) {
+            total++;
+            if (FogModel.intensity(t, t, 0.0, 1.0, 1.0, true) > 0.01) {
+                foggy++;
+            }
+        }
+        double share = foggy / (double) total;
+        assertTrue(share > 0.01 && share < 0.06, "share of time with fog: " + share);
+    }
+
+    @Test
+    void oneFogNeverLastsLongerThanSevenMinutes() {
+        long started = -1;
+        for (long t = 0; t < 48_000_000L; t += 100) {
+            boolean foggy = FogModel.intensity(t, t, 1.0, 1.0, 1.0, true) > 0.0;
+            if (!foggy) {
+                started = -1;
+                continue;
+            }
+            if (started < 0) {
+                started = t;
+            }
+            assertTrue(t - started <= 8_100, "fog has lasted " + (t - started) + " ticks at " + t);
+        }
+    }
+
+    @Test
+    void fogRollsInAndOutSmoothly() {
+        double last = 0.0;
+        for (long t = 0; t < 4_800_000L; t += 20) {
+            double now = FogModel.intensity(t, 6_000, 0.0, 1.0, 1.0, false);
+            assertTrue(Math.abs(now - last) < 0.02, "jump at " + t + ": " + last + " -> " + now);
+            last = now;
+        }
+    }
+
+    @Test
+    void dawnAndRainDoNotCreateFogOnTheirOwn() {
+        for (long t = 0; t < 4_800_000L; t += 997) {
+            if (FogModel.intensity(t, 6_000, 0.0, 1.0, 1.0, false) == 0.0) {
+                assertEquals(0.0, FogModel.intensity(t, 0, 1.0, 1.0, 1.0, true), "fog appeared at " + t);
+            }
+        }
+    }
+
+    @Test
     void zeroMaxMeansNoFog() {
         assertEquals(0.0, FogModel.intensity(50_000, 1_000, 1.0, 0.0, 1.0, true));
     }

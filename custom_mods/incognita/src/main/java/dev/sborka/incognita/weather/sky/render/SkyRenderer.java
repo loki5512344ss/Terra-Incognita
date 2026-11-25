@@ -1,5 +1,6 @@
 package dev.sborka.incognita.weather.sky.render;
 
+import dev.sborka.incognita.weather.fog.control.FogOverride;
 import dev.sborka.incognita.Incognita;
 import dev.sborka.incognita.weather.WeatherState;
 import dev.sborka.incognita.weather.clouds.shade.CloudLight;
@@ -154,7 +155,7 @@ final class SkyRenderer implements AutoCloseable {
         float rain = level.getRainLevel(partialTick);
         float thunder = level.getThunderLevel(partialTick);
         double cloudiness = WeatherState.cloudiness(level.getGameTime(), level.getDayTime(), rain, thunder,
-            FogConfig.frequency(), FogConfig.morningFog());
+            FogOverride.client().frequency(FogConfig.frequency()), FogConfig.morningFog());
         // The same greyness as the clouds, so a stormy sky and its clouds agree.
         float overcast = CloudLight.compute(sun[1], (float) cloudiness, rain, thunder, 0.5f).greyness();
         float fog = (float) SkyMath.clamp01(FogClient.density(partialTick));

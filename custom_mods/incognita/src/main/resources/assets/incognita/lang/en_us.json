@@ -22,5 +22,10 @@
   "block.incognita.lamp_orange": "Orange Test Lamp",
   "incognita.presence.menu": "In the main menu",
   "incognita.presence.loading": "Loading the world",
-  "incognita.presence.exploring": "Finding a way without coordinates"
+  "incognita.presence.exploring": "Finding a way without coordinates",
+  "incognita.fog.on": "Fog is back to natural weather",
+  "incognita.fog.off": "Fog is switched off",
+  "incognita.fog.set": "Fog with density %s for %s seconds",
+  "incognita.fog.chance": "Chance of a natural fog is now %s%% per game day",
+  "incognita.fog.status": "Fog mode: %s, daily chance: %s"
 }

@@ -1,6 +1,7 @@
 package dev.sborka.incognita.weather.fog;
 
 import dev.sborka.incognita.Incognita;
+import dev.sborka.incognita.weather.fog.control.FogOverride;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -10,6 +11,7 @@ import net.minecraft.world.level.material.FogType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.client.event.ViewportEvent;
 
@@ -41,6 +43,12 @@ public final class FogClient {
         testOverride = density;
     }
 
+    /** The next server sends its own state; singleplayer worlds must not inherit the last one. */
+    @SubscribeEvent
+    public static void onLoggingOut(ClientPlayerNetworkEvent.LoggingOut event) {
+        FogOverride.setClient(FogOverride.NONE);
+    }
+
     @SubscribeEvent
     public static void onClientTick(ClientTickEvent.Post event) {
         ClientLevel level = Minecraft.getInstance().level;
@@ -68,8 +76,10 @@ public final class FogClient {
         if (testOverride >= 0.0) {
             return testOverride;
         }
-        double raw = FogModel.intensity(level.getGameTime(), level.getDayTime(), level.getRainLevel(partialTick),
-            FogConfig.maxIntensity(), FogConfig.frequency(), FogConfig.morningFog());
+        FogOverride control = FogOverride.client();
+        double natural = FogModel.intensity(level.getGameTime(), level.getDayTime(), level.getRainLevel(partialTick),
+            FogConfig.maxIntensity(), control.frequency(FogConfig.frequency()), FogConfig.morningFog());
+        double raw = control.apply(natural, level.getGameTime());
         double shown = lastExposure + (exposure - lastExposure) * partialTick;
         return raw * shown;
     }

@@ -22,5 +22,10 @@
   "block.incognita.lamp_orange": "Оранжевая тестовая лампа",
   "incognita.presence.menu": "В главном меню",
   "incognita.presence.loading": "Загружает мир",
-  "incognita.presence.exploring": "Ищет путь без координат"
+  "incognita.presence.exploring": "Ищет путь без координат",
+  "incognita.fog.on": "Туман снова идёт по погоде",
+  "incognita.fog.off": "Туман выключен",
+  "incognita.fog.set": "Туман плотностью %s на %s секунд",
+  "incognita.fog.chance": "Шанс природного тумана теперь %s%% за игровой день",
+  "incognita.fog.status": "Режим тумана: %s, шанс за день: %s"
 }

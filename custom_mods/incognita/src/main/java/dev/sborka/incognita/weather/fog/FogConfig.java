@@ -19,15 +19,15 @@ public final class FogConfig {
 
     static {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
-        ENABLED = builder.comment("Dense atmospheric fog banks")
+        ENABLED = builder.comment("Rare dense fog: a weather event that rolls in for a few minutes")
             .define("enabled", true);
         MAX_INTENSITY = builder.comment("Strongest fog density, 0 to 1")
             .defineInRange("maxIntensity", 0.9, 0.0, 1.0);
         MIN_DISTANCE = builder.comment("Visibility in blocks at the densest fog")
             .defineInRange("minDistance", 12, 2, 256);
-        FREQUENCY = builder.comment("How often fog banks appear (1 = default, higher = more often)")
+        FREQUENCY = builder.comment("How often fog happens (1 = about once per 8 game days, higher = more often)")
             .defineInRange("frequency", 1.0, 0.1, 10.0);
-        MORNING_FOG = builder.comment("Extra fog around sunrise")
+        MORNING_FOG = builder.comment("A fog that happens around sunrise is thicker")
             .define("morningFog", true);
         CloudConfig.define(builder);
         SkyConfig.define(builder);

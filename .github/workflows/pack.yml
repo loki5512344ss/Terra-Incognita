@@ -54,6 +54,18 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
+      # Runs once the CurseForge project exists and the repository has the secret and the variable
+      - name: Upload to CurseForge
+        if: startsWith(github.ref, 'refs/tags/v') && vars.CURSEFORGE_PROJECT_ID != ''
+        env:
+          CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+          CURSEFORGE_PROJECT_ID: ${{ vars.CURSEFORGE_PROJECT_ID }}
+        run: |
+          git tag -l --format='%(contents)' "$GITHUB_REF_NAME" > changelog.md
+          python3 script/upload-curseforge.py --version "${GITHUB_REF_NAME#v}" --changelog changelog.md
+        # a rejected upload must not stop the GitHub release below
+        continue-on-error: true
+
       - name: Publish the release
         if: startsWith(github.ref, 'refs/tags/v')
         env:

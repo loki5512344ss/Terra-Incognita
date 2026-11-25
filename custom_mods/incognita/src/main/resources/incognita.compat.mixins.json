@@ -19,7 +19,8 @@
     "FlwDebugInfoMixin",
     "I18nMixin",
     "ClientSuggestionProviderMixin",
-    "SchematicEditScreenMixin"
+    "SchematicEditScreenMixin",
+    "GravestoneObituaryMixin"
   ],
   "injectors": {
     "defaultRequire": 0

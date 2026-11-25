@@ -41,6 +41,9 @@ public final class CoordinatesConfig {
         "item.storagedrawers.remote_group_upgrade_bound.bound",
         "message.storagedrawers.updated_remote_binding",
         "ftbquests.message.configurator_bound",
+        // Neruina reports where a ticking entity or block entity was suspended
+        "neruina.*",
+        "commands.neruina.*",
         // Jade: the optional "coordinates" lines a player can switch on in the Jade settings
         "jade.blockpos",
         "narration.jade.blockpos",

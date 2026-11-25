@@ -4,6 +4,7 @@ import dev.sborka.incognita.compass.CompassModule;
 import dev.sborka.incognita.coordinates.CoordinatesModule;
 import dev.sborka.incognita.core.IncognitaModule;
 import dev.sborka.incognita.core.IncognitaTab;
+import dev.sborka.incognita.gear.GearModule;
 import dev.sborka.incognita.presence.PresenceModule;
 import dev.sborka.incognita.radio.RadioModule;
 import dev.sborka.incognita.spawn.SpawnModule;
@@ -32,6 +33,7 @@ public final class Incognita {
         new CompassModule(),
         new WeatherModule(),
         new PresenceModule(),
+        new GearModule(),
         new dev.sborka.incognita.lighting.LightingModule()
     );
 

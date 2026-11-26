@@ -132,3 +132,8 @@ configurable-3.5.3+1.21.1-neoforge.jar
 dragonlib-3.0.29+mc1.21.1-neoforge.jar
 interiors-0.6.1 v3.jar
 skinrestorer-2.11.1+1.21-neoforge.jar
+zoomify-2.15.2+1.21.1.jar
+connector-2.0.0-beta.17+1.21.1-full.jar
+forgified-fabric-api-0.116.15+2.3.6+1.21.1.jar
+fabric-language-kotlin-1.14.2+kotlin.2.4.21.jar
+yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar

@@ -3,6 +3,9 @@ package dev.sborka.incognita.presence;
 import dev.sborka.incognita.Incognita;
 import dev.sborka.incognita.presence.ipc.DiscordActivity;
 import dev.sborka.incognita.presence.ipc.DiscordIpc;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicBoolean;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.neoforged.api.distmarker.Dist;
@@ -20,12 +23,19 @@ public final class PresenceClient {
     private static final int TICKS_PER_SECOND = 20;
     private static final long MIN_INTERVAL_MILLIS = 5_000L;
 
-    private static DiscordIpc ipc;
+    private static volatile DiscordIpc ipc;
     private static String ipcClientId = "";
     private static long sessionStart;
     private static long lastSend;
     private static String lastSignature = "";
-    private static boolean announced;
+    private static volatile boolean announced;
+    /** Talking to Discord blocks until it answers, so it never happens on the game thread. */
+    private static final ExecutorService DISCORD = Executors.newSingleThreadExecutor(task -> {
+        Thread thread = new Thread(task, "incognita-discord-rpc");
+        thread.setDaemon(true);
+        return thread;
+    });
+    private static final AtomicBoolean BUSY = new AtomicBoolean();
     private static int ticks;
 
     private PresenceClient() {}
@@ -55,12 +65,8 @@ public final class PresenceClient {
         }
         if (send(activity)) {
             lastSignature = signature;
-            if (!announced) {
-                announced = true;
-                Incognita.LOGGER.info("Discord Rich Presence is connected");
-            }
+            lastSend = now;
         }
-        lastSend = now;
     }
 
     @SubscribeEvent
@@ -105,24 +111,44 @@ public final class PresenceClient {
         return value.equals(key) ? fallback : value;
     }
 
+    /** Hands the card to the Discord thread. Returns {@code false} while the previous update is still in flight. */
     private static boolean send(DiscordActivity activity) {
         String clientId = PresenceConfig.applicationId();
-        if (clientId.isBlank()) {
+        if (clientId.isBlank() || !BUSY.compareAndSet(false, true)) {
             return false;
         }
+        DISCORD.execute(() -> {
+            try {
+                if (clientFor(clientId).setActivity(activity) && !announced) {
+                    announced = true;
+                    Incognita.LOGGER.info("Discord Rich Presence is connected");
+                }
+            } finally {
+                BUSY.set(false);
+            }
+        });
+        return true;
+    }
+
+    /** Runs on the Discord thread, like every other use of {@link #ipc}. */
+    private static DiscordIpc clientFor(String clientId) {
         if (ipc == null || !clientId.equals(ipcClientId)) {
-            shutdown();
+            close();
             ipc = new DiscordIpc(clientId);
             ipcClientId = clientId;
         }
-        return ipc.setActivity(activity);
+        return ipc;
     }
 
-    private static void shutdown() {
+    private static void close() {
         if (ipc != null) {
             ipc.close();
             ipc = null;
             ipcClientId = "";
         }
+    }
+
+    private static void shutdown() {
+        DISCORD.execute(PresenceClient::close);
     }
 }

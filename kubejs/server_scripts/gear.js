@@ -69,6 +69,11 @@ ServerEvents.recipes(event => {
     event.replaceInput({ id: id }, '#c:ingots/iron', 'create:iron_sheet')
   })
 
+  // Shears join the iron step: two sheets and a plank handle (durability is raised in startup_scripts/durability.js)
+  event.remove({ id: 'minecraft:shears' })
+  event.shaped('minecraft:shears', [' M', 'MP'], { M: 'create:iron_sheet', P: '#minecraft:planks' })
+    .id('sborka:gear_shears')
+
   // --- Step 2: diamond ---
   parts.forEach(part => {
     const id = 'minecraft:diamond_' + part

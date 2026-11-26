@@ -14,3 +14,9 @@ exclude JustEnoughProfessions  # JEI plugin
 exclude sound-physics      # client audio processing
 include trashslot          # needs the server half: without it the client disables the mod with an error
 exclude better-advanced-tooltips  # client tooltips
+# Zoomify (a Fabric mod) and what it needs to run on NeoForge; zooming is client only
+exclude connector-2.0
+exclude forgified-fabric-api
+exclude fabric-language-kotlin
+exclude zoomify
+exclude yet_another_config_lib

@@ -17,6 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.Assumptions;
@@ -49,6 +50,8 @@ class DiscordIpcTest {
                     Frame command = readFrame(in);
                     assertEquals(1, command.op());
                     activity.set(command.json());
+                    writeFrame(java.nio.channels.Channels.newOutputStream(client), 1,
+                        "{\"cmd\":\"SET_ACTIVITY\"}".getBytes(StandardCharsets.UTF_8));
                 }
             } catch (Throwable t) {
                 failure.set(t);
@@ -84,6 +87,109 @@ class DiscordIpcTest {
         assertEquals("Terra Incognita", assets.get("large_text").getAsString());
         JsonObject button = act.getAsJsonArray("buttons").get(0).getAsJsonObject();
         assertEquals("GitHub", button.get("label").getAsString());
+    }
+
+    /** Like the real client, this one answers every message and then stays silent until the next one. */
+    @Test
+    void laterUpdatesDoNotBlockWhileDiscordIsSilent(@TempDir Path dir) throws Exception {
+        Assumptions.assumeTrue(!System.getProperty("os.name").toLowerCase().contains("win"));
+        Path socket = dir.resolve("discord-ipc-0");
+        ServerSocketChannel listener = ServerSocketChannel.open(StandardProtocolFamily.UNIX);
+        listener.bind(UnixDomainSocketAddress.of(socket));
+        Thread server = new Thread(() -> {
+            try (listener; SocketChannel client = listener.accept()) {
+                DataInputStream in = new DataInputStream(java.nio.channels.Channels.newInputStream(client));
+                while (true) {
+                    readFrame(in);
+                    ByteBuffer reply = ByteBuffer.allocate(10).order(ByteOrder.LITTLE_ENDIAN);
+                    reply.putInt(1).putInt(2).put("{}".getBytes(StandardCharsets.UTF_8)).flip();
+                    client.write(reply);
+                }
+            } catch (IOException ignored) {
+                // the client closed the socket at the end of the test
+            }
+        }, "silent-discord");
+        server.setDaemon(true);
+        server.start();
+
+        DiscordIpc ipc = new DiscordIpc("123", () -> IpcTransport.connect(socket));
+        for (int i = 0; i < 3; i++) {
+            FutureTask<Boolean> update = new FutureTask<>(
+                () -> ipc.setActivity(new DiscordActivity("", "state", 0L, "", "", "", "")));
+            Thread game = new Thread(update, "fake-render-thread");
+            game.setDaemon(true);
+            game.start();
+            assertTrue(update.get(3, TimeUnit.SECONDS), "update " + i + " failed");
+            Thread.sleep(300); // gives a background reader, if there is one, time to block on the socket
+        }
+        ipc.close();
+    }
+
+    @Test
+    void updatesFinishOnAPipeThatCannotReadAndWriteAtOnce() throws Exception {
+        try (DiscordIpc ipc = new DiscordIpc("123", HalfDuplexPipe::new)) {
+            for (int i = 0; i < 3; i++) {
+                FutureTask<Boolean> update = new FutureTask<>(
+                    () -> ipc.setActivity(new DiscordActivity("", "state", 0L, "", "", "", "")));
+                Thread caller = new Thread(update, "caller");
+                caller.setDaemon(true);
+                caller.start();
+                assertTrue(update.get(3, TimeUnit.SECONDS), "update " + i + " failed");
+                Thread.sleep(200);
+            }
+        }
+    }
+
+    /**
+     * Behaves like a Windows named pipe opened as a file: a write waits while a read is pending. Like Discord, it
+     * answers every frame it gets and says nothing otherwise.
+     */
+    private static final class HalfDuplexPipe implements IpcTransport {
+        private final Object handle = new Object();
+        private final java.util.concurrent.BlockingQueue<Integer> replies =
+            new java.util.concurrent.LinkedBlockingQueue<>();
+
+        @Override
+        public java.io.InputStream in() {
+            return new java.io.InputStream() {
+                @Override
+                public int read() throws IOException {
+                    synchronized (handle) {
+                        try {
+                            return replies.take();
+                        } catch (InterruptedException e) {
+                            throw new IOException(e);
+                        }
+                    }
+                }
+            };
+        }
+
+        @Override
+        public java.io.OutputStream out() {
+            return new java.io.OutputStream() {
+                @Override
+                public void write(int b) {
+                    write(new byte[] {(byte) b}, 0, 1);
+                }
+
+                @Override
+                public void write(byte[] bytes, int offset, int length) {
+                    synchronized (handle) {
+                        ByteBuffer reply = ByteBuffer.allocate(10).order(ByteOrder.LITTLE_ENDIAN);
+                        reply.putInt(1).putInt(2).put("{}".getBytes(StandardCharsets.UTF_8));
+                        for (byte value : reply.array()) {
+                            replies.add(value & 0xFF);
+                        }
+                    }
+                }
+            };
+        }
+
+        @Override
+        public void close() {
+            // nothing to release
+        }
     }
 
     @Test

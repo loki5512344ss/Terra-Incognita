@@ -16,6 +16,11 @@ import java.util.concurrent.TimeUnit;
 /**
  * Minimal Discord IPC client: connects to the desktop client, performs the handshake and sends
  * {@code SET_ACTIVITY}. One instance per game session; it reconnects on its own after Discord restarts.
+ *
+ * <p>The pipe is used strictly in turns: write a message, then read its answer. There must be no background reader.
+ * On Windows the pipe cannot be written while a read is pending (neither by the Java file channel nor by the system
+ * handle), so a reader waiting for Discord blocked the next update forever. Calls block, so they must not run on the
+ * game thread. Not thread safe.
  */
 public final class DiscordIpc implements AutoCloseable {
     private static final int OP_HANDSHAKE = 0;
@@ -28,12 +33,9 @@ public final class DiscordIpc implements AutoCloseable {
     private final String clientId;
     private final IpcSource source;
     private final Gson gson = new Gson();
-    private final Object writeLock = new Object();
 
-    private volatile IpcTransport transport;
-    private volatile boolean connected;
-    private volatile long nextAttempt;
-    private Thread reader;
+    private IpcTransport transport;
+    private long nextAttempt;
 
     public DiscordIpc(String clientId) {
         this(clientId, IpcTransport::connectAuto);
@@ -60,7 +62,8 @@ public final class DiscordIpc implements AutoCloseable {
         command.add("args", args);
         command.addProperty("nonce", UUID.randomUUID().toString());
         try {
-            sendFrame(OP_FRAME, gson.toJson(command).getBytes(StandardCharsets.UTF_8));
+            sendOn(transport, OP_FRAME, gson.toJson(command).getBytes(StandardCharsets.UTF_8));
+            readReply(transport);
             return true;
         } catch (IOException e) {
             disconnect();
@@ -69,8 +72,7 @@ public final class DiscordIpc implements AutoCloseable {
     }
 
     private boolean ensureConnected() {
-        IpcTransport current = transport;
-        if (current != null && connected) {
+        if (transport != null) {
             return true;
         }
         long now = System.currentTimeMillis();
@@ -81,9 +83,8 @@ public final class DiscordIpc implements AutoCloseable {
         try {
             opened = source.open();
             sendOn(opened, OP_HANDSHAKE, gson.toJson(handshake()).getBytes(StandardCharsets.UTF_8));
+            readReply(opened);
             transport = opened;
-            connected = true;
-            startReader(opened);
             nextAttempt = 0L;
             return true;
         } catch (IOException | RuntimeException e) {
@@ -101,54 +102,29 @@ public final class DiscordIpc implements AutoCloseable {
         return json;
     }
 
-    private void startReader(IpcTransport opened) {
-        Thread thread = new Thread(() -> readLoop(opened), "incognita-discord-rpc");
-        thread.setDaemon(true);
-        reader = thread;
-        thread.start();
-    }
-
-    private void readLoop(IpcTransport opened) {
-        try {
-            InputStream in = opened.in();
-            while (connected && transport == opened) {
-                int op = readInt(in);
-                int length = readInt(in);
-                byte[] payload = in.readNBytes(length);
-                if (payload.length != length) {
-                    break;
-                }
-                if (op == OP_PING) {
-                    sendOn(opened, OP_PONG, payload);
-                } else if (op == OP_CLOSE) {
-                    break;
-                }
+    /** Reads the answer to the last message, replying to pings that arrive before it. */
+    private void readReply(IpcTransport target) throws IOException {
+        InputStream in = target.in();
+        while (true) {
+            int op = readInt(in);
+            int length = readInt(in);
+            byte[] payload = in.readNBytes(length);
+            if (payload.length != length || op == OP_CLOSE) {
+                throw new EOFException("Discord closed the pipe");
             }
-        } catch (IOException | RuntimeException ignored) {
-            // Discord closed the pipe; the next setActivity reconnects.
-        } finally {
-            if (transport == opened) {
-                disconnect();
+            if (op != OP_PING) {
+                return;
             }
+            sendOn(target, OP_PONG, payload);
         }
-    }
-
-    private void sendFrame(int op, byte[] payload) throws IOException {
-        IpcTransport current = transport;
-        if (current == null) {
-            throw new IOException("not connected");
-        }
-        sendOn(current, op, payload);
     }
 
     private void sendOn(IpcTransport target, int op, byte[] payload) throws IOException {
         ByteBuffer buffer = ByteBuffer.allocate(8 + payload.length).order(ByteOrder.LITTLE_ENDIAN);
         buffer.putInt(op).putInt(payload.length).put(payload);
-        synchronized (writeLock) {
-            OutputStream out = target.out();
-            out.write(buffer.array());
-            out.flush();
-        }
+        OutputStream out = target.out();
+        out.write(buffer.array());
+        out.flush();
     }
 
     private static int readInt(InputStream in) throws IOException {
@@ -160,7 +136,6 @@ public final class DiscordIpc implements AutoCloseable {
     }
 
     private void disconnect() {
-        connected = false;
         IpcTransport current = transport;
         transport = null;
         closeQuietly(current);
@@ -180,11 +155,6 @@ public final class DiscordIpc implements AutoCloseable {
     @Override
     public void close() {
         disconnect();
-        Thread thread = reader;
-        if (thread != null) {
-            thread.interrupt();
-            reader = null;
-        }
     }
 
     /** Lets the tests substitute a fake socket. */

@@ -80,6 +80,7 @@ final class CloudRenderer implements AutoCloseable {
 
     private boolean needsReload = true;
     private boolean failed;
+    private final CloudDiagnostics diagnostics = new CloudDiagnostics();
     private boolean windStarted;
     private float lastTicks = -1.0f;
     private GlSupport.Path activePath = GlSupport.Path.NONE;
@@ -121,13 +122,21 @@ final class CloudRenderer implements AutoCloseable {
 
     void render(Matrix4f view, Matrix4f projection, float partialTick, double camX, double camY, double camZ) {
         ClientLevel level = client.level;
-        if (failed || level == null || !CloudConfig.enabled() || ShaderPackCheck.isShaderPackActive()
-            || Float.isNaN(level.effects().getCloudHeight())
-            || client.gameRenderer.getMainCamera().getFluidInCamera() != FogType.NONE) {
+        if (failed || level == null || client.gameRenderer.getMainCamera().getFluidInCamera() != FogType.NONE
+            || Float.isNaN(level.effects().getCloudHeight())) {
+            return;
+        }
+        if (!CloudConfig.enabled()) {
+            diagnostics.skipped("switched off in incognita-weather.toml");
+            return;
+        }
+        if (ShaderPackCheck.isShaderPackActive()) {
+            diagnostics.skipped("a shader pack is active and draws its own sky");
             return;
         }
         GlSupport.Path path = GlSupport.path();
         if (path == GlSupport.Path.NONE) {
+            diagnostics.skipped("OpenGL 3.3 is not available");
             return;
         }
         CloudSettings settings = CloudSettings.fromConfig();
@@ -136,10 +145,16 @@ final class CloudRenderer implements AutoCloseable {
                 failed = true;
                 return;
             }
+            diagnostics.clearErrors();
             timer.begin();
             prepare(level, settings, view, projection, partialTick, camX, camY, camZ);
+            diagnostics.checkStage("prepare");
             drawPasses();
+            diagnostics.checkStage("cloud passes");
             drawComposite(level, settings, partialTick);
+            diagnostics.checkStage("composite");
+            diagnostics.firstClouds(activePath, visiblePuffs, client.getMainRenderTarget().width,
+                client.getMainRenderTarget().height);
         } catch (RuntimeException | LinkageError e) {
             Incognita.LOGGER.error("Cloud renderer failed, clouds disabled until the next resource reload", e);
             failed = true;

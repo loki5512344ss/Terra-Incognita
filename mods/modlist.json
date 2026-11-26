@@ -403,6 +403,14 @@
       }
     },
     {
+      "file": "connector-2.0.0-beta.17+1.21.1-full.jar",
+      "name": "Sinytra Connector",
+      "curseforge": {
+        "project": 890127,
+        "file": 8654089
+      }
+    },
+    {
       "file": "copycats-3.0.9+mc.1.21.1-neoforge.jar",
       "name": "Create: Copycats+",
       "curseforge": {
@@ -635,6 +643,14 @@
       }
     },
     {
+      "file": "fabric-language-kotlin-1.14.2+kotlin.2.4.21.jar",
+      "name": "Fabric Language Kotlin",
+      "curseforge": {
+        "project": 308769,
+        "file": 9106173
+      }
+    },
+    {
       "file": "fancymenu_neoforge_3.9.14_MC_1.21.1.jar",
       "name": "FancyMenu",
       "curseforge": {
@@ -648,6 +664,14 @@
       "curseforge": {
         "project": 429235,
         "file": 7524151
+      }
+    },
+    {
+      "file": "forgified-fabric-api-0.116.15+2.3.6+1.21.1.jar",
+      "name": "Forgified Fabric API",
+      "curseforge": {
+        "project": 889079,
+        "file": 9195559
       }
     },
     {
@@ -1122,11 +1146,27 @@
       }
     },
     {
+      "file": "yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar",
+      "name": "YetAnotherConfigLib (YACL)",
+      "curseforge": {
+        "project": 667299,
+        "file": 7437845
+      }
+    },
+    {
       "file": "zakoopt-2.0.4-1.21.1-neoforge.jar",
       "name": "ZakoOpt",
       "curseforge": {
         "project": 1731365,
         "file": 9407184
+      }
+    },
+    {
+      "file": "zoomify-2.15.2+1.21.1.jar",
+      "name": "Zoomify (Zoom)",
+      "curseforge": {
+        "project": 574741,
+        "file": 7591960
       }
     }
   ]
